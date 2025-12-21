@@ -16,19 +16,20 @@
 color: black;
  }
  .logo-name {
-   font-family:"Supermercado One", sans-serif;
-   font-weight: 450px;
+   font-family:"Supermercado One", sans-serif; 
+   font-weight: 450;
    font-size: 30px;
  }
  
  .logo {
-   width: 60px;
-   height: 60px;
+   width: 70px;
+   height: auto;
    border-radius: 50%;
    object-fit: cover;
+   object-position: center;
    margin-left: 30px;
    cursor: pointer;
-   margin-right: 15px;
+   margin-right: 5px;
  }
  
  .navbar {

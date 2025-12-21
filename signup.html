@@ -14,6 +14,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+      <link
+      rel="icon"
+      type="image/x-icon"
+      href="assets/images/logo/logo.png"
+    />
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
@@ -25,7 +30,7 @@
     <div class="navbar" style="font-size: larger">
       <a href="index.html">
         <div class="logo-container">
-          <img class="logo" src="assets/images/logo/Logodrk.jpg" />
+          <img class="logo" src="assets/images/logo/logo.png" />
           <p class="logo-name">Chulo</p>
         </div>
       </a>
@@ -90,78 +95,78 @@
     </div>
 
     <script>
-      const signupForm = document.getElementById('signupForm');
-      const errorMessage = document.getElementById('error-message');
+      // const signupForm = document.getElementById('signupForm');
+      // const errorMessage = document.getElementById('error-message');
 
-      signupForm.addEventListener('submit', async (e) => {
-        e.preventDefault();
+      // signupForm.addEventListener('submit', async (e) => {
+      //   e.preventDefault();
         
-        const username = document.getElementById('username').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirm-password').value;
+      //   const username = document.getElementById('username').value;
+      //   const email = document.getElementById('email').value;
+      //   const password = document.getElementById('password').value;
+      //   const confirmPassword = document.getElementById('confirm-password').value;
 
-        // Check if passwords match
-        if (password !== confirmPassword) {
-          errorMessage.textContent = 'Passwords do not match';
-          errorMessage.style.display = 'block';
-          return;
-        }
+      //   // Check if passwords match
+      //   if (password !== confirmPassword) {
+      //     errorMessage.textContent = 'Passwords do not match';
+      //     errorMessage.style.display = 'block';
+      //     return;
+      //   }
 
-        // Basic validation
-        if (password.length < 6) {
-          errorMessage.textContent = 'Password must be at least 6 characters';
-          errorMessage.style.display = 'block';
-          return;
-        }
+      //   // Basic validation
+      //   if (password.length < 6) {
+      //     errorMessage.textContent = 'Password must be at least 6 characters';
+      //     errorMessage.style.display = 'block';
+      //     return;
+      //   }
 
-        try {
-          const response = await fetch('/api/auth/signup', {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-            },
-            body: JSON.stringify({ username, email, password }),
-          });
+      //   try {
+      //     const response = await fetch('/api/auth/signup', {
+      //       method: 'POST',
+      //       headers: {
+      //         'Content-Type': 'application/json',
+      //       },
+      //       body: JSON.stringify({ username, email, password }),
+      //     });
 
-          const data = await response.json();
+      //     const data = await response.json();
 
-          if (!response.ok) {
-            errorMessage.textContent = data.error;
-            errorMessage.style.display = 'block';
-            return;
-          }
+      //     if (!response.ok) {
+      //       errorMessage.textContent = data.error;
+      //       errorMessage.style.display = 'block';
+      //       return;
+      //     }
 
-          // Success
-          alert('Account created successfully! Redirecting to login...');
-          window.location.href = '/login.html';
+      //     // Success
+      //     alert('Account created successfully! Redirecting to login...');
+      //     window.location.href = '/login.html';
           
-        } catch (error) {
-          console.error('Error:', error);
-          errorMessage.textContent = 'Network error. Please try again.';
-          errorMessage.style.display = 'block';
-        }
-      });
+      //   } catch (error) {
+      //     console.error('Error:', error);
+      //     errorMessage.textContent = 'Network error. Please try again.';
+      //     errorMessage.style.display = 'block';
+      //   }
+      // });
 
-      // Password toggle for all password fields
-      const toggleIcons = document.querySelectorAll('.password-toggle-icon');
-      toggleIcons.forEach(function(toggleIcon) {
-        toggleIcon.addEventListener('click', function() {
-          const userBox = this.closest('.user-box');
-          const passwordInput = userBox.querySelector('input[type="password"], input[type="text"]');
-          const icon = this.querySelector('i');
+      // // Password toggle for all password fields
+      // const toggleIcons = document.querySelectorAll('.password-toggle-icon');
+      // toggleIcons.forEach(function(toggleIcon) {
+      //   toggleIcon.addEventListener('click', function() {
+      //     const userBox = this.closest('.user-box');
+      //     const passwordInput = userBox.querySelector('input[type="password"], input[type="text"]');
+      //     const icon = this.querySelector('i');
           
-          if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            icon.classList.remove('fa-eye');
-            icon.classList.add('fa-eye-slash');
-          } else {
-            passwordInput.type = 'password';
-            icon.classList.remove('fa-eye-slash');
-            icon.classList.add('fa-eye');
-          }
-        });
-      });
+      //     if (passwordInput.type === 'password') {
+      //       passwordInput.type = 'text';
+      //       icon.classList.remove('fa-eye');
+      //       icon.classList.add('fa-eye-slash');
+      //     } else {
+      //       passwordInput.type = 'password';
+      //       icon.classList.remove('fa-eye-slash');
+      //       icon.classList.add('fa-eye');
+      //     }
+      //   });
+      // });
     </script>
   </body>
 </html>
