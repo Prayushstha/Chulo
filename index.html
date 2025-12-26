@@ -39,7 +39,7 @@
       rel="stylesheet"
     />
     <title>Homepage</title>
-
+    <script src="assets/Backend/ui-enhancer.js"></script>
     <script>
       // Smooth Scrolling JS
       console.log("Smooth scroll initializing...");
@@ -267,7 +267,7 @@
   </aside>
 
   <!-- Scripts -->
-  <script src="assets/Backend/ui-enhancer.js"></script>
+
   <script src="assets/Backend/ordering.js"></script>
   <script src="assets/Backend/cart.js"></script>
   <script src="assets/Backend/search.js"></script>
@@ -301,7 +301,7 @@ function createFoodItemHTML(item, showRank = false, rank = null) {
           <div class="food-sub-description">
             <p class="food-price">&#x20B9; ${item.price}</p>
             <div class="food-stock">
-              <button class="buy-button" onclick="event.stopPropagation(); addToCart(${item.id})">Buy</button>
+              <button class="buy-button" onclick="event.stopPropagation(); addToCart(${item.id})" id="buy-button">Buy</button>
             </div>
           </div>
         </div>
