@@ -54,10 +54,11 @@ Admin dashboard
 Payment gateway integration
 
 👨‍💻 Developer
-Your Name
-
-GitHub: @yourusername
-Email: your.email@example.com
+Prayush Shrestha
+Prashil Baidhya
+Krishna Shrestha
+GitHub: @Prayushstha
+Email: prayushstha1212@gmail.com
 
 📄 License
 This project is created for educational purposes.
