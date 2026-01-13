@@ -1,4 +1,3 @@
-
 const foodItems = [
   // ATG, Trending
   {
