@@ -29,7 +29,7 @@ html {
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   position: sticky;
   top: 70.7px;
-  background-color: #fff;
+  background: none;
   padding-top: 20px;
   padding-bottom: 15px;
   z-index: 1;

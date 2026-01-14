@@ -9,7 +9,7 @@
     --bg-secondary: #ffffff;
     --bg-glass: rgba(255, 255, 255, 0.85);
 
-    --text-primary: #1a202c;
+    --text-primary: #242525;
     --text-secondary: #718096;
     --text-accent: #FF6B35;
 
@@ -112,10 +112,10 @@ a:hover {
 
 /* ===== NAME BAR ===== */
 .name {
-    background: var(--glass-bg) !important;
-    backdrop-filter: blur(60px) !important;
+    background: var(--bg-primary) !important;
+    /* backdrop-filter: blur(60px) !important;
     -webkit-backdrop-filter: blur(60px) !important;
-    border-bottom-color: var(--border-color) !important;
+    border-bottom-color: var(--border-color) !important; */
 }
 
 /* ===== SIDEBAR ===== */
