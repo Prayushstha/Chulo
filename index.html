@@ -476,105 +476,118 @@
     <script src="assets/Backend/descriptions.js"></script>
 
     <script>
-      // Food Categories Configuration
-      const categories = {
-        "Around-The-Globe": [1, 2, 3, 4, 5],
-        Trending: [4, 2, 3, 1, 6],
-        Dessert: [7, 8, 9, 10],
-        Healthy: [11, 12, 13, 14, 15],
-        Desi: [16, 17, 18],
-      };
+  // Food Categories Configuration
+  const categories = {
+    "Around-The-Globe": [1, 2, 3, 4, 5],
+    Trending: [4, 2, 3, 1, 6],
+    Dessert: [7, 8, 9, 10],
+    Healthy: [11, 12, 13, 14, 15],
+    Desi: [16, 17, 18],
+  };
 
-      // Create HTML for a single food item
-      function createFoodItemHTML(item, showRank = false, rank = null) {
-        const originalPriceDisplay = showRank
-          ? `#${rank}`
-          : `&#x20B9; ${item.originalPrice}`;
+  // Helper function to generate star rating HTML
+  function generateStarRating(rating) {
+    const fullStars = Math.floor(rating);
+    const emptyStars = 5 - fullStars;
+    
+    let stars = '';
+    
+    for (let i = 0; i < fullStars; i++) {
+      stars += '<span class="fa fa-star checked"></span>';
+    }
+    
+    for (let i = 0; i < emptyStars; i++) {
+      stars += '<span class="fa fa-star"></span>';
+    }
+    
+    return stars;
+  }
 
-        return `
-    <div class="food-preview" data-id="${item.id}">
-      <a onclick="showDialog(${item.id})">
-        <div>
-          <img class="food-picture" src="assets/images/food-pictures/${item.image}" alt="${item.name}">
-        </div>
-        <div class="food-description">
-          <p class="food-name">${item.name}</p>
-          <div class="food-sub-description">
-            <p class="food-price">&#x20B9; ${item.price}</p>
-            <div class="food-stock">
-              <button class="buy-button" onclick="event.stopPropagation(); addToCart(${item.id})" id="buy-button">Buy</button>
+  // Create HTML for a single food item
+  function createFoodItemHTML(item, showRank = false, rank = null) {
+    const starRating = generateStarRating(item.rating || 4.5);
+    
+    return `
+      <div class="food-preview" data-id="${item.id}">
+        <a onclick="showDialog(${item.id})">
+          <div class="food-image-wrapper">
+            <img class="food-picture" src="assets/images/food-pictures/${item.image}" alt="${item.name}">
+          </div>
+          <div class="food-description">
+            <p class="food-name">${item.name}</p>
+            <div class="food-rating">
+              ${starRating}
+            </div>
+            <div class="food-item-description">
+              ${item.shortDescription || 'Delicious food item prepared with fresh ingredients'}
+            </div>
+            <div class="food-sub-description">
+              <span class="food-price">&#x20B9; ${item.price}</span>
+              <button class="buy-button" onclick="event.stopPropagation(); addToCart(${item.id})">Buy</button>
             </div>
           </div>
-        </div>
-      </a>
-    </div>
-  `;
+        </a>
+      </div>
+    `;
+  }
+
+  // Render a specific category
+  function renderCategory(categoryId, itemIds, showRanks = false) {
+    const container = document.getElementById(categoryId);
+
+    if (!container) {
+      console.error(`Container with id "${categoryId}" not found`);
+      return;
+    }
+
+    let previewContainer = container.nextElementSibling;
+
+    while (
+      previewContainer &&
+      !previewContainer.classList.contains("food-1-preview")
+    ) {
+      previewContainer = previewContainer.nextElementSibling;
+    }
+
+    if (!previewContainer) {
+      console.error(`Preview container not found for category "${categoryId}"`);
+      return;
+    }
+
+    previewContainer.innerHTML = "";
+
+    itemIds.forEach((itemId, index) => {
+      const item = foodItems.find((food) => food.id === itemId);
+      if (item) {
+        const rank = showRanks ? index + 1 : null;
+        previewContainer.innerHTML += createFoodItemHTML(item, showRanks, rank);
       }
+    });
+  }
 
-      // Render a specific category
-      function renderCategory(categoryId, itemIds, showRanks = false) {
-        const container = document.getElementById(categoryId);
+  // Render all categories
+  function renderAllCategories() {
+    console.log("Rendering all categories...");
 
-        if (!container) {
-          console.error(`Container with id "${categoryId}" not found`);
-          return;
-        }
+    renderCategory("Around-The-Globe", categories["Around-The-Globe"]);
+    renderCategory("Trending", categories["Trending"], true);
+    renderCategory("Dessert", categories["Dessert"]);
+    renderCategory("Healthy", categories["Healthy"]);
+    renderCategory("Desi", categories["Desi"]);
 
-        let previewContainer = container.nextElementSibling;
+    console.log("All categories rendered");
 
-        while (
-          previewContainer &&
-          !previewContainer.classList.contains("food-1-preview")
-        ) {
-          previewContainer = previewContainer.nextElementSibling;
-        }
+    if (typeof initializeSearchAfterRender === "function") {
+      initializeSearchAfterRender();
+    }
+  }
 
-        if (!previewContainer) {
-          console.error(
-            `Preview container not found for category "${categoryId}"`
-          );
-          return;
-        }
-
-        previewContainer.innerHTML = "";
-
-        itemIds.forEach((itemId, index) => {
-          const item = foodItems.find((food) => food.id === itemId);
-          if (item) {
-            const rank = showRanks ? index + 1 : null;
-            previewContainer.innerHTML += createFoodItemHTML(
-              item,
-              showRanks,
-              rank
-            );
-          }
-        });
-      }
-
-      // Render all categories
-      function renderAllCategories() {
-        console.log("Rendering all categories...");
-
-        renderCategory("Around-The-Globe", categories["Around-The-Globe"]);
-        renderCategory("Trending", categories["Trending"], true);
-        renderCategory("Dessert", categories["Dessert"]);
-        renderCategory("Healthy", categories["Healthy"]);
-        renderCategory("Desi", categories["Desi"]);
-
-        console.log("All categories rendered");
-
-        // IMPORTANT: Initialize search after cards are rendered
-        if (typeof initializeSearchAfterRender === "function") {
-          initializeSearchAfterRender();
-        }
-      }
-
-      // Initialize everything when DOM is ready
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM Content Loaded");
-        renderAllCategories();
-      });
-    </script>
+  // Initialize everything when DOM is ready
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log("DOM Content Loaded");
+    renderAllCategories();
+  });
+</script>
     <!-- sliders -->
     <script
       type="module"

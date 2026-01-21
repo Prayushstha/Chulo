@@ -6,6 +6,8 @@ const foodItems = [
     image: "chickenBurger.jpg",
     price: 140,
     originalPrice: 190,
+    rating: 4.5,
+    shortDescription: "Juicy grilled chicken patty with fresh toppings and savory sauces",
     type: "Non-veg",
     description:
       "A classic sandwich featuring a grilled or fried chicken patty served in a bun with fresh toppings and savory sauces. A versatile and popular alternative to beef burgers globally.",
@@ -20,6 +22,8 @@ const foodItems = [
     image: "cheesepizza.jpg",
     price: 120,
     originalPrice: 140,
+    rating: 5,
+    shortDescription: "Classic pizza with rich tomato sauce and melted mozzarella cheese",
     type: "Veg",
     description:
       "The quintessential comfort food: dough topped with rich tomato sauce and a generous blanket of melted mozzarella cheese. Celebrated for its simple, perfect blend of textures and flavors.",
@@ -34,6 +38,8 @@ const foodItems = [
     image: "chickenMomo.jpg",
     price: 120,
     originalPrice: 140,
+    rating: 4.5,
+    shortDescription: "Steamed Himalayan dumplings filled with seasoned minced chicken",
     type: "Non-veg",
     description:
       "Delicious, bite-sized Himalayan dumplings (Nepal, Tibet, India) filled with seasoned minced chicken, commonly served steamed with a spicy dipping sauce.",
@@ -48,6 +54,8 @@ const foodItems = [
     image: "buffMomo.webp",
     price: 110,
     originalPrice: 130,
+    rating: 4,
+    shortDescription: "Savory Nepali dumplings with richly spiced buffalo meat filling",
     type: "Non-veg",
     description:
       "Savory Nepali dumplings filled with finely minced and richly spiced buffalo meat (buff). Offers a distinct, aromatic flavor profile, popular as street food.",
@@ -62,6 +70,8 @@ const foodItems = [
     image: "friedChicken.webp",
     price: 150,
     originalPrice: 180,
+    rating: 5,
+    shortDescription: "Crispy golden-brown chicken with tender, juicy meat inside",
     type: "Non-veg",
     description:
       "Globally recognized dish of chicken pieces coated in seasoned batter and deep-fried, resulting in a crispy, golden-brown exterior and tender, juicy meat inside.",
@@ -76,6 +86,8 @@ const foodItems = [
     image: "bubbleTea.jpg",
     price: 180,
     originalPrice: 220,
+    rating: 4.5,
+    shortDescription: "Trending Taiwanese tea with signature chewy tapioca pearls",
     type: "Veg",
     description:
       "Trending Taiwanese tea-based drink with signature chewy tapioca pearls (boba). Available in various milk and fruit tea flavors, offering a unique, sweet drinking experience.",
@@ -89,6 +101,8 @@ const foodItems = [
     image: "Lakhamari.webp",
     price: 80,
     originalPrice: 100,
+    rating: 4,
+    shortDescription: "Traditional Newari sweet bread, deep-fried and decorative",
     type: "Veg",
     description:
       "Large, decorative, semi-sweet traditional Newari bread, deep-fried and often used ceremonially during festivals and weddings in Nepal.",
@@ -103,6 +117,8 @@ const foodItems = [
     image: "jujuDhau.webp",
     price: 120,
     originalPrice: 150,
+    rating: 5,
+    shortDescription: "The 'King of Yogurt' - creamy, sweet specialty from Bhaktapur",
     type: "Veg",
     description:
       "Known as the 'King of Yogurt,' this specialty from Bhaktapur, Nepal, is a creamy, sweet, and rich curd traditionally set in clay pots.",
@@ -116,6 +132,8 @@ const foodItems = [
     image: "Jerry.webp",
     price: 60,
     originalPrice: 80,
+    rating: 4,
+    shortDescription: "Crispy fried flour coils soaked in warm sugar syrup",
     type: "Veg",
     description:
       "A famous South Asian sweet made by deep-frying flour batter coils and soaking them immediately in warm sugar syrup for a crunchy, intensely syrupy finish.",
@@ -130,6 +148,8 @@ const foodItems = [
     image: "rasbari.webp",
     price: 100,
     originalPrice: 120,
+    rating: 5,
+    shortDescription: "Soft cheese balls in fragrant sugar syrup, melt-in-mouth texture",
     type: "Veg",
     description:
       "Soft, spongy cheese balls (chhena/paneer) delicately cooked in a light, fragrant sugar syrup. Cherished for its delicate sweetness and melt-in-mouth texture.",
@@ -143,6 +163,8 @@ const foodItems = [
     image: "LentilSoup.webp",
     price: 140,
     originalPrice: 170,
+    rating: 4.5,
+    shortDescription: "Nourishing protein-packed soup with vegetables and mild spices",
     type: "Veg",
     description:
       "A highly nourishing, hearty, and protein-packed soup made from various lentils simmered with vegetables and mild spices. A low-fat, high-fiber meal.",
@@ -157,6 +179,8 @@ const foodItems = [
     image: "veggiestir.webp",
     price: 130,
     originalPrice: 160,
+    rating: 4,
+    shortDescription: "Vibrant fresh vegetables cooked with minimal oil and light seasoning",
     type: "Veg",
     description:
       "A vibrant, customizable dish of fresh vegetables rapidly cooked in a wok with minimal healthy oil and light, savory seasoning. Excellent source of vitamins and fiber.",
@@ -171,6 +195,8 @@ const foodItems = [
     image: "grilledChicken.webp",
     price: 200,
     originalPrice: 240,
+    rating: 5,
+    shortDescription: "Lean protein-packed chicken breast with herbs and spices",
     type: "Non-veg",
     description:
       "Lean, protein-packed, skinless chicken breast cooked over a grill with minimal fat. A staple for health-conscious diets, seasoned with herbs and spices.",
@@ -185,6 +211,8 @@ const foodItems = [
     image: "FreshJuice.webp",
     price: 90,
     originalPrice: 120,
+    rating: 4.5,
+    shortDescription: "Pure extracted fruit juices with concentrated vitamins",
     type: "Veg",
     description:
       "Naturally refreshing beverages made from the pure extracted liquid of fresh fruits and vegetables, providing concentrated vitamins and hydration without added sugars.",
@@ -199,6 +227,8 @@ const foodItems = [
     image: "NepaliBara.webp",
     price: 70,
     originalPrice: 90,
+    rating: 4,
+    shortDescription: "Protein-rich savory pancake made from ground lentil batter",
     type: "Veg",
     description:
       "A savory, protein-rich pancake made from ground lentil batter, naturally gluten-free. A wholesome base often enjoyed plain or with toppings.",
@@ -213,6 +243,8 @@ const foodItems = [
     image: "thakali-khana-set.webp",
     price: 280,
     originalPrice: 320,
+    rating: 5,
+    shortDescription: "Nepal's national meal - balanced set with rice, lentils, and curry",
     type: "Non-veg",
     description:
       "Nepal's national meal (Daal Bhat). A balanced set of steamed rice, soupy lentils, vegetable curry, greens, and savory pickles, traditionally refillable.",
@@ -227,6 +259,8 @@ const foodItems = [
     image: "NewariKhaja.webp",
     price: 260,
     originalPrice: 300,
+    rating: 4.5,
+    shortDescription: "Traditional Newari feast platter with beaten rice and marinated meats",
     type: "Non-veg",
     description:
       "A traditional Newari assortment platter (Samay Baji) featuring beaten rice (chiura), marinated meats, soybeans, pickles, and dried ginger. Served during feasts.",
@@ -241,6 +275,8 @@ const foodItems = [
     image: "choilla.webp",
     price: 180,
     originalPrice: 220,
+    rating: 4,
+    shortDescription: "Spiced Newari appetizer with roasted meat and mustard oil",
     type: "Non-veg",
     description:
       "A highly flavored Newari appetizer of boiled and roasted/pan-fried meat (buff or chicken), heavily spiced with mustard oil, ginger, garlic, and chilies.",
@@ -255,6 +291,8 @@ const foodItems = [
     image: "coca-colawebp.webp",
     price: 50,
     originalPrice: 70,
+    rating: 4,
+    shortDescription: "Popular carbonated soft drinks - Coca Cola, Fanta, Sprite",
     type: "Veg",
     description:
       "Globally leading brands of sweet, carbonated soft drinks: Coca Cola (classic cola), Fanta (orange), Sprite (lemon-lime), and Mountain Dew (citrus, high caffeine).",
@@ -266,6 +304,7 @@ const foodItems = [
 
 const dialog = document.getElementById("dialog");
 const desc = document.getElementById("desc");
+
 function showDialog(itemId) {
   const item = foodItems.find((food) => food.id === itemId);
 
@@ -276,6 +315,7 @@ function showDialog(itemId) {
   updateDialogContent(item);
   dialog.showModal();
 }
+
 function updateDialogContent(item) {
   const imgElement = dialog.querySelector(".food-description-picture");
   imgElement.src = `assets/images/food-pictures/${item.image}`;
@@ -286,6 +326,7 @@ function updateDialogContent(item) {
   ).textContent = `₹ ${item.originalPrice}`;
   dialog.querySelector(".discounted-price").textContent = `₹ ${item.price}`;
   dialog.querySelector(".description-content").textContent = item.description;
+  
   const vegIcon = dialog.querySelector(".food-sticker");
   const vegText = dialog.querySelector(".veg-non");
 
