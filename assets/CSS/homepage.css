@@ -1,4 +1,7 @@
+/* Import Google Font for cards */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
+/* Keep existing base styles */
 * {
   margin: 0px;
   padding: 0px;
@@ -8,22 +11,13 @@
 body {
   margin-top: 40px;
   overflow-x: hidden;
-
 }
 
 html {
   scroll-behavior: smooth;
-
 }
 
-@supports not (scroll-behavior: smooth) {
-  html {
-    scroll-behavior: auto;
-
-  }
-}
-
-
+/* Keep existing name/categories bar */
 .name {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -48,18 +42,7 @@ html {
   width: 100%;
 }
 
-.food-preview {
-  width: 300px;
-  margin-left: 40px;
-  margin-bottom: 40px;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: rgb(230, 230, 230);
-  overflow: hidden;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
-}
-
+/* Keep existing layout structure */
 .food-preview-container {
   display: grid;
   grid-template-columns: 200px 1fr;
@@ -67,18 +50,7 @@ html {
   padding: 20px 40px;
 }
 
-.image {
-
-  width: 96%;
-  height: 550px;
-  object-fit: cover;
-  padding-left: 40px;
-  padding-right: 10px;
-  display: flex;
-  flex-direction: row;
-
-}
-
+/* Keep existing sidebar */
 .sidebar {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
     Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
@@ -105,7 +77,6 @@ html {
   color: rgb(55, 55, 55);
   font-weight: 300;
   font-size: 17px;
-
 }
 
 .sidebar-list a::after {
@@ -123,22 +94,13 @@ html {
   width: 100%;
 }
 
-/* Main Content Area */
+/* Keep existing main content area */
 .main-content {
   width: 100%;
 }
 
 .food-item-list {
   margin-bottom: 40px;
-}
-
-#AroundTheGlobe {
-  width: 100%;
-  max-width: 1000px;
-  height: 145px;
-  object-fit: cover;
-  object-position: center right;
-  margin-bottom: 20px;
 }
 
 .food-type-name {
@@ -150,90 +112,204 @@ html {
   width: 100%;
 }
 
-/* Food Items Grid */
+/* ============================================
+   UPDATED FOOD CARD GRID
+   ============================================ */
 .food-1-preview {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   gap: 30px;
   margin-bottom: 40px;
+  padding: 0 20px;
 }
 
+/* ============================================
+   NEW MODERN CARD DESIGN
+   ============================================ */
 .food-preview {
-  border: 1px solid rgb(230, 230, 230);
-  border-radius: 12px;
+  max-width: 400px;
+  width: 100%;
+  height: 450px;
+  border: 1px solid #e0e0e0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 10px;
   overflow: hidden;
-  transition: transform 0.2s ease-in-out;
+  background: white;
+  margin: 0; /* Remove old margins */
 }
 
 .food-preview:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.food-preview a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+/* Image wrapper */
+.food-image-wrapper {
+  height: 200px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+  background: #f5f5f5;
 }
 
 .food-picture {
+  height: 100%;
   width: 100%;
-  height: 200px;
   object-fit: cover;
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s ease;
 }
 
-.food-picture:hover {
+.food-preview:hover .food-picture {
   transform: scale(1.05);
-  cursor: pointer;
 }
 
+/* Card content area */
 .food-description {
-  padding: 15px;
+  padding: 0;
+  background: white;
 }
 
 .food-name {
-  font-size: 20px;
-  color: rgb(100, 100, 100);
-  padding-bottom: 5px;
-  font-weight: bold;
+  margin: 16px 20px 8px 20px;
+  font-size: 24px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Open Sans', sans-serif;
 }
 
-.food-sub-description {
+/* Star rating */
+.food-rating {
+  padding: 0;
+  margin: 8px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 15px;
+  gap: 4px;
 }
 
+.fa-star {
+  font-size: 16px;
+  color: #ddd;
+}
+
+.fa-star.checked {
+  color: #ffc107;
+}
+
+/* Short description */
+.food-item-description {
+  padding:8px 20px 0px 20px;
+  color: #666;
+  line-height: 1.5;
+  font-size: 14px;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  min-height: 60px; /* Ensures consistent card height */
+}
+
+/* Price and button container */
+.food-sub-description {
+  padding: 0 20px 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.food-price {
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  margin: 0;
+}
+
+/* Updated buy button */
+.buy-button {
+  background-color: #ff6b35;
+  color: white;
+  width: 120px;
+  height: 48px;
+  border: none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: none; /* Remove old shadow */
+}
+
+.buy-button:hover {
+  background-color: #ff5722;
+  transform: scale(1.05);
+}
+
+.buy-button:active {
+  transform: scale(0.95);
+}
+
+/* ============================================
+   PRICE CONTAINER (if you add original price)
+   ============================================ */
 .price-container {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-
-.food-price {
-  font-weight: bold;
-  font-size: 17px;
-  color: black;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .food-original-price {
   text-decoration: line-through 1.3px;
   color: rgb(160, 160, 160);
-  font-weight: bold;
-  font-size: 15px;
+  font-weight: 600;
+  font-size: 18px;
+  margin: 0;
 }
 
-.buy-button {
-  border-radius: 15px;
-  border: none;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  background-color: #ffea00;
-  padding: 10px 20px;
-  color: rgb(0, 0, 0);
-  font-weight: bold;
-  font-size: 13px;
-  cursor: pointer;
-  transition: background-color 0.4s;
+/* ============================================
+   RESPONSIVE ADJUSTMENTS
+   ============================================ */
+@media screen and (max-width: 1200px) {
+  .food-1-preview {
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
 }
 
-.buy-button:hover {
-  background-color: #ffbb00;
+@media screen and (max-width: 768px) {
+  .food-preview-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .sidebar {
+    position: relative;
+    top: 0;
+    border-right: none;
+    border-bottom: 1px solid black;
+    padding-bottom: 20px;
+  }
+  
+  .food-1-preview {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 20px;
+  }
+  
+  .food-type-name {
+    margin-left: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .food-1-preview {
+    grid-template-columns: 1fr;
+    padding: 0 10px;
+  }
+  
+  .food-preview {
+    max-width: 100%;
+  }
 }
 
 .fas.fa-user-alt {
@@ -244,5 +320,3 @@ html {
   width: 35px;
   height: 35px;
 }
-
-
