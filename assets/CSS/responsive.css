@@ -4,13 +4,14 @@
   .sidebar {
     display: none;
   }
-  .food-preview-container {
-    grid-template-columns: 1fr;
+ .food-preview-container {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
     padding: 20px 40px;
   }
   .name {
     margin-left: 40px;
     margin-right: 40px;
+    width: 85vh;
   }
   .food-preview{
     margin-left: 0;
@@ -38,17 +39,25 @@
   }
 
   .food-1-preview {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 25px;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 30px;
+  }
+#navtrending{
+    display: none;
+  }
+  #search{
+    display: none;
+
+  }
+  .navbar-list{
+    margin-right: 10px !important;
   }
 }
 
-/* Below Tablet - Remove top image (max-width: 768px) */
-@media screen and (max-width: 768px) {
-  .topimage {
-    display: none;
-  }
 
+/* Below Tablet - Remove top image (max-width: 768px) */
+/* Tablet - 2 items per row (max-width: 768px) */
+@media screen and (max-width: 768px) {
   .name {
     top: 60px;
     margin-left: 20px;
@@ -59,6 +68,7 @@
 
   .food-preview-container {
     padding: 20px;
+    width: 100%; /* Changed from fit-content */
   }
 
   .image {
@@ -71,11 +81,10 @@
   }
 
   .food-1-preview {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(2, 1fr); /* Exactly 2 columns */
     gap: 20px;
   }
 
-  /* Dialog adjustments for smaller screens */
   #dialog {
     max-width: 95vw !important;
     min-height: auto !important;
