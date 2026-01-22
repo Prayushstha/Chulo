@@ -2,10 +2,10 @@
 .footer {
     background: var(--footer-bg);
     color: var(--footer-text);
-    padding: 40px 6% 20px;
+    padding: 20px 6% 20px;
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
-    border-top: 2px solid var(--footer-border);
+    border-top: 2px solid var(--border-color);
 }
 
 .footer-grid {
@@ -39,7 +39,7 @@
 
 .footer-links a {
     display: inline-block;
-    color: var(--footer-link);
+    color: var(--text-primary) !important;
     text-decoration: none;
     margin-bottom: 6px;
     position: relative;
@@ -94,7 +94,7 @@
   position: relative;
   width: fit-content;
   text-decoration: none;
-  color: var(--footer-link);
+
 }
 
 .footer-links a::after {
