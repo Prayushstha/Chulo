@@ -1,25 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- style -->
-    <link rel="stylesheet" href="assets/CSS/homepage.css" />
-    <link rel="stylesheet" href="assets/CSS/responsive.css" />
-    <link rel="stylesheet" href="assets/CSS/navbar.css" />
-    <link rel="stylesheet" href="assets/CSS/cart.css" />
-    <link rel="stylesheet" href="assets/CSS/theme.css" />
-    <link rel="stylesheet" href="assets/CSS/footer.css" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Front Page</title>
+    <link rel="shortcut icon" href="assets/images/logo/logo.png" type="image/x-icon">
 
-    <!-- slider -->
-    <link rel="stylesheet" href="assets/CSS/slider.css" />
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/swiper@8/swiper-bundle.min.css"
-    />
-    <!-- descriptions -->
-    <link rel="stylesheet" href="assets/CSS/food-description.css" />
-
+    <link rel="stylesheet" href="assets/CSS/frontpage.css">
+    <link rel="stylesheet" href="assets/CSS/navbar.css">
+    
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="icon" type="image/x-icon" href="assets/images/logo/logo.png" />
     <link
@@ -42,66 +32,78 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Supermercado+One&display=swap"
       rel="stylesheet"
     />
-    <title>Homepage</title>
-    <script src="assets/Backend/ui-enhancer.js"></script>
-    <script>
-      // Smooth Scrolling JS
-      console.log("Smooth scroll initializing...");
-      function smoothScrollWithOffset(target) {
-        const element = document.querySelector(target);
-        if (!element) {
-          console.log("Element not found:", target);
-          return;
+    <style>
+       
+          @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
-        const navbar = document.querySelector(".navbar");
-        const categoriesBar = document.querySelector(".name");
-        const navbarHeight = navbar ? navbar.offsetHeight : 0;
-        const categoriesHeight = categoriesBar ? categoriesBar.offsetHeight : 0;
-        const totalOffset = navbarHeight + categoriesHeight + 30;
-        const elementPosition =
-          element.getBoundingClientRect().top + window.pageYOffset;
-        const targetPosition = elementPosition - totalOffset;
-        console.log("Scrolling to position:", targetPosition);
-        window.scrollTo({
-          top: targetPosition,
-          behavior: "smooth",
-        });
-      }
-      document.addEventListener("DOMContentLoaded", function () {
-        const sidebarLinks = document.querySelectorAll(
-          '.sidebar-list a[href^="#"]'
-        );
-        console.log("Found sidebar links:", sidebarLinks.length);
-        sidebarLinks.forEach((link) => {
-          link.addEventListener("click", function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            const target = this.getAttribute("href");
-            console.log("Clicked:", target);
-            smoothScrollWithOffset(target);
-          });
-        });
-      });
 
-      // Search Bar Toggle JS
-      function toggleSearchBar() {
-        const container = document.getElementById("navSearchContainer");
-        const input = document.getElementById("navSearchInput");
-
-        container.classList.toggle("active");
-
-        // Focus on input when opened
-        if (container.classList.contains("active")) {
-          setTimeout(() => input.focus(), 300);
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-      }
-    </script>
-  </head>
 
-  <body id="home-link">
-    <!-- Navbar -->
-    <div class="navbar" style="font-size: larger">
-      <a href="index.html">
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .about-section {
+                padding-right: 0;
+            }
+        }
+        
+        @keyframes floatChunks {
+            0%, 100% {
+                transform: translateY(-50%);
+            }
+            50% {
+                transform: translateY(-54%);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInRight {
+            from {
+                opacity: 0;
+                transform: translateX(200px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }    
+
+        @keyframes floatCard {
+            0%, 100% { 
+                transform: translateY(0px);
+            }
+            50% { 
+                transform: translateY(-15px);
+            }
+        }
+    </style>
+</head>
+<body>
+ <div class="navbar" style="font-size: larger">
+      <a href="homepage.html">
         <div class="logo-container">
           <img class="logo" src="assets/images/logo/logo.png" />
           <p class="logo-name">Chulo</p>
@@ -145,10 +147,10 @@
           </div>
         </li>
         <li class="navbar-list" id="navhome">
-          <a href="#home-link" id="navhome">Home</a>
+          <a href="homepage.html#home-link" id="navhome">Home</a>
         </li>
         <li class="navbar-list" id="navtrending">
-          <a href="#Trending">Trending</a>
+          <a href="homepage.html#Trending">Trending</a>
         </li>
         <li class="navbar-list" id="navabout">
           <a href="AboutUS.html">About Us</a>
@@ -167,477 +169,338 @@
         </li>
       </ul>
     </div>
-    <!-- Image slider -->
-
-    <div class="food-slider-wrapper">
-      <section id="food-slider-section">
-        <div class="food-slider-container">
-          <div class="swiper food-slider-swiper">
-            <div class="swiper-wrapper">
-              <!-- Slide 1 -->
-              <div class="swiper-slide food-slider-slide">
-                <div class="food-slider-img">
-                  <img
-                    src="assets/images/food-pictures/cheesepizza.jpg"
-                    alt="Cheese Pizza"
-                  />
+    <section class="home-page">
+        <div class="container">
+            <div class="info-section">
+                <div class="tags">
+                    <span class="original-tag">Original Taste</span>
+                    <span class="authentic-tag">Authentic</span>
                 </div>
-                <div class="food-slider-content">
-                  <h1 class="food-slider-price">$20</h1>
-                  <div class="food-slider-bottom">
-                    <h2 class="food-slider-name">Cheese Pizza</h2>
-                    <h3 class="food-slider-rating">
-                      <span>4.5</span>
-                      <div class="food-slider-stars">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                      </div>
-                    </h3>
+                <h1>
+                    NEPAL's <span class="no-1">#1</span><br> Fast-Growing<br>
+                    <span class="highlight-fast">Fast</span><span class="highlight-food">-Food</span> Chain
+                </h1>
+                <p class="subtitle">
+                   Chulo brings bold Nepali flavors and
+                   modern fast food together in one unforgettable experience. 
+                   From freshly prepared meals to quick, friendly service, we’re dedicated to serving quality food that satisfies every craving.
+                   Whether you’re dining in or taking away, Chulo is where taste, speed, and authenticity meet.<br>
+                </p>
+                <div class="buttons">
+                    <button class="button order-now-button" onclick="Register()">Sign Up</button>
+                    <button class="button menu-button"><a href="homepage.html">View Menu</a></button>
+                </div>
+
+                <div class="stats-bar">
+                  <div class="stat-item">
+                      <div class="stat-number">4.8</div>
+                      <div class="stat-label">⭐ Rating</div>
                   </div>
-                </div>
-              </div>
-
-              <!-- Slide 2 -->
-              <div class="swiper-slide food-slider-slide">
-                <div class="food-slider-img">
-                  <img
-                    src="assets/images/food-pictures/buffMomo.webp"
-                    alt="Buff Momo"
-                  />
-                </div>
-                <div class="food-slider-content">
-                  <h1 class="food-slider-price">$20</h1>
-                  <div class="food-slider-bottom">
-                    <h2 class="food-slider-name">Buff Momo</h2>
-                    <h3 class="food-slider-rating">
-                      <span>4.5</span>
-                      <div class="food-slider-stars">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                      </div>
-                    </h3>
+                  <div class="stat-divider"></div>
+                  <div class="stat-item">
+                      <div class="stat-number">50K+</div>
+                      <div class="stat-label">🍔 Customers</div>
                   </div>
-                </div>
-              </div>
-
-              <!-- Slide 3 -->
-              <div class="swiper-slide food-slider-slide">
-                <div class="food-slider-img">
-                  <img
-                    src="assets/images/food-pictures/chickenBurger.jpg"
-                    alt="Chicken Burger"
-                  />
-                </div>
-                <div class="food-slider-content">
-                  <h1 class="food-slider-price">$40</h1>
-                  <div class="food-slider-bottom">
-                    <h2 class="food-slider-name">Chicken Burger</h2>
-                    <h3 class="food-slider-rating">
-                      <span>4.5</span>
-                      <div class="food-slider-stars">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                      </div>
-                    </h3>
+                  <div class="stat-divider"></div>
+                  <div class="stat-item">
+                      <div class="stat-number">25+</div>
+                      <div class="stat-label">📍 Outlets</div>
                   </div>
-                </div>
               </div>
-
-              <!-- Slide 4 -->
-              <div class="swiper-slide food-slider-slide">
-                <div class="food-slider-img">
-                  <img
-                    src="assets/images/food-pictures/friedChicken.webp"
-                    alt="Fried Chicken"
-                  />
+                
+               <div class="share-buttons">
+                    <div class="share-prim-text">
+                        <span>Share Chulo</span>
+                        <p class="share-sub-text">to your friends</p>
+                    </div>
+                    
+                    <button class="share-button facebook-button">
+                         <img src="assets/images/others/facebook-logo.png" alt="Share" width="23" height="23" >
+                       <span class="share-text">Share</span>
+                     </button>
+                    <button class="share-button twitter-button">
+                        <img src="assets/images/others/tweeter.png" alt="Share" width="23" height="23">
+                        <span class="share-text">Share</span>
+                    </button>
                 </div>
-                <div class="food-slider-content">
-                  <h1 class="food-slider-price">$15</h1>
-                  <div class="food-slider-bottom">
-                    <h2 class="food-slider-name">Fried Chicken</h2>
-                    <h3 class="food-slider-rating">
-                      <span>4.5</span>
-                      <div class="food-slider-stars">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                      </div>
-                    </h3>
-                  </div>
+            </div>
+            
+            <div class="burger-section"> 
+              <div class="feature-card card-1">
+                  <span class="emoji">🚚</span>Fast Delivery
+              </div>
+              <div class="feature-card card-2">
+                  <span class="emoji">🥩</span>Fresh Ingredients
+              </div>
+              <div class="feature-card card-3">
+                  <span class="emoji">🇳🇵</span>Nepali Taste
+            </div>
+                <img src="assets/images/others/meat-chunks.png" class="meat-chunks-image" >
+                <img src="assets/images/others/fries-photo.png" class="fries-image">
+
+                <div class="burger-wrapper">
+                      <img src="assets/images/others/burger.png" class="burger-image">
                 </div>
-              </div>
 
-              <!-- Slide 5 -->
-              <div class="swiper-slide food-slider-slide">
-                <div class="food-slider-img">
-                  <img
-                    src="assets/images/food-pictures/chickenMomo.jpg"
-                    alt="Chicken Momo"
-                  />
+                <div class="burger-price-badge">
+                <span class="currency">&#8377;</span>
+                    <span class="amount">350</span>
                 </div>
-                <div class="food-slider-content">
-                  <h1 class="food-slider-price">$15</h1>
-                  <div class="food-slider-bottom">
-                    <h2 class="food-slider-name">Chicken Momo</h2>
-                    <h3 class="food-slider-rating">
-                      <span>4.5</span>
-                      <div class="food-slider-stars">
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                        <ion-icon name="star"></ion-icon>
-                      </div>
-                    </h3>
-                  </div>
+                <div class="fries-wrapper">
+                    <img src="fries-bag.png" class="fries-bag-image" >
                 </div>
-              </div>
+                <div class="fries-price-badge">
+                 <span class="currency">&#8377;</span>
+                        <span class="amount">110</span>
+                    </div>
             </div>
-
-            <div class="food-slider-controls">
-              <div class="swiper-button-prev food-slider-arrow">
-                <ion-icon name="arrow-back-outline"></ion-icon>
-              </div>
-              <div class="swiper-button-next food-slider-arrow">
-                <ion-icon name="arrow-forward-outline"></ion-icon>
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
         </div>
-      </section>
-    </div>
+    </section>
+    
+    
+    <div class="container">
+        <!-- LEFT SIDE - About Section -->
+        <div class="about-section">
+            <h1>Chulo - Nepal's Best Fast-Food Chain</h1>
+            
+            <p>
+                Do you know that according to recent surveys, the demand for authentic Nepali fast food has grown exponentially? Chulo is the answer to this growing appetite, bringing together bold Nepali flavors and modern fast-food convenience.
+            </p>
+            
+            <p>
+                Just like premium restaurant chains, fast-food experiences are not created equally. Some are better than the rest, so we've decided to build Chulo to be one of the best fast-food chains for all food lovers in Nepal.
+            </p>
 
-    <!-- Main Content -->
-    <div class="name">
-      <p id="categories">CATEGORIES</p>
-    </div>
+            <h2>1/ What is Chulo?</h2>
+            <p>
+                Chulo is a fast-food restaurant chain that serves authentic Nepali cuisine with a modern twist. You can enjoy freshly prepared meals in ultra-quality without any compromise. By having multiple outlets across Nepal, we are trying to make authentic Nepali fast food accessible to everyone.
+            </p>
 
-    <div class="food-preview-container">
-      <div class="sidebar">
-        <ul>
-          <li class="sidebar-list">
-            <a href="#Around-The-Globe">Around The Globe</a>
-          </li>
-          <li class="sidebar-list"><a href="#Trending">Trending</a></li>
-          <li class="sidebar-list"><a href="#Dessert">Dessert</a></li>
-          <li class="sidebar-list"><a href="#Healthy">Healthy Option</a></li>
-          <li class="sidebar-list"><a href="#Desi">Desi food</a></li>
-        </ul>
-      </div>
+            <h2>2/ Is Chulo safe and hygienic?</h2>
+            <p>
+                Yes, we are! We maintain the highest standards of hygiene and food safety. Our kitchens are regularly inspected, and we use only fresh, quality ingredients. We keep our preparation areas spotless 24/7 to make sure all food served is clean and safe.
+            </p>
 
-      <div class="main-content">
-        <!-- Around The Globe -->
-        <div class="food-item-list" id="Around-The-Globe">
-          <br />
-          <div class="food-type-name">AROUND THE GLOBE</div>
-        </div>
-        <div class="food-1-preview"></div>
+            <h2>3/ What makes Chulo the best fast-food chain in Nepal?</h2>
+            <p>
+                Before building Chulo, we researched many other fast-food chains and learned from them. We only keep the good things and improve upon the competitors. Here's why we're confident about being the best:
+            </p>
 
-        <!-- Trending -->
-        <div class="food-type-name" id="Trending">Trending</div>
-        <div class="food-1-preview"></div>
+            <ul>
+                <li><strong>Quality:</strong> We never compromise on ingredient quality or taste.</li>
+                <li><strong>Speed:</strong> Fast service without sacrificing food quality.</li>
+                <li><strong>Authenticity:</strong> Genuine Nepali flavors with modern presentation.</li>
+                <li><strong>Hygiene:</strong> Spotless kitchens and strict food safety protocols.</li>
+                <li><strong>Value:</strong> Affordable prices for premium quality food.</li>
+                <li><strong>Service:</strong> Friendly staff trained to serve with a smile.</li>
+            </ul>
 
-        <!-- Dessert -->
-        <div class="food-type-name" id="Dessert">DESSERT</div>
-        <div class="food-1-preview"></div>
-
-        <!-- Healthy -->
-        <div class="food-type-name" id="Healthy">Healthy Option</div>
-        <div class="food-1-preview"></div>
-
-        <!-- Desi -->
-        <div class="food-type-name" id="Desi">Desi Foods</div>
-        <div class="food-1-preview"></div>
-      </div>
-    </div>
-    <!-- Dialog -->
-    <dialog
-      id="dialog"
-      style="
-        max-width: 140vh;
-        min-height: 70vh;
-        margin: auto;
-        border-radius: 24px;
-        border: none;
-      "
-    >
-      <button class="dialog-close-btn" onclick="closeDialog()">×</button>
-      <div class="food-description-container" id="desc">
-        <div class="food-picture-container" style="max-width: 600px">
-          <img class="food-description-picture" src="" />
+            <h2>4/ Our Mission</h2>
+            <p>
+                At Chulo, our mission is simple: to celebrate Nepali cuisine and make it accessible as fast food. We want every Nepali to feel proud of our food culture while enjoying the convenience of modern dining. Whether you're dining in or taking away, Chulo is where taste, speed, and authenticity meet.
+            </p>
         </div>
 
-        <div class="food-description" style="margin-left: 20px">
-          <div class="food-name">Chicken Burger</div>
+        <!-- RIGHT SIDE - Reviews Section -->
+        <div class="reviews-section">
+            <h2>Customer Reviews</h2>
 
-          <div class="food-price">
-            <div class="original-price">&#x20B9; 190</div>
-            <div class="discounted-price">&#x20B9; 140</div>
-          </div>
-
-          <button class="buy-button">Buy</button>
-
-          <div class="description">
-            <div class="description-heading">DETAILS ABOUT THIS MEAL</div>
-            <div class="description-content"></div>
-
-            <div class="veg-non-veg">
-              <img
-                class="food-sticker"
-                src="assets/images/food-pictures/icn-non-veg.svg"
-              />
-              <div class="veg-non">Non-veg</div>
+            <div class="review-card" onclick="openReview(1)">
+                <div class="review-header">
+                    <span class="review-tag">#General</span>
+                    <span class="review-time">2 hours ago</span>
+                </div>
+                <div class="review-title">Best momo I've ever had!</div>
+                <div class="review-preview">
+                    The chicken momo at Chulo is absolutely incredible. The spices are perfectly balanced and the dipping sauce is to die for...
+                </div>
+                <div class="review-footer">
+                    <div class="review-avatar">R</div>
+                    <span class="review-author">Rajesh Kumar</span>
+                    <span class="review-comments">💬 15</span>
+                </div>
             </div>
 
-            <div class="ingredients-heading">INGREDIENTS</div>
-            <div class="ingredients-content"></div>
-          </div>
+            <div class="review-card" onclick="openReview(2)">
+                <div class="review-header">
+                    <span class="review-tag">#Service</span>
+                    <span class="review-time">5 hours ago</span>
+                </div>
+                <div class="review-title">Quick delivery and amazing taste</div>
+                <div class="review-preview">
+                    Ordered through their app and the food arrived in 20 minutes, still hot and fresh. The burger was juicy and the fries were crispy...
+                </div>
+                <div class="review-footer">
+                    <div class="review-avatar">P</div>
+                    <span class="review-author">Priya Sharma</span>
+                    <span class="review-comments">💬 23</span>
+                </div>
+            </div>
 
-          <div class="nutrients-heading">NUTRIENTS</div>
-          <div class="nutrients-content">
-            <div class="nutrients-value">
-              <div class="nutrients-number">450</div>
-              <div>Energy (kcl)</div>
+            <div class="review-card" onclick="openReview(3)">
+                <div class="review-header">
+                    <span class="review-tag">#Food</span>
+                    <span class="review-time">1 day ago</span>
+                </div>
+                <div class="review-title">Finally, authentic Nepali fast food!</div>
+                <div class="review-preview">
+                    Been waiting for something like this. The dal bhat combo is phenomenal, and they even have sekuwa wraps. Innovation at its best...
+                </div>
+                <div class="review-footer">
+                    <div class="review-avatar">S</div>
+                    <span class="review-author">Sujan Thapa</span>
+                    <span class="review-comments">💬 42</span>
+                </div>
             </div>
-            <div class="nutrients-value">
-              <div class="nutrients-number">20</div>
-              <div>Fats (g)</div>
+
+            <div class="review-card" onclick="openReview(4)">
+                <div class="review-header">
+                    <span class="review-tag">#Experience</span>
+                    <span class="review-time">2 days ago</span>
+                </div>
+                <div class="review-title">Clean, fast, and delicious!</div>
+                <div class="review-preview">
+                    Visited the New Road outlet yesterday. The place is spotless, staff is super friendly, and the food quality is top-notch...
+                </div>
+                <div class="review-footer">
+                    <div class="review-avatar">A</div>
+                    <span class="review-author">Anita Gurung</span>
+                    <span class="review-comments">💬 18</span>
+                </div>
             </div>
-            <div class="nutrients-value">
-              <div class="nutrients-number">35</div>
-              <div>Carbs (g)</div>
+
+            <div class="review-card" onclick="openReview(5)">
+                <div class="review-header">
+                    <span class="review-tag">#Value</span>
+                    <span class="review-time">3 days ago</span>
+                </div>
+                <div class="review-title">Great value for money</div>
+                <div class="review-preview">
+                    The combo meals are huge and reasonably priced. You get quality food without breaking the bank. Will definitely come back...
+                </div>
+                <div class="review-footer">
+                    <div class="review-avatar">K</div>
+                    <span class="review-author">Kiran Rai</span>
+                    <span class="review-comments">💬 31</span>
+                </div>
             </div>
-            <div class="nutrients-value">
-              <div class="nutrients-number">4</div>
-              <div>Fiber (g)</div>
-            </div>
-            <div class="nutrients-value">
-              <div class="nutrients-number">37</div>
-              <div>Protein (g)</div>
-            </div>
-          </div>
         </div>
-      </div>
-    </dialog>
-    <!-- Cart -->
-    <aside class="cart-sidebar" id="cart-sidebar">
-      <div class="cart-header">
-        <h2><i class="fas fa-shopping-bag"></i> Your Cart</h2>
-        <button class="clear-cart-btn" onclick="clearCart()">Clear</button>
-        <button class="close-cart-btn" id="close-cart-btn">
-          <i class="fas fa-times"></i>
-        </button>
-      </div>
-
-      <div class="cart-items-container" id="cart-items-container">
-        <!-- Cart Items will be injected here via JS -->
-        <div class="empty-cart-message">
-          <i class="fas fa-shopping-basket"></i>
-          <p>Your cart is empty</p>
-        </div>
-      </div>
-
-      <div class="cart-footer">
-        <div class="billing-summary">
-          <div class="billing-row">
-            <span>Subtotal</span>
-            <span id="cart-subtotal">Rs. 0</span>
-          </div>
-          <div class="billing-row">
-            <span>VAT (13%)</span>
-            <span id="cart-tax">Rs. 0</span>
-          </div>
-          <div class="billing-row total">
-            <span>Total</span>
-            <span id="cart-total">Rs. 0</span>
-          </div>
-        </div>
-        <button class="checkout-btn" onclick="checkout()">
-          Proceed to Checkout
-        </button>
-      </div>
-    </aside>
-
-    <!-- Footer-->
-    <footer class="footer">
-    <div class="footer-grid">
-
-    <div class="footer-brand">
-      <h2>Chulo</h2>
-      <p>Bold flavors and fast bites served fresh every day.</p>
-      <p>Founded in the heart of Bhaktapur in 2018, KhajaTime began with a simple mission: to bring the authentic taste of Nepali cuisine to food lovers across the valley.</p>
     </div>
 
-    <div class="footer-links">
-      <h4>Quick Links</h4>
-      <a href="#home-link">Home</a>
-      <a href="index.html#Trending">Trending</a>
-      <a href="#">Reviews</a>
-      <a href="AboutUS.html">About</a>
+    <!-- Dialog/Modal -->
+    <div class="dialog-overlay" id="dialogOverlay" onclick="closeDialog(event)">
+        <div class="dialog" onclick="event.stopPropagation()">
+            <button class="close-btn" onclick="closeDialog()">×</button>
+            <h3 id="dialogTitle"></h3>
+            <div class="dialog-meta">
+                <span id="dialogTag"></span>
+                <span id="dialogTime"></span>
+                <span class="rating" id="dialogRating"></span>
+            </div>
+            <div class="dialog-content" id="dialogContent"></div>
+            <div class="dialog-author-info">
+                <div class="dialog-avatar" id="dialogAvatar"></div>
+                <div>
+                    <div id="dialogAuthor" style="font-weight: 600;"></div>
+                    <div style="font-size: 13px; color: #888;">Verified Customer</div>
+                </div>
+            </div>
+        </div>
     </div>
-
-    <div class="footer-contact">
-      <h4>Contact</h4>
-      <p>📍 Durbar Square Road, Bhaktapur 44800, Nepal</p>
-      <p>📞 +977 1-6611234</p>
-      <p>📧 khajatime.fastfood@gmail.com</p>
-
-      <div class="social-icons">
-        <a href="https://www.facebook.com/prayush.stha.56"><img src="assets\images\others\facebookicon.webp" alt="Prayush"></a>
-        <a href="https://www.facebook.com/krishna.neupane.408127"><img src="assets\images\others\facebookicon.webp" alt="Krishna"></a>
-        <a href="https://www.facebook.com/prashil.baidhya.2025"><img src="assets\images\others\facebookicon.webp" alt="Prashil"></a>
-      </div>
-    </div>
-
-  </div>
-
-  <div class="footer-bottom">
-    <p>© 2026 Chulo Fast Food. All rights reserved.</p>
-  </div>
-</footer>
-
-    <!-- Scripts -->
-
-    <script src="assets/Backend/ordering.js"></script>
-    <script src="assets/Backend/cart.js"></script>
-    <script src="assets/Backend/search.js"></script>
-    <script src="assets/Backend/descriptions.js"></script>
 
     <script>
-  // Food Categories Configuration
-  const categories = {
-    "Around-The-Globe": [1, 2, 3, 4, 5],
-    Trending: [4, 2, 3, 1, 6],
-    Dessert: [7, 8, 9, 10],
-    Healthy: [11, 12, 13, 14, 15],
-    Desi: [16, 17, 18],
-  };
+        const reviews = {
+            1: {
+                title: "Best momo I've ever had!",
+                tag: "#General",
+                time: "2 hours ago",
+                rating: "⭐⭐⭐⭐⭐ 5.0",
+                author: "Rajesh Kumar",
+                avatar: "R",
+                content: `The chicken momo at Chulo is absolutely incredible. The spices are perfectly balanced and the dipping sauce is to die for. I've been to many restaurants in Kathmandu, but Chulo's momo stands out from the rest.
+                
+                The wrapper is thin and perfectly steamed, not too thick or doughy. The filling is generous with juicy chicken and fresh vegetables. What really impressed me was the consistency - I've ordered multiple times and it's always perfect.
+                
+                The staff is friendly and the service is quick. The restaurant is always clean and well-maintained. Highly recommend the chicken momo combo with their special sauce!`
+            },
+            2: {
+                title: "Quick delivery and amazing taste",
+                tag: "#Service",
+                time: "5 hours ago",
+                rating: "⭐⭐⭐⭐⭐ 5.0",
+                author: "Priya Sharma",
+                avatar: "P",
+                content: `Ordered through their app and the food arrived in 20 minutes, still hot and fresh. The burger was juicy and the fries were crispy - exactly how they should be.
+                
+                I was impressed by the packaging too. Everything was neatly packed and the burger didn't get soggy during delivery. The delivery person was polite and followed all safety protocols.
+                
+                The Nepali burger they have is unique - it has this amazing chatpate flavor that you won't find anywhere else. The combination of traditional spices with modern fast food is genius. Will definitely order again!`
+            },
+            3: {
+                title: "Finally, authentic Nepali fast food!",
+                tag: "#Food",
+                time: "1 day ago",
+                rating: "⭐⭐⭐⭐⭐ 5.0",
+                author: "Sujan Thapa",
+                avatar: "S",
+                content: `Been waiting for something like this. The dal bhat combo is phenomenal, and they even have sekuwa wraps. Innovation at its best!
+                
+                What I love most is that they haven't compromised on authenticity while making it fast food. The dal tastes just like homemade, the bhat is perfectly cooked, and the tarkari has that traditional flavor.
+                
+                The sekuwa wrap is a game-changer. Perfectly grilled meat with fresh vegetables wrapped in soft roti - it's convenient to eat on the go but tastes amazing. Chulo has truly revolutionized Nepali fast food!`
+            },
+            4: {
+                title: "Clean, fast, and delicious!",
+                tag: "#Experience",
+                time: "2 days ago",
+                rating: "⭐⭐⭐⭐⭐ 5.0",
+                author: "Anita Gurung",
+                avatar: "A",
+                content: `Visited the New Road outlet yesterday. The place is spotless, staff is super friendly, and the food quality is top-notch.
+                
+                I could see into the kitchen through the glass window and everything looked clean and organized. The staff were wearing proper uniforms and hairnets. This level of hygiene is rare in Nepali restaurants.
+                
+                The ordering process was smooth - they have digital menus and multiple payment options. Food came out in less than 10 minutes and tasted fresh. The seating area is comfortable and well-designed. Great experience overall!`
+            },
+            5: {
+                title: "Great value for money",
+                tag: "#Value",
+                time: "3 days ago",
+                rating: "⭐⭐⭐⭐ 4.5",
+                author: "Kiran Rai",
+                avatar: "K",
+                content: `The combo meals are huge and reasonably priced. You get quality food without breaking the bank. Will definitely come back!
+                
+                I ordered the student special combo (NPR 350) and it came with a burger, fries, drink, and dessert. The portion size was generous and everything tasted great. Compare this to other places where you pay similar prices for just a burger.
+                
+                They also have daily deals and loyalty programs. I downloaded their app and got 20% off on my first order. For students and young professionals like me, Chulo is perfect - affordable, tasty, and convenient!`
+            }
+        };
 
-  // Helper function to generate star rating HTML
-  function generateStarRating(rating) {
-    const fullStars = Math.floor(rating);
-    const emptyStars = 5 - fullStars;
-    
-    let stars = '';
-    
-    for (let i = 0; i < fullStars; i++) {
-      stars += '<span class="fa fa-star checked"></span>';
-    }
-    
-    for (let i = 0; i < emptyStars; i++) {
-      stars += '<span class="fa fa-star"></span>';
-    }
-    
-    return stars;
-  }
+        function openReview(id) {
+            const review = reviews[id];
+            document.getElementById('dialogTitle').textContent = review.title;
+            document.getElementById('dialogTag').textContent = review.tag;
+            document.getElementById('dialogTime').textContent = review.time;
+            document.getElementById('dialogRating').textContent = review.rating;
+            document.getElementById('dialogAuthor').textContent = review.author;
+            document.getElementById('dialogAvatar').textContent = review.avatar;
+            document.getElementById('dialogContent').textContent = review.content;
+            document.getElementById('dialogOverlay').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
 
-  // Create HTML for a single food item
-  function createFoodItemHTML(item, showRank = false, rank = null) {
-    const starRating = generateStarRating(item.rating || 4.5);
-    
-    return `
-      <div class="food-preview" data-id="${item.id}">
-        <a onclick="showDialog(${item.id})">
-          <div class="food-image-wrapper">
-            <img class="food-picture" src="assets/images/food-pictures/${item.image}" alt="${item.name}">
-          </div>
-          <div class="food-description">
-            <p class="food-name">${item.name}</p>
-            <div class="food-rating">
-              ${starRating}
-            </div>
-            <div class="food-item-description">
-              ${item.shortDescription || 'Delicious food item prepared with fresh ingredients'}
-            </div>
-            <div class="food-sub-description">
-              <span class="food-price">&#x20B9; ${item.price}</span>
-              <button class="buy-button" onclick="event.stopPropagation(); addToCart(${item.id})">Buy</button>
-            </div>
-          </div>
-        </a>
-      </div>
-    `;
-  }
+        function closeDialog(event) {
+            if (event) {
+                event.stopPropagation();
+            }
+            document.getElementById('dialogOverlay').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
 
-  // Render a specific category
-  function renderCategory(categoryId, itemIds, showRanks = false) {
-    const container = document.getElementById(categoryId);
-
-    if (!container) {
-      console.error(`Container with id "${categoryId}" not found`);
-      return;
-    }
-
-    let previewContainer = container.nextElementSibling;
-
-    while (
-      previewContainer &&
-      !previewContainer.classList.contains("food-1-preview")
-    ) {
-      previewContainer = previewContainer.nextElementSibling;
-    }
-
-    if (!previewContainer) {
-      console.error(`Preview container not found for category "${categoryId}"`);
-      return;
-    }
-
-    previewContainer.innerHTML = "";
-
-    itemIds.forEach((itemId, index) => {
-      const item = foodItems.find((food) => food.id === itemId);
-      if (item) {
-        const rank = showRanks ? index + 1 : null;
-        previewContainer.innerHTML += createFoodItemHTML(item, showRanks, rank);
-      }
-    });
-  }
-
-  // Render all categories
-  function renderAllCategories() {
-    console.log("Rendering all categories...");
-
-    renderCategory("Around-The-Globe", categories["Around-The-Globe"]);
-    renderCategory("Trending", categories["Trending"], true);
-    renderCategory("Dessert", categories["Dessert"]);
-    renderCategory("Healthy", categories["Healthy"]);
-    renderCategory("Desi", categories["Desi"]);
-
-    console.log("All categories rendered");
-
-    if (typeof initializeSearchAfterRender === "function") {
-      initializeSearchAfterRender();
-    }
-  }
-
-  // Initialize everything when DOM is ready
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM Content Loaded");
-    renderAllCategories();
-  });
-</script>
-    <!-- sliders -->
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
-    <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-    <script src="assets/Backend/slider.js"></script>
-  </body>
+        function Register() {
+            alert("Under Development");
+        }
+        </script>
+</body>
 </html>

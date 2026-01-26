@@ -1,18 +1,23 @@
 /* Import Google Font for cards */
 @import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 
-/* Keep existing base styles */
 * {
   margin: 0px;
   padding: 0px;
   font-family: Helvetica, Arial, sans-serif;
+  box-sizing: border-box; /* Add this */
 }
-
+   html, body {
+     margin: 0;
+     padding: 0;
+     width: 100%;
+     min-height: 100%;
+   }
 body {
-  margin-top: 40px;
+  margin-top: 0; /* Change from 40px to 0 */
   overflow-x: hidden;
+  width: 100%;
 }
-
 html {
   scroll-behavior: smooth;
 }
@@ -278,17 +283,13 @@ html {
   }
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .food-preview-container {
     grid-template-columns: 1fr;
   }
   
   .sidebar {
-    position: relative;
-    top: 0;
-    border-right: none;
-    border-bottom: 1px solid black;
-    padding-bottom: 20px;
+    display: none !important;
   }
   
   .food-1-preview {
@@ -298,6 +299,23 @@ html {
   
   .food-type-name {
     margin-left: 20px;
+  }
+  #navtrending{
+    display: none;
+  }
+  #search{
+    display: none;
+
+  }
+  .navbar-list{
+    margin-right: 10px !important;
+  }
+  .slider{
+    margin-top: 14vh !important;
+    max-height: 320px;
+  }
+  .slider__content{
+    max-height: 320px;
   }
 }
 
@@ -310,6 +328,21 @@ html {
   .food-preview {
     max-width: 100%;
   }
+   #navhome, #navtrending, #navabout {
+    display: none;
+}
+  #search{
+    display: none;
+
+  }
+  .slider{
+    margin-top: 14vh !important;
+    max-height: 220px;
+  }
+  .slider__content{
+    max-height: 220px;
+  }
+
 }
 
 .fas.fa-user-alt {
