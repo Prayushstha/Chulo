@@ -72,7 +72,7 @@
       <!-- Hero Section -->
       <section class="hero">
         <div class="hero-content">
-          <h1>About KhajaTime</h1>
+          <h1>About Chulo</h1>
           <p>Serving Authentic Nepali Flavors Since 2018</p>
         </div>
       </section>
@@ -207,21 +207,21 @@
           The passionate people behind your favorite meals
         </p>
         <div class="team-grid">
-          <div class="team-member">
+          <div class="team-member" onclick="show_team_member_details(1)">
             <div class="member-photo">
               <img src="assets/images/Team/SahilBhujel.jpg" alt="Head Chef" />
             </div>
             <h3>Sahil Bhujel</h3>
             <p>Head Chef</p>
           </div>
-          <div class="team-member">
+          <div class="team-member" onclick="show_team_member_details(2)">
             <div class="member-photo">
               <img src="assets/images/Team/Anjali Maharjan.png" alt="Manager" />
             </div>
             <h3>Anjali Maharjan</h3>
             <p>Restaurant Manager</p>
           </div>
-          <div class="team-member">
+          <div class="team-member" onclick="show_team_member_details(3)">
             <div class="member-photo">
               <img
                 src="assets/images/Team/BikashThapa.png"
@@ -231,7 +231,7 @@
             <h3>Bikash Thapa</h3>
             <p>Operations Lead</p>
           </div>
-          <div class="team-member">
+          <div class="team-member" onclick="show_team_member_details(4)">
             <div class="member-photo">
               <img src="assets/images/Team/Sita Tamang.png" alt="Sous Chef" />
             </div>
@@ -252,7 +252,7 @@
             gap: 10px;
           "
         >
-          <div class="team-member">
+          <div class="team-member" onclick="show_team_member_details(5)">
             <div class="member-photo">
               <img
                 src="assets\images\Team\PrashilBaidhya.jpg"
@@ -268,7 +268,7 @@
             <h3>Prashil Baidhya</h3>
             <p>Frontend Developer</p>
           </div>
-          <div class="team-member">
+          <div class="team-member" onclick="show_team_member_details(6)">
             <div class="member-photo">
               <img
                 src="assets\images\Team\KrishnaNeupane.jpg"
@@ -278,7 +278,7 @@
             <h3>Krishna Neupane</h3>
             <p>Frontend Developer</p>
           </div>
-          <div class="team-member">
+          <div class="team-member " onclick="show_team_member_details(7)">
             <div class="member-photo">
               <img
                 src="assets\images\Team\Prayush Shrestha.png"
@@ -291,6 +291,38 @@
         </div>
       </section>
 
+      <!-- dialog -->
+<div class="team-dialog" id="teamModal">
+  <div class="dialog-card">
+    <div class="dialog-header">
+      <div class="dialog-photo">
+        <img id="modalPhoto" src="" alt="" />
+      </div>
+      <div class="dialog-info">
+        <h2 id="modalName"></h2>
+        <p id="modalRole"></p>
+        <div class="dialog-socials">
+          <span>🔗 Connect</span>
+        </div>
+      </div>
+    </div>
+    <div class="dialog-body">
+      <div class="dialog-section">
+        <h3>Description</h3>
+        <p id="modalDescription"></p>
+      </div>
+      <div class="dialog-section">
+        <h3>Contributions</h3>
+        <p id="modalContributions"></p>
+      </div>
+      <div class="dialog-section">
+        <h3>Extras</h3>
+        <p id="modalExtras"></p>
+      </div>
+    </div>
+    <button class="dialog-close" aria-label="Close dialog">×</button>
+  </div>
+</div>
       <!-- Location Section -->
       <section class="location">
         <div class="location-container">
@@ -383,5 +415,6 @@
 
     <!-- JS -->
     <script src="assets/Backend/ui-enhancer.js"></script>
+    <script src="assets/Backend/descriptions.js"></script>
   </body>
 </html>

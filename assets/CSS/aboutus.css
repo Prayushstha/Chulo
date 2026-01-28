@@ -233,20 +233,64 @@ body {
 
 .team-member {
     text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
 }
 
 .member-photo {
+    position: relative;
     width: 150px;
     height: 150px;
     margin: 0 auto 20px;
-    background: linear-gradient(135deg, #ff6f00 0%, #d84315 100%);
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 50px;
-    color: white;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    overflow: visible; /* Changed from default */
+    cursor: pointer;
+}
+
+/* Animated rotating border */
+.member-photo::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        #C75B2C 0deg,
+        #C75B2C 30deg,
+       #C75B2C 90deg,
+        transparent 360deg
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.member-photo:hover::before {
+    opacity: 1;
+    animation: rotateBorder 1.5s linear infinite;
+}
+
+/* White background circle to create outline effect */
+.member-photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    border-radius: 50%;
+    z-index: 0;
 }
 
 .member-photo img {
@@ -254,6 +298,23 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Remove old gradient background since we're using images */
+.member-photo {
+    background: none !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .team-member h3 {
@@ -520,4 +581,235 @@ body.dark-mode {
 
 .footer-links a:hover::after {
   width: 100%;
+}
+.team-dialog {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.team-dialog.active {
+    display: flex;
+}
+
+.dialog-card {
+    background: var(--bg-secondary);
+    border-radius: 25px;
+    max-width: 900px;
+    width: 100%;
+    max-height: 90vh;
+    overflow: hidden;
+    position: relative;
+    box-shadow: var(--shadow-xl);
+    animation: slideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid var(--border-color);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px) scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+/* Header Section */
+.dialog-header {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    padding: 50px;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.dialog-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    border-radius: 50%;
+}
+
+.dialog-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+    border: 4px solid rgba(255, 255, 255, 0.2);
+    position: relative;
+    z-index: 1;
+}
+
+.dialog-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.dialog-info {
+    flex: 1;
+    color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.dialog-info h2 {
+    font-size: 42px;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.dialog-info > p {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.95);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.dialog-socials {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.dialog-socials span {
+    display: inline-block;
+    padding: 8px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+/* Body Section */
+.dialog-body {
+    padding: 50px;
+    background: var(--bg-primary);
+    overflow-y: auto;
+    max-height: calc(90vh - 320px);
+}
+
+.dialog-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.dialog-body::-webkit-scrollbar-track {
+    background: var(--border-color);
+}
+
+.dialog-body::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+.dialog-body::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-hover);
+}
+
+.dialog-section {
+    margin-bottom: 35px;
+}
+
+.dialog-section:last-child {
+    margin-bottom: 0;
+}
+
+.dialog-body h3 {
+    font-size: 24px;
+    margin: 0 0 15px 0;
+    font-weight: 700;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dialog-body h3::before {
+    content: '';
+    width: 4px;
+    height: 24px;
+    background: var(--gradient-primary);
+    border-radius: 2px;
+}
+
+.dialog-body p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Close Button */
+.dialog-close {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 10;
+}
+
+.dialog-close:hover {
+    background: white;
+    color: var(--primary);
+    transform: rotate(90deg) scale(1.1);
+    border-color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dialog-header {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+    }
+    
+    .dialog-photo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .dialog-info h2 {
+        font-size: 32px;
+    }
+    
+    .dialog-body {
+        padding: 30px;
+    }
 }
