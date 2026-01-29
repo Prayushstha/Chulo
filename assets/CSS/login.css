@@ -288,12 +288,18 @@
     max-width: 620px;
     padding: 40px;
 }
-
+.login-page-form-wrapper p{
+    color: var(--primary) !important;
+    justify-self: center;
+    backdrop-filter: blur(10px);
+    padding: 10px;
+    
+}
 .login-page-form-wrapper h2 {
     font-size: 32px;
     font-weight: 600;
     color: #333;
-    margin-bottom: 40px;
+    margin-bottom: 10px;
 }
 
 .login-page-input-box {

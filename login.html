@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="assets/CSS/login.css" />
     <link rel="stylesheet" href="assets/CSS/navbar.css" />
+    <link rel="stylesheet" href="assets/CSS/theme.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="icon" type="image/x-icon" href="assets/images/logo/logo.png" />
@@ -185,44 +186,23 @@
          <div class="login-page-container">
           <div class="login-page-form-wrapper">
             <h2>Enter your credentials</h2>
-            <form action="homepage.html" method="post"></form>
-              <div class="login-page-input-box">
-                <label for="login-page-email">Email address</label>
-                <input
-                  type="email"
-                  id="login-page-email"
-                  required
-                  placeholder="Enter your email"
-                  name="email"
-                />
-              </div>
+            <form id="login-form" onsubmit="return login(event);">
+  <p id="errors"></p>
+  
+  <div class="login-page-input-box">
+    <label for="login-email">Email address</label>
+    <input type="email" id="login-email" required placeholder="Enter your email" />
+  </div>
 
-              <div class="login-page-input-box">
-                <label for="login-page-password">Password</label>
-                <input
-                  type="password"
-                  id="login-page-password"
-                  required
-                  placeholder="Enter your password"
-                  name="password"
-                />
-              </div>
+  <div class="login-page-input-box">
+    <label for="login-password">Password</label>
+    <input type="password" id="login-password" required placeholder="Enter your password" />
+  </div>
 
-              <div class="login-page-checkbox-wrapper">
-                <input type="checkbox" id="login-page-terms" required />
-                <label for="login-page-terms"
-                  >I agree to the
-                  <a href="#" class="login-page-terms-link"
-                    >terms & policy</a
-                  ></label
-                >
-              </div>
-
-              <button type="submit" class="login-page-btn" name="signup">
-                Signup
-              </button>
-            </form>
-
+  <button type="submit" class="login-page-btn">
+    Login
+  </button>
+</form>
             <div class="login-page-divider">
               <span>Or</span>
             </div>
@@ -316,5 +296,8 @@
         </div>
       </div>
     </section>
+
+    <script src="assets/Backend/signup.js"></script>
+    <script src="assets/Backend/navbar.js"></script>
   </body>
 </html>

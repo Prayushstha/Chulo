@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Register</title>
     <link
       rel="shortcut icon"
       href="assets/images/logo/logo.png"
@@ -12,6 +12,7 @@
 
     <link rel="stylesheet" href="assets/CSS/login.css" />
     <link rel="stylesheet" href="assets/CSS/navbar.css" />
+    <link rel="stylesheet" href="assets/CSS/theme.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="icon" type="image/x-icon" href="assets/images/logo/logo.png" />
@@ -183,51 +184,34 @@
        <!-- Login -->
          <div class="login-page-container">
           <div class="login-page-form-wrapper">
+
             <h2>Get Started Now</h2>
+            <p id="errors"></p>
+            <form method="post" id="login-page-signup-form" onsubmit="return register(event);">
+  <div class="login-page-input-box">
+    <label for="login-page-name">Name</label>
+    <input type="text" id="login-page-name" name="username" required placeholder="Enter your name" />
+  </div>
 
-            <form method="post" action="login.html" id="login-page-signup-form" onsubmit="return validateForm()">
-              <div class="login-page-input-box">
-                <label for="login-page-name">Name</label>
-               <input type="text" id="login-page-name" name="username" required placeholder="Enter your name" />
-              </div>
+  <div class="login-page-input-box">
+    <label for="login-page-email">Email address</label>
+    <input type="email" id="login-page-email" required placeholder="Enter your email" name="email" />
+  </div>
 
-              <div class="login-page-input-box">
-                <label for="login-page-email">Email address</label>
-                <input
-                  type="email"
-                  id="login-page-email"
-                  required
-                  placeholder="Enter your email"
-                  name="email"
-                />
-              </div>
+  <div class="login-page-input-box">
+    <label for="login-page-password">Password</label>
+    <input type="password" id="login-page-password" required placeholder="Enter your password" name="password" />
+  </div>
 
-              <div class="login-page-input-box">
-                <label for="login-page-password">Password</label>
-                <input
-                  type="password"
-                  id="login-page-password"
-                  required
-                  placeholder="Enter your password"
-                  name="password"
-                />
-              </div>
+  <div class="login-page-checkbox-wrapper">
+    <input type="checkbox" id="login-page-terms" required />
+    <label for="login-page-terms">I agree to the <a href="#" class="login-page-terms-link">terms & policy</a></label>
+  </div>
 
-              <div class="login-page-checkbox-wrapper">
-                <input type="checkbox" id="login-page-terms" required />
-                <label for="login-page-terms"
-                  >I agree to the
-                  <a href="#" class="login-page-terms-link"
-                    >terms & policy</a
-                  ></label
-                >
-              </div>
-
-              <button type="submit" class="login-page-btn" name="signup">
-                Signup
-              </button>
+  <button type="submit" class="login-page-btn" name="signup">
+    Signup
+  </button>
             </form>
-
             <div class="login-page-divider">
               <span>Or</span>
             </div>
@@ -324,35 +308,7 @@
     </section>
 
 
-   <script>
-function validateForm() {
-    const name = document.getElementById('login-page-name').value.trim();
-    const email = document.getElementById('login-page-email').value.trim();
-    const password = document.getElementById('login-page-password').value;
-    const terms = document.getElementById('login-page-terms').checked;
-    
-    if (!name) {
-        alert('Please enter your name');
-        return false;
-    }
-    
-    if (!email || !email.includes('@')) {
-        alert('Please enter a valid email');
-        return false;
-    }
-    
-    if (password.length < 6) {
-        alert('Password must be at least 6 characters');
-        return false;
-    }
-    
-    if (!terms) {
-        alert('Please agree to the terms & policy');
-        return false;
-    }
-    
-    return true;
-}
-</script>
+   <script src="assets/Backend/signup.js"></script>
+ <script src="assets/Backend/navbar.js"></script>
   </body>
 </html>
