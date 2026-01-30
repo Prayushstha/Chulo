@@ -332,7 +332,7 @@ dialog[open] {
   }
 
   .food-description {
-    margin: 0;
+    margin-top: 10px;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -352,7 +352,7 @@ dialog[open] {
   }
 
   .food-price {
-    max-width: 60px;
+    max-width: 100px;
     margin-top: 14px;
     max-height: 20px;
   }
