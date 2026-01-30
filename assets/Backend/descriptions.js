@@ -302,7 +302,6 @@ const foodItems = [
     nutrients: { energy: 160, fats: 0, carbs: 40, fiber: 0, protein: 0 },
   },
 ];
-
 // Team Member Data
 const teamData = {
   1: {
@@ -390,10 +389,82 @@ const teamData = {
   },
 };
 
-// This function is called from onclick in HTML
+
+// food description dialog functionality
+const foodDialog = document.getElementById('dialog');
+const desc = document.getElementById('desc');
+
+// Function to show food dialog
+function showDialog(itemId) {
+  const item = foodItems.find(food => food.id === itemId);
+  if (item) {
+    updateDialogContent(item);
+    foodDialog.showModal();
+  }
+}
+
+function updateDialogContent(item) {
+  const imgElement = foodDialog.querySelector(".food-description-picture");
+  imgElement.src = `assets/images/food-pictures/${item.image}`;
+  imgElement.alt = item.name;
+  foodDialog.querySelector(".food-name").textContent = item.name;
+  foodDialog.querySelector(
+    ".original-price"
+  ).textContent = `₹ ${item.originalPrice}`;
+  foodDialog.querySelector(".discounted-price").textContent = `₹ ${item.price}`;
+  foodDialog.querySelector(".description-content").textContent = item.description;
+  
+  const vegIcon = foodDialog.querySelector(".food-sticker");
+  const vegText = foodDialog.querySelector(".veg-non");
+
+  if (item.type === "Veg") {
+    vegIcon.src = "assets/images/food-pictures/icn-veg.svg";
+    vegText.textContent = "Veg";
+  } else {
+    vegIcon.src = "assets/images/food-pictures/icn-non-veg.svg";
+    vegText.textContent = "Non-veg";
+  }
+
+  foodDialog.querySelector(".ingredients-content").textContent = item.ingredients;
+
+  const nutrientValues = foodDialog.querySelectorAll(".nutrients-value");
+  nutrientValues[0].querySelector(".nutrients-number").textContent =
+    item.nutrients.energy;
+  nutrientValues[1].querySelector(".nutrients-number").textContent =
+    item.nutrients.fats;
+  nutrientValues[2].querySelector(".nutrients-number").textContent =
+    item.nutrients.carbs;
+  nutrientValues[3].querySelector(".nutrients-number").textContent =
+    item.nutrients.fiber;
+  nutrientValues[4].querySelector(".nutrients-number").textContent =
+    item.nutrients.protein;
+}
+
+function closeDialog() {
+  foodDialog.close();
+}
+
+foodDialog.addEventListener("click", (e) => {
+  if (!desc.contains(e.target)) {
+    closeDialog();
+  }
+});
+
+
+
+
+
+// Team Member Modal Functionality
 function show_team_member_details(memberId) {
-    const modal = document.getElementById('teamModal');
+    console.log('Opening team modal for member:', memberId);
+    
+    const teamModal = document.getElementById('teamModal');
     const data = teamData[memberId];
+    
+    if (!teamModal) {
+        console.error('Team modal element not found!');
+        return;
+    }
     
     if (data) {
         document.getElementById('modalPhoto').src = data.photo;
@@ -404,32 +475,17 @@ function show_team_member_details(memberId) {
         document.getElementById('modalContributions').textContent = data.contributions;
         document.getElementById('modalExtras').textContent = data.extras;
         
-        modal.classList.add('active');
+        teamModal.classList.add('active');
+        console.log('Team modal opened');
     }
 }
 
-// Close modal functionality
-const modal = document.getElementById('teamModal');
-const closeBtn = document.querySelector('.dialog-close');
-
-if (closeBtn) {
-    closeBtn.addEventListener('click', () => {
-        modal.classList.remove('active');
-    });
-}
-
-if (modal) {
-    // Close on background click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            modal.classList.remove('active');
+// Initialize team modal close functionality
+document.addEventListener('DOMContentLoaded', function() {
+    const teamModal = document.getElementById('teamModal');
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && teamModal && teamModal.classList.contains('active')) {
+            teamModal.classList.remove('active');
         }
     });
-}
-
-// Close with Escape key
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
-        modal.classList.remove('active');
-    }
 });
