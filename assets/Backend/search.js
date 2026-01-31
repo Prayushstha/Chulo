@@ -376,22 +376,3 @@ if (typeof window !== 'undefined') {
     window.initializeCustomSearchAfterRender = initializeCustomSearchAfterRender;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

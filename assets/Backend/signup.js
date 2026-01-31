@@ -66,8 +66,6 @@ function register(event) {
     }
     
     saveUserData(usernameInput.value, emailInput.value, passwordInput.value);
-    
-    errors.innerText = "Registration successful! Redirecting to login...";
     errors.style.color = "green";
     
     setTimeout(() => {
@@ -101,7 +99,6 @@ function login(event) {
         localStorage.setItem('isLoggedIn', 'true');
         
         if (errors) {
-            errors.innerText = "Login successful! Redirecting...";
             errors.style.color = "green";
         }
         

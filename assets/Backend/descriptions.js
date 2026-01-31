@@ -476,6 +476,7 @@ function show_team_member_details(memberId) {
         document.getElementById('modalExtras').textContent = data.extras;
         
         teamModal.classList.add('active');
+        document.body.style.overflow = 'hidden';
         console.log('Team modal opened');
     }
 }
