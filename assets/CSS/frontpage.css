@@ -1,746 +1,743 @@
-
- * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            margin-top: 6vh;
-            font-family: 'Arial', sans-serif;
-            overflow-x: hidden;
-        }
-
-        .home-page {
-            min-height: 100vh;
-            background:radial-gradient(circle at right center, #ffb347 40%, #ffffff 90%, #ffffff 100%);
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-        }
-       .home-page::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-            background-image: url("noise-pattern.avif");
-            opacity: 0.12;
-            z-index: 2;
-            pointer-events: none;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
-        .container {
-            max-width: 1400px;
-            width: 100%;
-            padding: 0 0px;
-            display: flex;
-            align-items: center;
-            
-            position: relative;
-            z-index: 2;
-            
-            flex-wrap: nowrap;
-        }
-
-        .info-section {
-            flex-direction: row;
-            max-width: 500px;
-            animation: fadeInLeft 1s ease-out
-    }
-        .tags {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 30px;
-            
-        }
-
-        .original-tag {
-            background: #ffc864;
-            color: #fff;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-
-        .authentic-tag {
-            background: #ff6b8a;
-            color: #fff;
-            padding: 10px 25px;
-            border-radius: 30px;
-            font-weight: 600;
-            font-size: 14px;
-            text-transform: uppercase;
-        }
-
-        h1 {
-            font-size: 58px;
-            font-weight: 900;
-            line-height: 1.1;
-            margin-bottom: 20px;
-            color: #000;
-        }
-
-        .no-1{
-            color:#979797db;
-            transition: color 0.5s ease;
-            cursor: pointer;
-        }
-        .no-1:hover{
-            color:rgb(255, 255, 15);
-           -webkit-text-stroke-width: 3px;
-            -webkit-text-stroke-color: black;
-
-        }
-        .highlight-fast {
-            color: #ffa500;
-        }
-
-        .highlight-food {
-            color: #ff4757;
-        }
-
-        .subtitle {
-            font-size: 18px;
-            color: #393636;
-            margin-bottom: 40px;
-            line-height: 1.6;
-        }
-
-        .buttons {
-            display: flex;
-            gap: 20px;
-        }
-
-        .button {
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-size: 16px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, #ff6b35, #ff4757);
-            transition: left 0.4s ease;
-            z-index: -1;
-        }
-
-        .order-now-button {
-            background: #ff8c42;
-            color: #fff;
-        }
-
-        .order-now-button:hover::before {
-            left: 0;
-        }
-
-        .menu-button {
-            background: transparent;
-            color: #000;
-            border: 2px solid #000;
-        }
-
-        .menu-button::before {
-            background: linear-gradient(90deg, #000, #333);
-        }
-
-        .menu-button:hover {
-            color: #fff;
-        }
-
-        .menu-button:hover::before {
-            left: 0;
-        }
-
-        .button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-        }
-
-
-        
-        .stats-bar {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            margin: 8px 0 40px 0;
-            padding: 20px 0;
-        }
-
-        .stat-item {
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 36px;
-            font-weight: 900;
-            color: #ff8c42;
-            line-height: 1;
-            margin-bottom: 5px;
-        }
-
-        .stat-label {
-            font-size: 18px;
-            color: #666;
-            font-weight: 600;
-        }
-
-        .stat-divider {
-            width: 3px;
-            height: 50px;
-            background: linear-gradient(to bottom, transparent, #ffb554, transparent);
-        }
-
-        
-        .burger-section {
-            display: flex;
-            flex-direction: row;
-            position: relative;
-            width: 700px;
-            height: 600px;
-            animation: slideInRight 1.2s ease-out;
-        }
-
-        .feature-card {
-            position: absolute;
-            padding: 15px 20px;
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-            font-size: 14px;
-            font-weight: 600;
-            color: #333;
-            white-space: nowrap;
-            z-index: 2;
-            animation: floatCard 3s ease-in-out infinite;
-        }
-
-        .feature-card .emoji {
-            font-size: 20px;
-            margin-right: 8px;
-        }
-
-      
-        .card-1 {
-            top: 15%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .card-2 {
-            top: 25%;
-            right: 5%;
-            animation-delay: 1s;
-            z-index: 2;
-            font-size: 15px;
-        }
-
-        .card-3 {
-            bottom: 25%;
-            left: 15%;
-            animation-delay: 2s;
-            z-index: 4;
-        }
-
-        
-
-      
-        .burger-price-badge {
-            position: absolute;
-            top: 20%;           
-            right: 60%;
-            background: #b93100f0; 
-            color: white;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;  
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transform: rotate(15deg); 
-            z-index: 10;
-            border: 4px solid white;
-            box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
-            }
-
-         .currency { 
-            font-size: 25px; 
-        }
-            .amount { 
-                font-size: 27px;
-         }
-
-        .burger-with-chunks {
-            position: absolute;
-            right: -50px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 750px;
-            height: auto;
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
-        }
-
-        
-           
-        .burger-wrapper {
-            position: absolute;
-            right: 50px;
-            top: 300px;
-            transform: translateY(-50%);
-            z-index: 1;
-            width: 550px;  
-            height: auto;  
-        }
-
-
-        .burger-image {
-            width: 500px;  
-            height: auto;
-            display: block;  
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
-        }
-
-       
-        .burger-wrapper::after {
-            content: '';
-            position: absolute;
-            bottom: 50px;
-            left: 47%;
-            transform: translateX(-50%);
-            width: 80%;
-            height: 100px;
-            background: radial-gradient(ellipse, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.6) 40%, transparent 70%);
-            filter: blur(8px);
-            z-index: -1;
-        }
-        .fries-wrapper{
-            position: absolute;
-            right: -90px;
-            top: 330px;
-            transform: translateY(-50%);
-            z-index: 1;
-            width: 500px;  
-            height: auto;
-        }
-
-        .fries-bag-image{         
-            display: block;  
-            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
-            position: absolute;
-            transform: translateY(-50%);
-            width: 500px;
-            height: auto;
-            z-index: 3; 
-        }
-        .fries-wrapper::after{
-            content: '';
-            position: absolute;
-            bottom: -180px;
-            left: 50%;
-            transform: translateX(-50%) skew(30deg);
-            width: 50%;
-            height: 100px;
-            background: radial-gradient(ellipse, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.6) 40%, transparent 70%);
-            filter: blur(8px);
-        }
-
-        .fries-price-badge {
-            position: absolute;
-            top: 35%;            
-            right: 7%;
-            background: #b93100f0; 
-            color: white;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;  
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-            transform: rotate(325deg); 
-            z-index: 10;
-            border: 4px solid white;
-            box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
-        }
-
-        .meat-chunks-image {
-            position: absolute;
-            right: 220px;
-            top: 200px;
-            transform: translateY(-50%);
-            width: 550px;
-            height: auto;
-            z-index: 1;
-             filter: drop-shadow(0 20px 40px rgba(0,0,0,0));
-            animation: floatChunks 2.5s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .fries-image{
-            position: absolute;
-            right: -80px;
-            top: 230px;
-            transform: translateY(-50%);
-            width: 550px;
-            height: auto;
-            z-index: 1;
-             filter: drop-shadow(0 20px 40px rgba(0,0,0,0));
-            animation: floatChunks 2.5s ease-in-out infinite;
-            pointer-events: none;
-        }
-
-        .share-prim-text{
-            text-align: center;
-            color:#ffa500;
-            font-weight: 600;
-        }
-        .share-sub-text{
-            color:#4d4b4b;
-            font-size: 12px;
-        }
-        .share-buttons{
-            display: flex;
-            gap: 20px;
-            margin-top: 10px;
-        }
-
-        .share-button{
-            padding: 10px 10px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 500;
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: none;
-            position: relative;
-            display: flex;
-            z-index: 1;
-        }
-
-        .facebook-button{
-            background-color: #4267B2;
-            color: white;
-            align-items: center;
-            justify-content: center;
-           
-        }
-        .facebook-button:hover{
-             transform: translateY(-3px);
-        }
-
-        .twitter-button{
-            background-color: #000000;
-            color: white;
-            align-items: center;
-            justify-content: center;
-        }
-        .twitter-button:hover{
-             transform: translateY(-3px);
-        }
-        .share-text{
-            padding-left: 8px;
-            margin: 0px 5px 0px 5px ;  
-            line-height: 1;
-            padding-top:3px ;
-        }
-
-
-         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: #1a1a2e;
-            color: #fff;
-            line-height: 1.6;
-        }
-
-        .container {
-            display: grid;
-            grid-template-columns: 1fr 400px;
-            gap: 40px;
-            max-width: 1400px;
-            margin-left: 100px;
-            padding: 0px 40px;
-        }
-
-        /* LEFT SIDE - About Section */
-        .about-section {
-            padding-right: 40px;
-        }
-
-        .about-section h1 {
-            color: var(--text-primary);
-            font-size: 42px;
-            margin-bottom: 30px;
-            line-height: 1.3;
-        }
-
-        .about-section h2 {
-            font-size: 28px;
-            margin-top: 40px;
-            margin-bottom: 20px;
-            color: #ff8c42;
-        }
-
-        .about-section p {
-            font-size: 16px;
-            color: #b8b8d1;
-            margin-bottom: 20px;
-        }
-
-        .about-section ul {
-            list-style: none;
-            margin-top: 20px;
-        }
-
-        .about-section ul li {
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #b8b8d1;
-        }
-
-        .about-section ul li::before {
-            content: '•';
-            color: #ff8c42;
-            font-size: 24px;
-            position: absolute;
-            left: 0;
-            top: 5px;
-        }
-
-        /* RIGHT SIDE - Reviews Section */
-        .reviews-section h2 {
-            font-size: 28px;
-            margin-bottom: 30px;
-            padding-bottom: 15px;
-            border-bottom: 2px solid #2a2a40;
-        }
-
-        .review-card {
-            background: #16213e;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid #2a2a40;
-        }
-
-        .review-card:hover {
-            background: #1f2d4d;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(255, 140, 66, 0.2);
-        }
-
-        .review-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .review-tag {
-            font-size: 12px;
-            color: #888;
-        }
-
-        .review-time {
-            font-size: 12px;
-            color: #666;
-        }
-
-        .review-title {
-            font-size: 18px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: #fff;
-        }
-
-        .review-preview {
-            font-size: 14px;
-            color: #b8b8d1;
-            margin-bottom: 15px;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-        }
-
-        .review-footer {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .review-avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff8c42, #ff4757);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-        }
-
-        .review-author {
-            font-size: 14px;
-            color: #b8b8d1;
-        }
-
-        .review-comments {
-            margin-left: auto;
-            font-size: 13px;
-            color: #888;
-        }
-
-        /* Dialog/Modal */
-        .dialog-overlay {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .dialog-overlay.active {
-            display: flex;
-        }
-
-        .dialog {
-            background: #16213e;
-            border-radius: 20px;
-            padding: 40px;
-            max-width: 700px;
-            width: 90%;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: relative;
-            animation: slideUp 0.3s ease;
-        }
-
-        .close-btn {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            background: #ff4757;
-            color: white;
-            border: none;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            cursor: pointer;
-            font-size: 20px;
-            transition: all 0.3s ease;
-        }
-
-        .close-btn:hover {
-            background: #ff3345;
-            transform: rotate(90deg);
-        }
-
-        .dialog h3 {
-            font-size: 32px;
-            margin-bottom: 20px;
-            color: #ff8c42;
-        }
-
-        .dialog-meta {
-            display: flex;
-            gap: 20px;
-            margin-bottom: 30px;
-            font-size: 14px;
-            color: #888;
-        }
-
-        .dialog-content {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #b8b8d1;
-        }
-
-        .dialog-author-info {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 30px;
-            padding-top: 30px;
-            border-top: 1px solid #2a2a40;
-        }
-
-        .dialog-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #ff8c42, #ff4757);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-        }
-
-        .rating {
-            color: #ffd700;
-            font-size: 20px;
-        }
-
-
-/* Login Page Specific Styles */
-/* Login Container - Initially Hidden */
+
+body {
+    margin-top: 6vh;
+    font-family: 'Arial', sans-serif;
+    overflow-x: hidden;
+}
+
+.home-page {
+    min-height: 100vh;
+    background: radial-gradient(circle at right center, #ffb347 40%, var(--bg-primary) 90%, var(--bg-primary) 100%);
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+}
+
+
+.home-page::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: url("noise-pattern.avif");
+    opacity: 0.12;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.container {
+    max-width: 1400px;
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    flex-wrap: nowrap;
+    margin: 0 auto;
+}
+
+.info-section {
+    flex-direction: row;
+    max-width: 500px;
+    animation: fadeInLeft 1s ease-out;
+}
+
+.tags {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+.original-tag {
+    background: #ffc864;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.authentic-tag {
+    background: #ff6b8a;
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 58px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: #000;
+}
+
+.no-1 {
+    color: #979797db;
+    transition: color 0.5s ease;
+    cursor: pointer;
+}
+
+.no-1:hover {
+    color: rgb(255, 255, 15);
+    -webkit-text-stroke-width: 3px;
+    -webkit-text-stroke-color: black;
+}
+
+.highlight-fast {
+    color: #ffa500;
+}
+
+.highlight-food {
+    color: #ff4757;
+}
+
+.subtitle {
+    font-size: 18px;
+    color: #393636;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.button {
+    padding: 15px 35px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, #ff6b35, #ff4757);
+    transition: left 0.4s ease;
+    z-index: -1;
+}
+
+.order-now-button {
+    background: #ff8c42;
+    color: #fff;
+}
+
+.order-now-button:hover::before {
+    left: 0;
+}
+
+.menu-button {
+    background: transparent;
+    color: #000;
+    border: 2px solid #000;
+}
+
+.menu-button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.menu-button::before {
+    background: linear-gradient(90deg, #000, #333);
+}
+
+.menu-button:hover {
+    color: #fff;
+}
+
+.menu-button:hover::before {
+    left: 0;
+}
+
+.button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.stats-bar {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin: 8px 0 40px 0;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-number {
+    font-size: 36px;
+    font-weight: 900;
+    color: #ff8c42;
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.stat-label {
+    font-size: 18px;
+    color: #666;
+    font-weight: 600;
+}
+
+.stat-divider {
+    width: 3px;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, #ffb554, transparent);
+}
+
+.burger-section {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    width: 700px;
+    height: 600px;
+    animation: slideInRight 1.2s ease-out;
+}
+
+.feature-card {
+    position: absolute;
+    padding: 15px 20px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    font-size: 14px;
+    font-weight: 600;
+    color: #333;
+    white-space: nowrap;
+    z-index: 2;
+    animation: floatCard 3s ease-in-out infinite;
+}
+
+.feature-card .emoji {
+    font-size: 20px;
+    margin-right: 8px;
+}
+
+.card-1 {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.card-2 {
+    top: 25%;
+    right: 5%;
+    animation-delay: 1s;
+    z-index: 2;
+    font-size: 15px;
+}
+
+.card-3 {
+    bottom: 25%;
+    left: 15%;
+    animation-delay: 2s;
+    z-index: 4;
+}
+
+.burger-price-badge {
+    position: absolute;
+    top: 20%;
+    right: 60%;
+    background: #b93100f0;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+    transform: rotate(15deg);
+    z-index: 10;
+    border: 4px solid white;
+}
+
+.currency {
+    font-size: 25px;
+}
+
+.amount {
+    font-size: 27px;
+}
+
+.burger-with-chunks {
+    position: absolute;
+    right: -50px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 750px;
+    height: auto;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+.burger-wrapper {
+    position: absolute;
+    right: 50px;
+    top: 300px;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 550px;
+    height: auto;
+}
+
+.burger-image {
+    width: 500px;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+}
+
+.burger-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: 50px;
+    left: 47%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.6) 40%, transparent 70%);
+    filter: blur(8px);
+    z-index: -1;
+}
+
+.fries-wrapper {
+    position: absolute;
+    right: -90px;
+    top: 330px;
+    transform: translateY(-50%);
+    z-index: 1;
+    width: 500px;
+    height: auto;
+}
+
+.fries-bag-image {
+    display: block;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
+    position: absolute;
+    transform: translateY(-50%);
+    width: 500px;
+    height: auto;
+    z-index: 3;
+}
+
+.fries-wrapper::after {
+    content: '';
+    position: absolute;
+    bottom: -180px;
+    left: 50%;
+    transform: translateX(-50%) skew(30deg);
+    width: 50%;
+    height: 100px;
+    background: radial-gradient(ellipse, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.6) 40%, transparent 70%);
+    filter: blur(8px);
+}
+
+.fries-price-badge {
+    position: absolute;
+    top: 35%;
+    right: 7%;
+    background: #b93100f0;
+    color: white;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    box-shadow: 0 10px 25px 0 rgba(0, 0, 0, 0.3);
+    transform: rotate(325deg);
+    z-index: 10;
+    border: 4px solid white;
+}
+
+.meat-chunks-image {
+    position: absolute;
+    right: 220px;
+    top: 200px;
+    transform: translateY(-50%);
+    width: 550px;
+    height: auto;
+    z-index: 1;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0));
+    animation: floatChunks 2.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.fries-image {
+    position: absolute;
+    right: -80px;
+    top: 230px;
+    transform: translateY(-50%);
+    width: 550px;
+    height: auto;
+    z-index: 1;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0));
+    animation: floatChunks 2.5s ease-in-out infinite;
+    pointer-events: none;
+}
+
+.share-prim-text {
+    text-align: center;
+    color: #ffa500;
+    font-weight: 600;
+}
+
+.share-sub-text {
+    color: #4d4b4b;
+    font-size: 12px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 20px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.share-button {
+    padding: 10px 10px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+    position: relative;
+    display: flex;
+    z-index: 1;
+}
+
+.facebook-button {
+    background-color: #4267B2;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.facebook-button:hover {
+    transform: translateY(-3px);
+}
+
+.twitter-button {
+    background-color: #000000;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.twitter-button:hover {
+    transform: translateY(-3px);
+}
+
+.share-text {
+    padding-left: 8px;
+    margin: 0px 5px 0px 5px;
+    line-height: 1;
+    padding-top: 3px;
+}
+
+/* About Section Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a2e;
+    color: #fff;
+    line-height: 1.6;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 40px;
+    
+    margin-left: 100px;
+    padding: 40px;
+}
+
+.about-section {
+    padding-right: 40px;
+}
+
+.about-section h1 {
+    color: var(--text-primary);
+    font-size: 42px;
+    margin-bottom: 30px;
+    line-height: 1.3;
+}
+
+.about-section h2 {
+    font-size: 28px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    color: #ff8c42;
+}
+
+.about-section p {
+    font-size: 16px;
+    color: #b8b8d1;
+    margin-bottom: 20px;
+}
+
+.about-section ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.about-section ul li {
+    padding: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #b8b8d1;
+}
+
+.about-section ul li::before {
+    content: '•';
+    color: #ff8c42;
+    font-size: 24px;
+    position: absolute;
+    left: 0;
+    top: 5px;
+}
+
+/* Reviews Section */
+.reviews-section h2 {
+    justify-self: flex-end;
+    font-size: 28px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #2a2a40;
+}
+
+.review-card {
+    background: var(--bg-primary);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid #2a2a40;
+}
+
+.review-card:hover {
+    background: var(--bg-secondary);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(255, 140, 66, 0.2);
+}
+
+.review-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.review-tag {
+    font-size: 12px;
+    color: #888;
+}
+
+.review-time {
+    font-size: 12px;
+    color: #666;
+}
+
+.review-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+.review-preview {
+    font-size: 14px;
+    color: #b8b8d1;
+    margin-bottom: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+}
+
+.review-footer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.review-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff8c42, #ff4757);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.review-author {
+    font-size: 14px;
+    color: #b8b8d1;
+}
+
+.review-comments {
+    margin-left: auto;
+    font-size: 13px;
+    color: #888;
+}
+
+/* Dialog/Modal */
+.dialog-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+    padding: 20px;
+}
+
+.dialog-overlay.active {
+    display: flex;
+}
+
+.dialog {
+    background: var(--bg-primary);
+    border-radius: 20px;
+    padding: 40px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: slideUp 0.3s ease;
+}
+
+.close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #ff4757;
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.close-btn:hover {
+    background: #ff3345;
+    transform: rotate(90deg);
+}
+
+.dialog h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #ff8c42;
+}
+
+.dialog-meta {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+    font-size: 14px;
+    color: #888;
+    flex-wrap: wrap;
+}
+
+.dialog-content {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #b8b8d1;
+}
+
+.dialog-author-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: 1px solid #2a2a40;
+}
+
+.dialog-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff8c42, #ff4757);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.rating {
+    color: #ffd700;
+    font-size: 20px;
+}
+
+/* Login Page Styles */
 .login-page-container {
     position: fixed;
     left: 0;
     top: 0;
     width: 50%;
     height: 100vh;
-    background: #ffffff;
+    background: var(--bg-primary);
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 1000;
     box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
-    
-    /* Initially hidden - takes no space */
     transform: translateX(-100%);
     opacity: 0;
     visibility: hidden;
     transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-                opacity 0.5s ease,
-                visibility 0.5s;
+        opacity 0.5s ease,
+        visibility 0.5s;
 }
 
-/* Active state - shown */
 .login-page-container.login-page-active {
     transform: translateX(0);
     opacity: 1;
@@ -756,7 +753,7 @@
 .login-page-form-wrapper h2 {
     font-size: 32px;
     font-weight: 600;
-    color: #333;
+    color: var(--text-secondary);
     margin-bottom: 40px;
 }
 
@@ -768,7 +765,7 @@
     display: block;
     font-size: 14px;
     font-weight: 500;
-    color: #333;
+    color: var(--text-secondary);
     margin-bottom: 8px;
 }
 
@@ -792,7 +789,6 @@
     color: #999;
 }
 
-/* Checkbox */
 .login-page-checkbox-wrapper {
     display: flex;
     align-items: center;
@@ -822,7 +818,6 @@
     text-decoration: underline;
 }
 
-/* Button with yellow-orange palette */
 .login-page-btn {
     width: 100%;
     padding: 14px;
@@ -848,7 +843,6 @@
     transform: translateY(0);
 }
 
-/* Divider */
 .login-page-divider {
     display: flex;
     align-items: center;
@@ -869,7 +863,6 @@
     padding: 0 15px;
 }
 
-/* Social Login Buttons */
 .login-page-social-login {
     display: flex;
     flex-direction: column;
@@ -924,7 +917,6 @@
     text-decoration: underline;
 }
 
-/* Right side - empty but styled */
 .login-page-image-section {
     position: fixed;
     right: 0;
@@ -934,7 +926,6 @@
     background: #f5f5f5;
 }
 
-/* Close button for login container */
 .login-page-close-btn {
     position: absolute;
     top: 20px;
@@ -959,46 +950,790 @@
     color: #333;
 }
 
-/* Responsive Design */
-@media (max-width: 968px) {
-    .login-page-container {
-        width: 70%;
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
     }
-    
-    .login-page-image-section {
-        width: 30%;
+    to {
+        opacity: 1;
     }
 }
 
-@media (max-width: 768px) {
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes floatChunks {
+    0%, 100% {
+        transform: translateY(-50%);
+    }
+    50% {
+        transform: translateY(-54%);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(200px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes floatCard {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ============================================ */
+
+/* Large Desktop (1400px and above) - Default styles */
+
+/* Medium Desktop and Large Tablets (1024px - 1399px) */
+@media (max-width: 1399px) {
+    .container {
+        margin-left: 50px;
+        padding: 40px 20px;
+    }
+
+    h1 {
+        font-size: 48px;
+    }
+
+    .burger-section {
+        width: 600px;
+        height: 500px;
+    }
+
+    .burger-wrapper {
+        width: 450px;
+        right: 30px;
+        top: 250px;
+    }
+
+    .burger-image {
+        width: 400px;
+    }
+
+    .meat-chunks-image,
+    .fries-image {
+        width: 450px;
+    }
+
+    .fries-wrapper {
+        width: 400px;
+        right: -70px;
+    }
+
+    .fries-bag-image {
+        width: 400px;
+    }
+}
+
+/* Tablets and Small Desktops (768px - 1023px) */
+@media (max-width: 1023px) {
+    body {
+        margin-top: 8vh;
+    }
+
+    .home-page {
+        padding: 40px 20px;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        margin-left: 0;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .home-page .container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .info-section {
+        max-width: 100%;
+        margin-bottom: 40px;
+    }
+
+    h1 {
+        font-size: 42px;
+    }
+
+    .subtitle {
+        font-size: 16px;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .stats-bar {
+        justify-content: center;
+    }
+
+    .share-buttons {
+        justify-content: center;
+    }
+
+    .burger-section {
+        width: 500px;
+        height: 450px;
+        margin: 0 auto;
+    }
+
+    .burger-wrapper {
+        width: 380px;
+        right: 20px;
+        top: 220px;
+    }
+
+    .burger-image {
+        width: 350px;
+    }
+
+    .burger-price-badge {
+        width: 70px;
+        height: 70px;
+        top: 18%;
+        right: 58%;
+    }
+
+    .currency {
+        font-size: 22px;
+    }
+
+    .amount {
+        font-size: 24px;
+    }
+
+    .fries-price-badge {
+        width: 70px;
+        height: 70px;
+    }
+
+    .meat-chunks-image,
+    .fries-image {
+        width: 380px;
+    }
+
+    .fries-wrapper {
+        width: 350px;
+        right: -60px;
+    }
+
+    .fries-bag-image {
+        width: 350px;
+    }
+
+    .feature-card {
+        font-size: 13px;
+        padding: 12px 18px;
+    }
+
+    .about-section {
+        padding-right: 0;
+    }
+
+    .about-section h1 {
+        font-size: 36px;
+    }
+
+    .about-section h2 {
+        font-size: 24px;
+    }
+
+    .reviews-section {
+        margin-top: 40px;
+    }
+
+    .login-page-container {
+        width: 60%;
+    }
+
+    .login-page-image-section {
+        width: 40%;
+    }
+}
+
+/* Mobile Landscape and Small Tablets (640px - 767px) */
+@media (max-width: 767px) {
+    body {
+        margin-top: 10vh;
+    }
+
+    .home-page {
+        padding: 30px 15px;
+        min-height: auto;
+    }
+
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
+
+    .tags {
+        gap: 10px;
+        justify-content: center;
+    }
+
+    .original-tag,
+    .authentic-tag {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+
+    .subtitle {
+        font-size: 15px;
+        margin-bottom: 30px;
+    }
+
+    .buttons {
+        flex-direction: column;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .button {
+        width: 100%;
+        padding: 14px 30px;
+        font-size: 15px;
+    }
+
+    .stats-bar {
+        gap: 15px;
+        margin: 20px 0 30px 0;
+    }
+
+    .stat-number {
+        font-size: 28px;
+    }
+
+    .stat-label {
+        font-size: 14px;
+    }
+
+    .stat-divider {
+        height: 40px;
+        width: 2px;
+    }
+
+    .burger-section {
+        width: 100%;
+        max-width: 400px;
+        height: 380px;
+    }
+
+    .burger-wrapper {
+        width: 300px;
+        right: 50%;
+        transform: translate(50%, -50%);
+        top: 200px;
+    }
+
+    .burger-image {
+        width: 280px;
+    }
+
+    .burger-price-badge {
+        width: 60px;
+        height: 60px;
+        top: 10%;
+        right: 15%;
+    }
+
+    .currency {
+        font-size: 18px;
+    }
+
+    .amount {
+        font-size: 20px;
+    }
+
+    .fries-price-badge {
+        width: 60px;
+        height: 60px;
+        top: 30%;
+        right: 5%;
+    }
+
+    .meat-chunks-image {
+        width: 280px;
+        right: 50%;
+        transform: translate(50%, -50%);
+        top: 150px;
+    }
+
+    .fries-image {
+        width: 280px;
+        right: 50%;
+        transform: translate(50%, -50%);
+        top: 180px;
+    }
+
+    .fries-wrapper {
+        width: 280px;
+        right: 50%;
+        transform: translate(50%, -50%);
+        top: 250px;
+    }
+
+    .fries-bag-image {
+        width: 280px;
+    }
+
+    .feature-card {
+        font-size: 11px;
+        padding: 10px 15px;
+    }
+
+    .card-1 {
+        top: 5%;
+        left: 5%;
+    }
+
+    .card-2 {
+        top: 15%;
+        right: 5%;
+    }
+
+    .card-3 {
+        bottom: 15%;
+        left: 5%;
+    }
+
+    .share-buttons {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: 250px;
+        margin: 10px auto 0;
+    }
+
+    .share-button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .about-section h1 {
+        font-size: 28px;
+    }
+
+    .about-section h2 {
+        font-size: 22px;
+        margin-top: 30px;
+    }
+
+    .about-section p {
+        font-size: 15px;
+    }
+
+    .review-card {
+        padding: 15px;
+    }
+
+    .review-title {
+        font-size: 16px;
+    }
+
+    .dialog {
+        padding: 30px 20px;
+    }
+
+    .dialog h3 {
+        font-size: 26px;
+    }
+
+    .dialog-content {
+        font-size: 15px;
+    }
+
+    .login-page-container {
+        width: 80%;
+    }
+
+    .login-page-image-section {
+        width: 20%;
+    }
+
+    .login-page-form-wrapper {
+        padding: 30px 25px;
+    }
+
+    .login-page-form-wrapper h2 {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+}
+
+/* Mobile Portrait (480px - 639px) */
+@media (max-width: 639px) {
+    h1 {
+        font-size: 32px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+    }
+
+    .stats-bar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .stat-divider {
+        display: none;
+    }
+
+    .stat-item {
+        width: 100%;
+    }
+
+    .burger-section {
+        height: 350px;
+        max-width: 350px;
+    }
+
+    .burger-wrapper {
+        width: 260px;
+        top: 180px;
+    }
+
+    .burger-image {
+        width: 240px;
+    }
+
+    .meat-chunks-image,
+    .fries-image {
+        width: 240px;
+    }
+
+    .fries-wrapper {
+        width: 240px;
+    }
+
+    .fries-bag-image {
+        width: 240px;
+    }
+
+    .about-section h1 {
+        font-size: 26px;
+    }
+
+    .about-section h2 {
+        font-size: 20px;
+    }
+
     .login-page-container {
         width: 100%;
     }
-    
+
     .login-page-image-section {
         display: none;
     }
-    
-    .login-page-form-wrapper {
-        padding: 30px 20px;
+}
+
+/* Small Mobile (320px - 479px) */
+@media (max-width: 479px) {
+    body {
+        margin-top: 12vh;
     }
-    
-    .login-page-content-wrapper h1 {
-        font-size: 36px;
+
+    .home-page {
+        padding: 20px 10px;
     }
-    
-    .login-page-content-wrapper p {
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .original-tag,
+    .authentic-tag {
+        padding: 6px 15px;
+        font-size: 11px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+        margin-bottom: 25px;
+    }
+
+    .button {
+        padding: 12px 25px;
+        font-size: 14px;
+    }
+
+    .stat-number {
+        font-size: 24px;
+    }
+
+    .stat-label {
+        font-size: 13px;
+    }
+
+    .burger-section {
+        height: 300px;
+        max-width: 300px;
+    }
+
+    .burger-wrapper {
+        width: 220px;
+        top: 160px;
+    }
+
+    .burger-image {
+        width: 200px;
+    }
+
+    .burger-price-badge,
+    .fries-price-badge {
+        width: 50px;
+        height: 50px;
+    }
+
+    .currency {
         font-size: 16px;
+    }
+
+    .amount {
+        font-size: 18px;
+    }
+
+    .meat-chunks-image,
+    .fries-image {
+        width: 200px;
+    }
+
+    .fries-wrapper {
+        width: 200px;
+    }
+
+    .fries-bag-image {
+        width: 200px;
+    }
+
+    .feature-card {
+        font-size: 10px;
+        padding: 8px 12px;
+    }
+
+    .feature-card .emoji {
+        font-size: 16px;
+    }
+
+    .share-prim-text {
+        font-size: 14px;
+    }
+
+    .share-sub-text {
+        font-size: 11px;
+    }
+
+    .share-button {
+        padding: 8px 8px;
+        font-size: 13px;
+    }
+
+    .about-section h1 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .about-section h2 {
+        font-size: 18px;
+        margin-top: 25px;
+    }
+
+    .about-section p {
+        font-size: 14px;
+    }
+
+    .about-section ul li {
+        font-size: 14px;
+        padding: 8px 0;
+    }
+
+    .review-card {
+        padding: 12px;
+    }
+
+    .review-title {
+        font-size: 15px;
+    }
+
+    .review-preview {
+        font-size: 13px;
+    }
+
+    .review-footer {
+        gap: 8px;
+    }
+
+    .review-avatar {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .review-author {
+        font-size: 13px;
+    }
+
+    .dialog {
+        padding: 25px 15px;
+    }
+
+    .dialog h3 {
+        font-size: 22px;
+    }
+
+    .dialog-content {
+        font-size: 14px;
+    }
+
+    .close-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 18px;
+    }
+
+    .login-page-form-wrapper {
+        padding: 25px 20px;
+    }
+
+    .login-page-form-wrapper h2 {
+        font-size: 24px;
+        margin-bottom: 25px;
+    }
+
+    .login-page-input-box {
+        margin-bottom: 20px;
+    }
+
+    .login-page-input-box input {
+        padding: 12px 14px;
+        font-size: 14px;
+    }
+
+    .login-page-btn {
+        padding: 12px;
+        font-size: 15px;
     }
 }
 
-@media (max-width: 480px) {
-    .login-page-trigger-btn {
-        padding: 14px 36px;
+/* Extra Small Devices (below 320px) */
+@media (max-width: 319px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .burger-section {
+        height: 250px;
+        max-width: 250px;
+    }
+
+    .burger-wrapper {
+        width: 180px;
+        top: 140px;
+    }
+
+    .burger-image {
+        width: 160px;
+    }
+
+    .meat-chunks-image,
+    .fries-image,
+    .fries-wrapper {
+        width: 160px;
+    }
+
+    .fries-bag-image {
+        width: 160px;
+    }
+
+    .about-section h1 {
+        font-size: 22px;
+    }
+
+    .about-section h2 {
         font-size: 16px;
     }
-    
+
     .login-page-form-wrapper h2 {
+        font-size: 22px;
+    }
+}
+
+/* Landscape Orientation Specific */
+@media (max-height: 500px) and (orientation: landscape) {
+    .home-page {
+        min-height: auto;
+        padding: 20px 10px;
+    }
+
+    .burger-section {
+        height: 300px;
+    }
+
+    h1 {
         font-size: 28px;
+    }
+
+    .subtitle {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+
+    .stats-bar {
+        margin: 15px 0 20px 0;
+    }
+
+    .dialog {
+        max-height: 90vh;
+    }
+}
+
+/* High Resolution Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .burger-image,
+    .meat-chunks-image,
+    .fries-image,
+    .fries-bag-image {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
     }
 }

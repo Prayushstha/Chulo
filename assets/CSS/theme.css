@@ -152,6 +152,8 @@ a:hover {
 .buy-button {
     background: var(--gradient-primary) !important;
     box-shadow: 0 4px 6px rgba(255, 107, 53, 0.25) !important;
+    border: none !important;
+    border-radius: 14px !important;
 }
 
 .buy-button:hover {

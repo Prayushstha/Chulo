@@ -46,7 +46,9 @@
         </div>
       </a>
       <ul>
-        <li class="navbar-list" id="navhome"><a href="homepage.html">Home</a></li>
+        <li class="navbar-list" id="navhome">
+          <a href="homepage.html">Home</a>
+        </li>
         <li class="navbar-list" id="navtrending">
           <a href="homepage.html#Trending">Trending</a>
         </li>
@@ -278,7 +280,7 @@
             <h3>Krishna Neupane</h3>
             <p>Frontend Developer</p>
           </div>
-          <div class="team-member " onclick="show_team_member_details(7)">
+          <div class="team-member" onclick="show_team_member_details(7)">
             <div class="member-photo">
               <img
                 src="assets\images\Team\Prayush Shrestha.png"
@@ -292,37 +294,43 @@
       </section>
 
       <!-- dialog -->
-<div class="team-dialog" id="teamModal">
-  <div class="dialog-card">
-    <div class="dialog-header">
-      <div class="dialog-photo">
-        <img id="modalPhoto" src="" alt="" />
-      </div>
-      <div class="dialog-info">
-        <h2 id="modalName"></h2>
-        <p id="modalRole"></p>
-        <div class="dialog-socials">
-          <span>🔗 Connect</span>
+      <div class="team-dialog" id="teamModal">
+        <div class="dialog-card">
+          <div class="dialog-header">
+            <div class="dialog-photo">
+              <img id="modalPhoto" src="" alt="" />
+            </div>
+            <div class="dialog-info">
+              <h2 id="modalName"></h2>
+              <p id="modalRole"></p>
+              <div class="dialog-socials">
+                <span>🔗 Connect</span>
+              </div>
+            </div>
+          </div>
+          <div class="dialog-body">
+            <div class="dialog-section">
+              <h3>Description</h3>
+              <p id="modalDescription"></p>
+            </div>
+            <div class="dialog-section">
+              <h3>Contributions</h3>
+              <p id="modalContributions"></p>
+            </div>
+            <div class="dialog-section">
+              <h3>Extras</h3>
+              <p id="modalExtras"></p>
+            </div>
+          </div>
+          <button
+            class="dialog-close"
+            aria-label="Close dialog"
+            onclick="teamModal.classList.remove('active')"
+          >
+            ×
+          </button>
         </div>
       </div>
-    </div>
-    <div class="dialog-body">
-      <div class="dialog-section">
-        <h3>Description</h3>
-        <p id="modalDescription"></p>
-      </div>
-      <div class="dialog-section">
-        <h3>Contributions</h3>
-        <p id="modalContributions"></p>
-      </div>
-      <div class="dialog-section">
-        <h3>Extras</h3>
-        <p id="modalExtras"></p>
-      </div>
-    </div>
-    <button class="dialog-close" aria-label="Close dialog" onclick=" teamModal.classList.remove('active');">×</button>
-  </div>
-</div>
       <!-- Location Section -->
       <section class="location">
         <div class="location-container">
@@ -371,20 +379,63 @@
       </section>
     </div>
 
+    <!-- Cart -->
+    <aside class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-header">
+        <h2><i class="fas fa-shopping-bag"></i> Your Cart</h2>
+        <button class="clear-cart-btn" onclick="clearCart()">Clear</button>
+        <button class="close-cart-btn" id="close-cart-btn">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+
+      <div class="cart-items-container" id="cart-items-container">
+        <!-- Cart Items will be injected here via JS -->
+        <div class="empty-cart-message">
+          <i class="fas fa-shopping-basket"></i>
+          <p>Your cart is empty</p>
+        </div>
+      </div>
+
+      <div class="cart-footer">
+        <div class="billing-summary">
+          <div class="billing-row">
+            <span>Subtotal</span>
+            <span id="cart-subtotal">Rs. 0</span>
+          </div>
+          <div class="billing-row">
+            <span>VAT (13%)</span>
+            <span id="cart-tax">Rs. 0</span>
+          </div>
+          <div class="billing-row total">
+            <span>Total</span>
+            <span id="cart-total">Rs. 0</span>
+          </div>
+        </div>
+        <button class="checkout-btn" onclick="checkout()">
+          Proceed to Checkout
+        </button>
+      </div>
+    </aside>
+
     <!-- Footer -->
     <footer class="footer">
       <div class="footer-grid">
         <div class="footer-brand">
           <h2>Chulo</h2>
           <p>Bold flavors and fast bites served fresh every day.</p>
-          <p>Founded in the heart of Bhaktapur in 2018, KhajaTime began with a simple mission: to bring the authentic taste of Nepali cuisine to food lovers across the valley.</p>
+          <p>
+            Founded in the heart of Bhaktapur in 2018, KhajaTime began with a
+            simple mission: to bring the authentic taste of Nepali cuisine to
+            food lovers across the valley.
+          </p>
         </div>
 
         <div class="footer-links">
           <h4>Quick Links</h4>
           <a href="homepage.html#home-link">Home</a>
           <a href="homepage.html#Trending">Trending</a>
-          <a href="#">Reviews</a>
+          <a href="index.html#review-section-link">Reviews</a>
           <a href="AboutUS.html">About</a>
         </div>
 
@@ -416,7 +467,7 @@
     <!-- JS -->
     <script src="assets/Backend/ui-enhancer.js"></script>
     <script src="assets/Backend/descriptions.js"></script>
-     <script src="assets/Backend/navbar.js"></script>
-
+    <script src="assets/Backend/navbar.js"></script>
+    <script src="assets/Backend/cart.js"></script>
   </body>
 </html>

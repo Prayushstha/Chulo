@@ -119,6 +119,9 @@ function updateNavbar() {
                 .navbar-profile-menu-item.logout-btn:hover {
                     background-color: #2d1519;
                 }
+                    #sign-up-btn{
+                    display:none;
+                    }
             `;
             document.head.appendChild(style);
         }

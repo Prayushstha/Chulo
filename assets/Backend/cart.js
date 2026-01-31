@@ -158,7 +158,7 @@ function renderCartItems() {
             <div class="empty-cart-message">
                 <i class="fas fa-shopping-basket"></i>
                 <p>Your cart is empty</p>
-                <button class="buy-button" onclick="toggleCart(false)" style="margin-top:20px; width:auto; padding: 10px 20px;">Start Shopping</button>
+                <button class="buy-button" onclick="toggleCart(false)" style="margin-top:20px; width:auto; padding: 10px 20px;"><a href="homepage.html#Around-The-Globe">Start Shopping</a></button>
             </div>
         `;
         return;

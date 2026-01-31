@@ -89,10 +89,12 @@ class UIEnhancer {
 
         // Insert before cart icon
         const cartItem = document.getElementById('navcart');
+        const profileIcon = document.getElementById('navprofile');
         if (cartItem) {
             navbar.insertBefore(themeToggle, cartItem);
         } else {
-            navbar.appendChild(themeToggle);
+            navbar.insertBefore(themeToggle, profileIcon);
+            // navbar.appendChild(themeToggle);
         }
 
         console.log('Theme toggle created');

@@ -169,59 +169,89 @@
     </div>
     <!-- Image slider -->
     <div class="slider">
-  <div class="slider__item">
-    <label class="slider__control">
-      <input type="radio" name="slider" checked />
-    </label>
-    <div class="slider__content">
-      <img src="assets/images/slider/1.jpg" alt="" />
+      <div class="slider__item">
+        <label class="slider__control">
+          <input type="radio" name="slider" checked />
+        </label>
+        <div class="slider__content">
+          <img src="assets/images/slider/1.jpg" alt="" />
+        </div>
+      </div>
+      <div class="slider__item">
+        <label class="slider__control">
+          <input type="radio" name="slider" />
+        </label>
+        <div class="slider__content">
+          <img src="assets/images/slider/2.jpg" alt="" />
+        </div>
+      </div>
+      <div class="slider__item">
+        <label class="slider__control">
+          <input type="radio" name="slider" />
+        </label>
+        <div class="slider__content">
+          <img src="assets/images/slider/3.jpg" alt="" />
+        </div>
+      </div>
+      <div class="slider__item">
+        <label class="slider__control">
+          <input type="radio" name="slider" />
+        </label>
+        <div class="slider__content">
+          <img src="assets/images/slider/4.jpg" alt="" />
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="slider__item">
-    <label class="slider__control">
-      <input type="radio" name="slider" />
-    </label>
-    <div class="slider__content">
-      <img src="assets/images/slider/2.jpg" alt="" />
-    </div>
-  </div>
-  <div class="slider__item">
-    <label class="slider__control">
-      <input type="radio" name="slider" />
-    </label>
-    <div class="slider__content">
-      <img src="assets/images/slider/3.jpg" alt="" />
-    </div>
-  </div>
-  <div class="slider__item">
-    <label class="slider__control">
-      <input type="radio" name="slider" />
-    </label>
-    <div class="slider__content">
-      <img src="assets/images/slider/4.jpg" alt="" />
-    </div>
-  </div>
-</div>
     <!-- Main Content -->
     <div class="name">
       <p id="categories">CATEGORIES</p>
     </div>
-<!-- Search bar -->
-<div class="search">
-    <form class="form" id="searchForm">
+    <!-- Mobile view Search bar -->
+    <div class="search">
+      <form class="form" id="searchForm">
         <button id="searchButton">
-            <svg width="17" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="search">
-                <path d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9" stroke="currentColor" stroke-width="1.333" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
+          <svg
+            width="17"
+            height="16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-labelledby="search"
+          >
+            <path
+              d="M7.667 12.667A5.333 5.333 0 107.667 2a5.333 5.333 0 000 10.667zM14.334 14l-2.9-2.9"
+              stroke="currentColor"
+              stroke-width="1.333"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            ></path>
+          </svg>
         </button>
-        <input class="input" id="searchInput" placeholder="Type your text" required="" type="text">
+        <input
+          class="input"
+          id="searchInput"
+          placeholder="Type your text"
+          required=""
+          type="text"
+        />
         <button class="reset" type="reset" id="resetButton">
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-6 w-6"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            ></path>
+          </svg>
         </button>
-    </form>
-</div>
+      </form>
+    </div>
 
     <div class="food-preview-container">
       <div class="sidebar">
@@ -385,8 +415,8 @@
         <div class="footer-links">
           <h4>Quick Links</h4>
           <a href="#home-link">Home</a>
-          <a href="index.html#Trending">Trending</a>
-          <a href="#">Reviews</a>
+          <a href="homepage.html#Trending">Trending</a>
+          <a href="index.html#review-section-link">Reviews</a>
           <a href="AboutUS.html">About</a>
         </div>
 
@@ -398,13 +428,13 @@
 
           <div class="social-icons">
             <a href="https://www.facebook.com/prayush.stha.56"
-              ><img src="assets\images\others\facebookicon.webp" alt="Prayush"
+              ><img src="assets/images/others/facebook-logo.png" alt="Prayush"
             /></a>
             <a href="https://www.facebook.com/krishna.neupane.408127"
-              ><img src="assets\images\others\facebookicon.webp" alt="Krishna"
+              ><img src="assets/images/others/facebook-logo.png" alt="Krishna"
             /></a>
             <a href="https://www.facebook.com/prashil.baidhya.2025"
-              ><img src="assets\images\others\facebookicon.webp" alt="Prashil"
+              ><img src="assets/images/others/facebook-logo.png" alt="Prashil"
             /></a>
           </div>
         </div>
@@ -416,8 +446,6 @@
     </footer>
 
     <!-- Scripts -->
-
-    <script src="assets/Backend/ordering.js"></script>
     <script src="assets/Backend/cart.js"></script>
     <script src="assets/Backend/search.js"></script>
     <script src="assets/Backend/descriptions.js"></script>
@@ -540,11 +568,10 @@
         console.log("DOM Content Loaded");
         renderAllCategories();
       });
-
-
-
     </script>
-
- <script src="assets/Backend/navbar.js"></script>
+  <script src="assets/Backend/cart.js"></script>
+    <script src="assets/Backend/search.js"></script>
+    <script src="assets/Backend/descriptions.js"></script>
+    <script src="assets/Backend/navbar.js"></script>
   </body>
 </html>
