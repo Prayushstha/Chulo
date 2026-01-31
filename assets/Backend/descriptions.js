@@ -487,6 +487,7 @@ document.addEventListener('DOMContentLoaded', function() {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && teamModal && teamModal.classList.contains('active')) {
             teamModal.classList.remove('active');
+            document.body.style.overflow = '';
         }
     });
 });
