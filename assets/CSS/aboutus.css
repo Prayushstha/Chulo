@@ -19,7 +19,8 @@ body {
 }
 
 .hero {
-    background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400"><rect fill="%23d84315" width="1200" height="400"/><circle cx="200" cy="200" r="150" fill="%23ff6f00" opacity="0.3"/><circle cx="1000" cy="250" r="180" fill="%23bf360c" opacity="0.3"/></svg>');
+      background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                url('../images/others/About-Us-bg.jpg') no-repeat center center;
     background-size: cover;
     background-position: center;
     height: 400px;
@@ -33,7 +34,6 @@ body {
 .hero-content h1 {
     font-size: 56px;
     margin-bottom: 15px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
