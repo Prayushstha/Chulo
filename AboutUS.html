@@ -325,7 +325,8 @@
           <button
             class="dialog-close"
             aria-label="Close dialog"
-            onclick="teamModal.classList.remove('active')"
+            onclick="teamModal.classList.remove('active');
+            document.body.style.overflow = ''; "
           >
             ×
           </button>
