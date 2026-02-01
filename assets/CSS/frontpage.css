@@ -32,8 +32,8 @@ body {
 }
 
 .container {
-    max-width: 1400px;
-    width: 100%;
+    width: calc(100% - 10vh);
+    height:calc(100% - 10vh);
     padding: 0 20px;
     display: flex;
     align-items: center;
@@ -214,11 +214,13 @@ h1 {
 
 .burger-section {
     display: flex;
+    justify-self: flex-end;
     flex-direction: row;
     position: relative;
     width: 700px;
     height: 600px;
     animation: slideInRight 1.2s ease-out;
+    margin-left: auto;
 }
 
 .feature-card {
@@ -482,7 +484,7 @@ body {
     display: grid;
     grid-template-columns: 1fr 400px;
     gap: 40px;
-    
+
     margin-left: 100px;
     padding: 40px;
 }
@@ -955,6 +957,7 @@ body {
     from {
         opacity: 0;
     }
+
     to {
         opacity: 1;
     }
@@ -965,6 +968,7 @@ body {
         opacity: 0;
         transform: translateY(50px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -972,9 +976,12 @@ body {
 }
 
 @keyframes floatChunks {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(-50%);
     }
+
     50% {
         transform: translateY(-54%);
     }
@@ -985,6 +992,7 @@ body {
         opacity: 0;
         transform: translateX(-50px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -996,6 +1004,7 @@ body {
         opacity: 0;
         transform: translateX(200px);
     }
+
     to {
         opacity: 1;
         transform: translateX(0);
@@ -1003,9 +1012,12 @@ body {
 }
 
 @keyframes floatCard {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0px);
     }
+
     50% {
         transform: translateY(-15px);
     }
@@ -1728,7 +1740,9 @@ body {
 }
 
 /* High Resolution Displays */
-@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
     .burger-image,
     .meat-chunks-image,
     .fries-image,
