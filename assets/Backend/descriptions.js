@@ -398,12 +398,12 @@ const desc = document.getElementById('desc');
 function showDialog(itemId) {
   const item = foodItems.find(food => food.id === itemId);
   if (item) {
-    updateDialogContent(item);
+    updateDialogContent(item, itemId);
     foodDialog.showModal();
   }
 }
 
-function updateDialogContent(item) {
+function updateDialogContent(item, itemId) {
   const imgElement = foodDialog.querySelector(".food-description-picture");
   imgElement.src = `assets/images/food-pictures/${item.image}`;
   imgElement.alt = item.name;
@@ -438,6 +438,12 @@ function updateDialogContent(item) {
     item.nutrients.fiber;
   nutrientValues[4].querySelector(".nutrients-number").textContent =
     item.nutrients.protein;
+
+  // Set the buy button's onclick handler dynamically
+  const buyButton = foodDialog.querySelector('.buy-button');
+  if (buyButton) {
+    buyButton.onclick = () => buyNow(itemId);
+  }
 }
 
 function closeDialog() {
@@ -449,7 +455,6 @@ foodDialog.addEventListener("click", (e) => {
     closeDialog();
   }
 });
-
 
 
 

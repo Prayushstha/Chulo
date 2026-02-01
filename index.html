@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="assets/CSS/frontpage.css" />
     <link rel="stylesheet" href="assets/CSS/navbar.css" />
     <link rel="stylesheet" href="assets/CSS/theme.css" />
+    <link rel="stylesheet" href="assets/CSS/footer.css">
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -144,74 +145,42 @@
         </div>
 
         <!-- Login Panel -->
-        <div class="login-page-container">
-          <button
-            class="login-page-close-btn"
-            onclick="hideLoginPanel()"
-            aria-label="Close login panel"
-          >
-            &times;
-          </button>
-
+         <div class="login-page-container">
           <div class="login-page-form-wrapper">
+
             <h2>Get Started Now</h2>
+            <p id="errors"></p>
+            <form method="post" id="login-page-signup-form" onsubmit="return register(event);">
+  <div class="login-page-input-box">
+    <label for="login-page-name">Name</label>
+    <input type="text" id="login-page-name" name="username" required placeholder="Enter your name" />
+  </div>
 
-            <form method="post" id="login-page-signup-form">
-              <div class="login-page-input-box">
-                <label for="login-page-name">Name</label>
-                <input
-                  type="text"
-                  id="login-page-name"
-                  required
-                  placeholder="Enter your name"
-                  name="name"
-                />
-              </div>
+  <div class="login-page-input-box">
+    <label for="login-page-email">Email address</label>
+    <input type="email" id="login-page-email" required placeholder="Enter your email" name="email" />
+  </div>
 
-              <div class="login-page-input-box">
-                <label for="login-page-email">Email address</label>
-                <input
-                  type="email"
-                  id="login-page-email"
-                  required
-                  placeholder="Enter your email"
-                  name="email"
-                />
-              </div>
+  <div class="login-page-input-box">
+    <label for="login-page-password">Password</label>
+    <input type="password" id="login-page-password" required placeholder="Enter your password" name="password" />
+  </div>
 
-              <div class="login-page-input-box">
-                <label for="login-page-password">Password</label>
-                <input
-                  type="password"
-                  id="login-page-password"
-                  required
-                  placeholder="Enter your password"
-                  name="password"
-                />
-              </div>
+  <div class="login-page-checkbox-wrapper">
+    <input type="checkbox" id="login-page-terms" required />
+    <label for="login-page-terms">I agree to the <a href="#" class="login-page-terms-link">terms & policy</a></label>
+  </div>
 
-              <div class="login-page-checkbox-wrapper">
-                <input type="checkbox" id="login-page-terms" required />
-                <label for="login-page-terms">
-                  I agree to the
-                  <a href="#" class="login-page-terms-link">terms & policy</a>
-                </label>
-              </div>
-
-              <button type="submit" class="login-page-btn" name="signup">
-                Signup
-              </button>
+  <button type="submit" class="login-page-btn" name="signup">
+    Signup
+  </button>
             </form>
-
             <div class="login-page-divider">
               <span>Or</span>
             </div>
 
             <div class="login-page-social-login">
-              <button
-                class="login-page-social-btn login-page-google-btn"
-                type="button"
-              >
+              <button class="login-page-social-btn login-page-google-btn" onclick="alert(`Under development. Will never develop`);">
                 <svg
                   width="20"
                   height="20"
@@ -239,10 +208,7 @@
                 Sign in with Google
               </button>
 
-              <button
-                class="login-page-social-btn login-page-apple-btn"
-                type="button"
-              >
+              <button class="login-page-social-btn login-page-apple-btn"  onclick="alert(`Under development. Will never develop`);">
                 <svg
                   width="20"
                   height="20"
@@ -262,9 +228,7 @@
             <div class="login-page-signup-text">
               <span
                 >Have an account?
-                <a href="signup.html" class="login-page-signin-link"
-                  >Sign In</a
-                ></span
+                <a href="login.html" class="login-page-signin-link">Sign in</a></span
               >
             </div>
           </div>
@@ -342,7 +306,7 @@
           in Nepal.
         </p>
 
-        <h2>1/ What is Chulo?</h2>
+        <h2>1. What is Chulo?</h2>
         <p>
           Chulo is a fast-food restaurant chain that serves authentic Nepali
           cuisine with a modern twist. You can enjoy freshly prepared meals in
@@ -351,7 +315,7 @@
           accessible to everyone.
         </p>
 
-        <h2>2/ Is Chulo safe and hygienic?</h2>
+        <h2>2. Is Chulo safe and hygienic?</h2>
         <p>
           Yes, we are! We maintain the highest standards of hygiene and food
           safety. Our kitchens are regularly inspected, and we use only fresh,
@@ -359,7 +323,7 @@
           make sure all food served is clean and safe.
         </p>
 
-        <h2>3/ What makes Chulo the best fast-food chain in Nepal?</h2>
+        <h2>3. What makes Chulo the best fast-food chain in Nepal?</h2>
         <p>
           Before building Chulo, we researched many other fast-food chains and
           learned from them. We only keep the good things and improve upon the
@@ -392,7 +356,7 @@
           </li>
         </ul>
 
-        <h2>4/ Our Mission</h2>
+        <h2>4. Our Mission</h2>
         <p>
           At Chulo, our mission is simple: to celebrate Nepali cuisine and make
           it accessible as fast food. We want every Nepali to feel proud of our
@@ -524,6 +488,52 @@
         </div>
       </div>
     </div>
+
+      <!-- Footer-->
+    <footer class="footer">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h2>Chulo</h2>
+          <p>Bold flavors and fast bites served fresh every day.</p>
+          <p>
+            Founded in the heart of Bhaktapur in 2018, KhajaTime began with a
+            simple mission: to bring the authentic taste of Nepali cuisine to
+            food lovers across the valley.
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <a href="#home-link">Home</a>
+          <a href="homepage.html#Trending">Trending</a>
+          <a href="index.html#review-section-link">Reviews</a>
+          <a href="AboutUS.html">About</a>
+        </div>
+
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <p>📍 Durbar Square Road, Bhaktapur 44800, Nepal</p>
+          <p>📞 +977 1-6611234</p>
+          <p>📧 khajatime.fastfood@gmail.com</p>
+
+          <div class="social-icons">
+            <a href="https://www.facebook.com/prayush.stha.56"
+              ><img src="assets/images/others/facebook-logo.png" alt="Prayush"
+            /></a>
+            <a href="https://www.facebook.com/krishna.neupane.408127"
+              ><img src="assets/images/others/facebook-logo.png" alt="Krishna"
+            /></a>
+            <a href="https://www.facebook.com/prashil.baidhya.2025"
+              ><img src="assets/images/others/facebook-logo.png" alt="Prashil"
+            /></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Chulo Fast Food. All rights reserved.</p>
+      </div>
+    </footer>
 
     <!-- Scripts -->
     <script>

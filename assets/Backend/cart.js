@@ -264,7 +264,7 @@ function showConfirmationModal(title, message, onConfirm) {
 // Checkout - Show Mock Payment Modal
 function checkout() {
     if (cart.length === 0) {
-        showNotification('Your cart is empty!', 'error');
+        console.log('Your cart is empty!', 'error');
         return;
     }
 
@@ -397,4 +397,41 @@ function showNotification(message, type = 'info') {
         notification.classList.remove('show');
         setTimeout(() => notification.remove(), 300);
     }, 3000);
+}
+
+// Buy Now - Add to cart and immediately checkout
+function buyNow(itemId) {
+    if (typeof foodItems === 'undefined') {
+        console.error("foodItems data not found!");
+        return;
+    }
+
+    const item = foodItems.find(food => food.id === itemId);
+    if (!item) {
+        showNotification('Item not found!', 'error');
+        return;
+    }
+
+    // Check if item already exists in cart
+    const existingItem = cart.find(cartItem => cartItem.id === itemId);
+
+    if (existingItem) {
+        existingItem.quantity += 1;
+    } else {
+        cart.push({
+            id: item.id,
+            name: item.name,
+            price: item.price,
+            image: `assets/images/food-pictures/${item.image}`,
+            quantity: 1
+        });
+    }
+
+    saveCart();
+    // Now proceed to checkout
+    dialog.close();
+    setTimeout(() => {
+        showPaymentModal();
+    }, 100);
+    
 }

@@ -153,8 +153,8 @@ h1 {
 
 .menu-button {
     background: transparent;
-    color: #000;
-    border: 2px solid #000;
+    color: var(--text-primary);
+    border: 2px solid var(--border-color);
 }
 
 .menu-button a {
@@ -163,7 +163,7 @@ h1 {
 }
 
 .menu-button::before {
-    background: linear-gradient(90deg, #000, #333);
+    background: var(--gradient-menu-button);
 }
 
 .menu-button:hover {
@@ -779,12 +779,12 @@ body {
     border-radius: 8px;
     outline: none;
     transition: border-color 0.3s ease;
-    background: #fafafa;
+    background: var(--bg-primary);
 }
 
 .login-page-input-box input:focus {
     border-color: #FF8C42;
-    background: #ffffff;
+    background: var(--bg-secondary);
 }
 
 .login-page-input-box input::placeholder {
