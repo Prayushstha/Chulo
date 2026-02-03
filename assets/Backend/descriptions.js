@@ -378,7 +378,7 @@ const teamData = {
   7: {
     id: 7,
     name: "Prayush Shrestha",
-    role: "Backend Developer",
+    role: "Fullstack Developer",
     photo: "assets/images/Team/Prayush Shrestha.png",
     description:
       "Proficient in HTML, CSS, JavaScript, and SQL. Skilled in creating responsive designs, managing GitHub repositories for version control, and handling database storage for user data.",
