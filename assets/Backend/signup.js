@@ -143,8 +143,6 @@ function register(event) {
     
     // Save user data
     saveUserData(usernameInput.value, emailInput.value, passwordInput.value);
-    errors.style.color = "green";
-    
     setTimeout(() => {
         window.location.href = 'login.html';
     }, 1500);
@@ -191,7 +189,6 @@ function login(event) {
         
         if (errors) {
             errors.style.color = "green";
-            errors.innerText = result.message;
         }
         
         setTimeout(() => {
