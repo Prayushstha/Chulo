@@ -113,19 +113,11 @@ Chulo/
 - Rating and review system
 - Multi-restaurant support
 
-## Development Team
+## Developer
 
 **Prayush Shrestha**
 - GitHub: [@Prayushstha](https://github.com/Prayushstha)
 - Email: prayushstha1212@gmail.com
-
-**Prashil Baidhya**
-- GitHub:
-- Email:
-
-**Krishna Shrestha**
-- GitHub:
-- Email:
 
 ## Contributing
 
