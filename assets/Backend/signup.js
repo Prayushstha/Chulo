@@ -89,7 +89,6 @@ function validateLogin(email, password) {
     if (userData.email === email && userData.password === password) {
         return { 
             success: true, 
-            message: "Login successful!", 
             user: userData 
         };
     }
@@ -145,7 +144,6 @@ function register(event) {
     // Save user data
     saveUserData(usernameInput.value, emailInput.value, passwordInput.value);
     errors.style.color = "green";
-    errors.innerText = "Registration successful! Redirecting to login...";
     
     setTimeout(() => {
         window.location.href = 'login.html';
