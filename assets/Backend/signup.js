@@ -213,7 +213,7 @@ function login(event) {
 function logout() {
     localStorage.removeItem('isLoggedIn');
     localStorage.removeItem('currentUser');
-    window.location.href = 'homepage.html';
+    window.location.href = '';
 }
 
 // Check if current user is admin
