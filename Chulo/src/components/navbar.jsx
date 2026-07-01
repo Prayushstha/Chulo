@@ -1,4 +1,5 @@
 import '../assets/CSS/navbar.css'
+import { NavLink } from "react-router";
 
 export function NavBar() {
   return (
@@ -56,7 +57,9 @@ export function NavBar() {
             <a href="#Trending">Trending</a>
           </li>
           <li className="navbar-list" id="navabout">
-            <a href="AboutUS.html">About Us</a>
+            <NavLink to="/aboutus">
+              About Us
+              </NavLink>
           </li>
 
           <li className="navbar-list" id="navcart">

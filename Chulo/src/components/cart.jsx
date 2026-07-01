@@ -1,4 +1,5 @@
-    <aside className="cart-sidebar" id="cart-sidebar">
+   export function Cart(){
+     <aside className="cart-sidebar" id="cart-sidebar">
       <div className="cart-header">
         <h2><i className="fas fa-shopping-bag"></i> Your Cart</h2>
         <button className="clear-cart-btn" onclick="clearCart()">Clear</button>
@@ -35,3 +36,5 @@
         </button>
       </div>
     </aside>
+   }
+  

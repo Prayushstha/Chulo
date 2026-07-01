@@ -1,4 +1,6 @@
-   <footer className="footer">
+  
+  export function Footer(){
+      <footer className="footer">
       <div className="footer-grid">
         <div className="footer-brand">
           <h2>Chulo</h2>
@@ -42,3 +44,5 @@
         <p>© 2026 Chulo Fast Food. All rights reserved.</p>
       </div>
     </footer>
+  }
+
