@@ -5,7 +5,7 @@
   --slider-bullets-height: 12px;
   --slider-shadow: 0px 10px 26px 3px rgb(0 0 0 / 10%);
   --slider-border-width: 8px;
-margin-top: 6vh;
+  margin-top: 6vh;
   position: relative;
   display: flex;
   gap: 8px;
@@ -13,10 +13,7 @@ margin-top: 6vh;
   align-items: flex-end;
   justify-content: center;
   width: var(--slider-width);
-  height: calc(
-    var(--slider-bullets-spacing-y) + var(--slider-bullets-height) +
-      var(--slider-height) + (var(--slider-border-width) * 2)
-  );
+  height: calc(var(--slider-bullets-spacing-y) + var(--slider-bullets-height) + var(--slider-height) + (var(--slider-border-width) * 2));
 }
 
 .slider__content {
@@ -31,7 +28,7 @@ margin-top: 6vh;
   border-radius: 16px;
   translate: -50% 0;
 
-  > img {
+  >img {
     position: absolute;
     inset: 0;
     width: 100%;
@@ -44,16 +41,13 @@ margin-top: 6vh;
 .slider__control {
   &::after {
     position: absolute;
-    bottom: calc(
-      50% + (var(--slider-bullets-spacing-y) + var(--slider-bullets-height)) / 2
-    );
+    bottom: calc(50% + (var(--slider-bullets-spacing-y) + var(--slider-bullets-height)) / 2);
     z-index: 10;
     width: 32px;
     height: 64px;
     cursor: pointer;
     content: "";
-    background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"%2F%3E%3C%2Fsvg%3E')
-      white;
+    background: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m15 6l-6 6l6 6"%2F%3E%3C%2Fsvg%3E') white;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 24px 24px;
@@ -65,7 +59,7 @@ margin-top: 6vh;
     width: 48px;
   }
 
-  > input {
+  >input {
     display: block;
     height: var(--slider-bullets-height);
     aspect-ratio: 1/1;
@@ -91,9 +85,10 @@ margin-top: 6vh;
 }
 
 .slider__item {
+
   /* All slides except current */
   &:not(:has(input:checked)) {
-    .slider__content > img {
+    .slider__content>img {
       translate: -100% 0;
     }
 
@@ -108,7 +103,7 @@ margin-top: 6vh;
   &:has(input:checked) {
     z-index: 1;
 
-    .slider__content > img {
+    .slider__content>img {
       translate: 0 0;
     }
 
@@ -118,10 +113,10 @@ margin-top: 6vh;
   }
 
   /* Slides after current slide */
-  &:has(input:checked) ~ & {
+  &:has(input:checked)~& {
     z-index: 5;
 
-    .slider__content > img {
+    .slider__content>img {
       translate: 100% 0;
     }
 
@@ -133,7 +128,7 @@ margin-top: 6vh;
   }
 
   /* Direct next slide */
-  &:has(input:checked) + & {
+  &:has(input:checked)+& {
     z-index: 7;
     display: block;
   }

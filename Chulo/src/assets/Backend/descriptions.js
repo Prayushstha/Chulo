@@ -1,5 +1,5 @@
 // food description data
-const foodItems = [
+export const foodItems = [
   // ATG, Trending
   {
     id: 1,
@@ -303,196 +303,196 @@ const foodItems = [
   },
 ];
 // Team Member Data
-const teamData = {
-  1: {
-    id: 1,
-    name: "Sahil Bhujel",
-    role: "Head Chef",
-    photo: "assets/images/Team/SahilBhujel.jpg",
-    description:
-      "With over a decade of culinary excellence, Sahil combines traditional flavors with modern techniques. His philosophy centers on using locally sourced, organic ingredients to tell a story through every dish served.",
-    contributions:
-      "Curated the signature seasonal menu, established farm-to-table partnerships, and oversees total quality control.",
-    extras:
-      "12+ years experience, Winner of 'Chef of the Year 2023', Himalayan Fusion Specialist",
-  },
-  2: {
-    id: 2,
-    name: "Anjali Maharjan",
-    role: "Restaurant Manager",
-    photo: "assets/images/Team/Anjali Maharjan.png",
-    description:
-      "Anjali is the heartbeat of our front-of-house operations. Her dedication to impeccable service ensures that every guest feels at home, fostering an atmosphere of warmth and sophisticated hospitality.",
-    contributions:
-      "Revamped guest service protocols, led staff training workshops, and increased repeat customer rate by 40%.",
-    extras:
-      "MBA in Hospitality Management, Certified Sommelier Level 1, 8 years in industry",
-  },
-  3: {
-    id: 3,
-    name: "Bikash Thapa",
-    role: "Operations Lead",
-    photo: "assets/images/Team/BikashThapa.png",
-    description:
-      "The backbone of our daily workflow, Bikash ensures seamless coordination between the kitchen and suppliers. His logical approach to logistics guarantees that our ingredients are always fresh and our facility runs without a hitch.",
-    contributions:
-      "Streamlined inventory systems to reduce waste by 25%, optimized delivery logistics, and manages vendor relations.",
-    extras:
-      "Supply Chain Expert, Six Sigma Green Belt, advocate for sustainable sourcing",
-  },
-  4: {
-    id: 4,
-    name: "Sita Tamang",
-    role: "Sous Chef",
-    photo: "assets/images/Team/Sita Tamang.png",
-    description:
-      "Sita brings precision and creativity to the line. Known for her mastery of spices and texture, she works hand-in-hand with the Head Chef to execute complex dishes while mentoring the junior kitchen staff.",
-    contributions:
-      "Standardized recipe portions, leads the pastry and dessert section, and manages kitchen safety protocols.",
-    extras:
-      "Specializes in traditional Newari cuisine, 7 years fine dining experience",
-  },
-  5: {
-    id: 5,
-    name: "Prashil Baidhya",
-    role: "Frontend Developer",
-    photo: "assets/images/Team/PrashilBaidhya.jpg",
-    description:
-      "Has good knowledge of HTML and CSS with a focus on designing user-friendly web pages. Familiar with responsive design principles and improving visual appearance using animations and themes.",
-    contributions:
-      "Developed Front and Home pages, implemented navigation bar, and created website themes with animations.",
-    extras: "Expert in UI debugging and responsive design optimization.",
-  },
-  6: {
-    id: 6,
-    name: "Krishna Neupane",
-    role: "Frontend Developer",
-    photo: "assets/images/Team/KrishnaNeupane.jpg",
-    description:
-      "Possesses basic knowledge of HTML and CSS, understanding how to structure and style web pages. Focuses on designing simple layouts and maintaining consistent styling across the site.",
-    contributions:
-      "Structured and styled the footer section, designed and formatted the About Us page layout.",
-    extras:
-      "Assisted in debugging layout issues and supported team collaboration.",
-  },
-  7: {
-    id: 7,
-    name: "Prayush Shrestha",
-    role: "Fullstack Developer",
-    photo: "assets/images/Team/Prayush Shrestha.png",
-    description:
-      "Proficient in HTML, CSS, JavaScript, and SQL. Skilled in creating responsive designs, managing GitHub repositories for version control, and handling database storage for user data.",
-    contributions:
-      "Implemented MySQL login/signup system, search functionality, image sliders, and managed Vercel deployment.",
-    extras:
-      "GitHub repository management, database integration, and UI functionality debugging.",
-  },
-};
+// const teamData = {
+//   1: {
+//     id: 1,
+//     name: "Sahil Bhujel",
+//     role: "Head Chef",
+//     photo: "assets/images/Team/SahilBhujel.jpg",
+//     description:
+//       "With over a decade of culinary excellence, Sahil combines traditional flavors with modern techniques. His philosophy centers on using locally sourced, organic ingredients to tell a story through every dish served.",
+//     contributions:
+//       "Curated the signature seasonal menu, established farm-to-table partnerships, and oversees total quality control.",
+//     extras:
+//       "12+ years experience, Winner of 'Chef of the Year 2023', Himalayan Fusion Specialist",
+//   },
+//   2: {
+//     id: 2,
+//     name: "Anjali Maharjan",
+//     role: "Restaurant Manager",
+//     photo: "assets/images/Team/Anjali Maharjan.png",
+//     description:
+//       "Anjali is the heartbeat of our front-of-house operations. Her dedication to impeccable service ensures that every guest feels at home, fostering an atmosphere of warmth and sophisticated hospitality.",
+//     contributions:
+//       "Revamped guest service protocols, led staff training workshops, and increased repeat customer rate by 40%.",
+//     extras:
+//       "MBA in Hospitality Management, Certified Sommelier Level 1, 8 years in industry",
+//   },
+//   3: {
+//     id: 3,
+//     name: "Bikash Thapa",
+//     role: "Operations Lead",
+//     photo: "assets/images/Team/BikashThapa.png",
+//     description:
+//       "The backbone of our daily workflow, Bikash ensures seamless coordination between the kitchen and suppliers. His logical approach to logistics guarantees that our ingredients are always fresh and our facility runs without a hitch.",
+//     contributions:
+//       "Streamlined inventory systems to reduce waste by 25%, optimized delivery logistics, and manages vendor relations.",
+//     extras:
+//       "Supply Chain Expert, Six Sigma Green Belt, advocate for sustainable sourcing",
+//   },
+//   4: {
+//     id: 4,
+//     name: "Sita Tamang",
+//     role: "Sous Chef",
+//     photo: "assets/images/Team/Sita Tamang.png",
+//     description:
+//       "Sita brings precision and creativity to the line. Known for her mastery of spices and texture, she works hand-in-hand with the Head Chef to execute complex dishes while mentoring the junior kitchen staff.",
+//     contributions:
+//       "Standardized recipe portions, leads the pastry and dessert section, and manages kitchen safety protocols.",
+//     extras:
+//       "Specializes in traditional Newari cuisine, 7 years fine dining experience",
+//   },
+//   5: {
+//     id: 5,
+//     name: "Prashil Baidhya",
+//     role: "Frontend Developer",
+//     photo: "assets/images/Team/PrashilBaidhya.jpg",
+//     description:
+//       "Has good knowledge of HTML and CSS with a focus on designing user-friendly web pages. Familiar with responsive design principles and improving visual appearance using animations and themes.",
+//     contributions:
+//       "Developed Front and Home pages, implemented navigation bar, and created website themes with animations.",
+//     extras: "Expert in UI debugging and responsive design optimization.",
+//   },
+//   6: {
+//     id: 6,
+//     name: "Krishna Neupane",
+//     role: "Frontend Developer",
+//     photo: "assets/images/Team/KrishnaNeupane.jpg",
+//     description:
+//       "Possesses basic knowledge of HTML and CSS, understanding how to structure and style web pages. Focuses on designing simple layouts and maintaining consistent styling across the site.",
+//     contributions:
+//       "Structured and styled the footer section, designed and formatted the About Us page layout.",
+//     extras:
+//       "Assisted in debugging layout issues and supported team collaboration.",
+//   },
+//   7: {
+//     id: 7,
+//     name: "Prayush Shrestha",
+//     role: "Fullstack Developer",
+//     photo: "assets/images/Team/Prayush Shrestha.png",
+//     description:
+//       "Proficient in HTML, CSS, JavaScript, and SQL. Skilled in creating responsive designs, managing GitHub repositories for version control, and handling database storage for user data.",
+//     contributions:
+//       "Implemented MySQL login/signup system, search functionality, image sliders, and managed Vercel deployment.",
+//     extras:
+//       "GitHub repository management, database integration, and UI functionality debugging.",
+//   },
+// };
 
 
-// food description dialog functionality
-const foodDialog = document.getElementById('dialog');
-const desc = document.getElementById('desc');
+// // food description dialog functionality
+// const foodDialog = document.getElementById('dialog');
+// const desc = document.getElementById('desc');
 
-// Function to show food dialog
-function showDialog(itemId) {
-  const item = foodItems.find(food => food.id === itemId);
-  if (item) {
-    updateDialogContent(item, itemId);
-    foodDialog.showModal();
-  }
-}
+// // Function to show food dialog
+// export function showDialog(itemId) {
+//   const item = foodItems.find(food => food.id === itemId);
+//   if (item) {
+//     updateDialogContent(item, itemId);
+//     foodDialog.showModal();
+//   }
+// }
 
-function updateDialogContent(item, itemId) {
-  const imgElement = foodDialog.querySelector(".food-description-picture");
-  imgElement.src = `assets/images/food-pictures/${item.image}`;
-  imgElement.alt = item.name;
-  foodDialog.querySelector(".food-name").textContent = item.name;
-  foodDialog.querySelector(
-    ".original-price"
-  ).textContent = `₹ ${item.originalPrice}`;
-  foodDialog.querySelector(".discounted-price").textContent = `₹ ${item.price}`;
-  foodDialog.querySelector(".description-content").textContent = item.description;
+// function updateDialogContent(item, itemId) {
+//   const imgElement = foodDialog.querySelector(".food-description-picture");
+//   imgElement.src = `assets/images/food-pictures/${item.image}`;
+//   imgElement.alt = item.name;
+//   foodDialog.querySelector(".food-name").textContent = item.name;
+//   foodDialog.querySelector(
+//     ".original-price"
+//   ).textContent = `₹ ${item.originalPrice}`;
+//   foodDialog.querySelector(".discounted-price").textContent = `₹ ${item.price}`;
+//   foodDialog.querySelector(".description-content").textContent = item.description;
   
-  const vegIcon = foodDialog.querySelector(".food-sticker");
-  const vegText = foodDialog.querySelector(".veg-non");
+//   const vegIcon = foodDialog.querySelector(".food-sticker");
+//   const vegText = foodDialog.querySelector(".veg-non");
 
-  if (item.type === "Veg") {
-    vegIcon.src = "assets/images/food-pictures/icn-veg.svg";
-    vegText.textContent = "Veg";
-  } else {
-    vegIcon.src = "assets/images/food-pictures/icn-non-veg.svg";
-    vegText.textContent = "Non-veg";
-  }
+//   if (item.type === "Veg") {
+//     vegIcon.src = "assets/images/food-pictures/icn-veg.svg";
+//     vegText.textContent = "Veg";
+//   } else {
+//     vegIcon.src = "assets/images/food-pictures/icn-non-veg.svg";
+//     vegText.textContent = "Non-veg";
+//   }
 
-  foodDialog.querySelector(".ingredients-content").textContent = item.ingredients;
+//   foodDialog.querySelector(".ingredients-content").textContent = item.ingredients;
 
-  const nutrientValues = foodDialog.querySelectorAll(".nutrients-value");
-  nutrientValues[0].querySelector(".nutrients-number").textContent =
-    item.nutrients.energy;
-  nutrientValues[1].querySelector(".nutrients-number").textContent =
-    item.nutrients.fats;
-  nutrientValues[2].querySelector(".nutrients-number").textContent =
-    item.nutrients.carbs;
-  nutrientValues[3].querySelector(".nutrients-number").textContent =
-    item.nutrients.fiber;
-  nutrientValues[4].querySelector(".nutrients-number").textContent =
-    item.nutrients.protein;
+//   const nutrientValues = foodDialog.querySelectorAll(".nutrients-value");
+//   nutrientValues[0].querySelector(".nutrients-number").textContent =
+//     item.nutrients.energy;
+//   nutrientValues[1].querySelector(".nutrients-number").textContent =
+//     item.nutrients.fats;
+//   nutrientValues[2].querySelector(".nutrients-number").textContent =
+//     item.nutrients.carbs;
+//   nutrientValues[3].querySelector(".nutrients-number").textContent =
+//     item.nutrients.fiber;
+//   nutrientValues[4].querySelector(".nutrients-number").textContent =
+//     item.nutrients.protein;
 
-  // Set the buy button's onclick handler dynamically
-  const buyButton = foodDialog.querySelector('.buy-button');
-  if (buyButton) {
-    buyButton.onclick = () => buyNow(itemId);
-  }
-}
+//   // Set the buy button's onclick handler dynamically
+//   const buyButton = foodDialog.querySelector('.buy-button');
+//   if (buyButton) {
+//     buyButton.onclick = () => buyNow(itemId);
+//   }
+// }
 
-function closeDialog() {
-  foodDialog.close();
-}
+// function closeDialog() {
+//   foodDialog.close();
+// }
 
-foodDialog.addEventListener("click", (e) => {
-  if (!desc.contains(e.target)) {
-    closeDialog();
-  }
-});
-
-
+// foodDialog.addEventListener("click", (e) => {
+//   if (!desc.contains(e.target)) {
+//     closeDialog();
+//   }
+// });
 
 
-// Team Member Modal Functionality
-function show_team_member_details(memberId) {
-    console.log('Opening team modal for member:', memberId);
+
+
+// // Team Member Modal Functionality
+// export function show_team_member_details(memberId) {
+//     console.log('Opening team modal for member:', memberId);
     
-    const teamModal = document.getElementById('teamModal');
-    const data = teamData[memberId];
+//     const teamModal = document.getElementById('teamModal');
+//     const data = teamData[memberId];
     
-    if (!teamModal) {
-        console.error('Team modal element not found!');
-        return;
-    }
+//     if (!teamModal) {
+//         console.error('Team modal element not found!');
+//         return;
+//     }
     
-    if (data) {
-        document.getElementById('modalPhoto').src = data.photo;
-        document.getElementById('modalPhoto').alt = data.name;
-        document.getElementById('modalName').textContent = data.name;
-        document.getElementById('modalRole').textContent = data.role;
-        document.getElementById('modalDescription').textContent = data.description;
-        document.getElementById('modalContributions').textContent = data.contributions;
-        document.getElementById('modalExtras').textContent = data.extras;
+//     if (data) {
+//         document.getElementById('modalPhoto').src = data.photo;
+//         document.getElementById('modalPhoto').alt = data.name;
+//         document.getElementById('modalName').textContent = data.name;
+//         document.getElementById('modalRole').textContent = data.role;
+//         document.getElementById('modalDescription').textContent = data.description;
+//         document.getElementById('modalContributions').textContent = data.contributions;
+//         document.getElementById('modalExtras').textContent = data.extras;
         
-        teamModal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-        console.log('Team modal opened');
-    }
-}
+//         teamModal.classList.add('active');
+//         document.body.style.overflow = 'hidden';
+//         console.log('Team modal opened');
+//     }
+// }
 
-// Initialize team modal close functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const teamModal = document.getElementById('teamModal');
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && teamModal && teamModal.classList.contains('active')) {
-            teamModal.classList.remove('active');
-            document.body.style.overflow = '';
-        }
-    });
-});
+// // Initialize team modal close functionality
+// document.addEventListener('DOMContentLoaded', function() {
+//     const teamModal = document.getElementById('teamModal');
+//     document.addEventListener('keydown', (e) => {
+//         if (e.key === 'Escape' && teamModal && teamModal.classList.contains('active')) {
+//             teamModal.classList.remove('active');
+//             document.body.style.overflow = '';
+//         }
+//     });
+// });
