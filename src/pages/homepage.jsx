@@ -1,6 +1,6 @@
-import { NavBar } from "../components/navbar";
-import { ImageSlider } from "../components/imageslider";
-import { SideBar } from "../components/sidebar";
+import { NavBar } from "../components/navbar.jsx";
+import { ImageSlider } from "../components/imageslider.jsx";
+import { SideBar } from "../components/sidebar.jsx";
 import { foodItems } from "../assets/Backend/descriptions.js";
 import '../assets/CSS/homepage.css'
 
