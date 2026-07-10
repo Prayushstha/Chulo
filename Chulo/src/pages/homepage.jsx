@@ -3,7 +3,7 @@ import { ImageSlider } from "../components/imageslider";
 import { SideBar } from "../components/sidebar";
 import { foodItems } from "../assets/Backend/descriptions.js";
 import '../assets/CSS/homepage.css'
-// Food Categories Configuration (order within each list is preserved)
+
 const categories = {
   "Around-The-Globe": [1, 2, 3, 4, 5],
   Trending: [4, 2, 3, 1, 6],

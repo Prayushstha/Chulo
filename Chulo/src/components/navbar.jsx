@@ -1,4 +1,4 @@
-import '../assets/CSS/navbar.css'
+import "../assets/CSS/navbar.css";
 import { NavLink } from "react-router";
 
 export function NavBar() {
@@ -49,30 +49,24 @@ export function NavBar() {
             </div>
           </li>
           <li className="navbar-list" id="navhome">
-            <a href="#home-link" id="navhome">
-              Home
-            </a>
+            <NavLink to="/dashboard">Home</NavLink>
           </li>
           <li className="navbar-list" id="navtrending">
             <a href="#Trending">Trending</a>
           </li>
           <li className="navbar-list" id="navabout">
-            <NavLink to="/aboutus">
-              About Us
-              </NavLink>
+            <NavLink to="/aboutus">About Us</NavLink>
           </li>
 
           <li className="navbar-list" id="navcart">
             <a href="#" id="cart-toggle-btn">
               <i className="fas fa-shopping-cart"></i>
-              <span id="cart-badge" >
-                0
-              </span>
+              <span id="cart-badge">0</span>
             </a>
           </li>
           <li className="navbar-list" id="navprofile">
             <a href="signup.html">
-              <i className="fas fa-user-alt" ></i>
+              <i className="fas fa-user-alt"></i>
             </a>
           </li>
         </ul>
