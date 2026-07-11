@@ -1,5 +1,6 @@
 export const reviews = {
   1: {
+    id: 1,
     title: "Best momo I've ever had!",
     tag: "#General",
     time: "2 hours ago",
@@ -11,8 +12,10 @@ export const reviews = {
 The wrapper is thin and perfectly steamed, not too thick or doughy. The filling is generous with juicy chicken and fresh vegetables. What really impressed me was the consistency - I've ordered multiple times and it's always perfect.
                 
 The staff is friendly and the service is quick. The restaurant is always clean and well-maintained. Highly recommend the chicken momo combo with their special sauce!`,
+comments: 32
   },
   2: {
+    id: 12,
     title: "Quick delivery and amazing taste",
     tag: "#Service",
     time: "5 hours ago",
@@ -24,8 +27,10 @@ The staff is friendly and the service is quick. The restaurant is always clean a
 I was impressed by the packaging too. Everything was neatly packed and the burger didn't get soggy during delivery. The delivery person was polite and followed all safety protocols.
                 
 The Nepali burger they have is unique - it has this amazing chatpate flavor that you won't find anywhere else. The combination of traditional spices with modern fast food is genius. Will definitely order again!`,
+comments: 32
   },
   3: {
+    id: 123,
     title: "Finally, authentic Nepali fast food!",
     tag: "#Food",
     time: "1 day ago",
@@ -37,8 +42,10 @@ The Nepali burger they have is unique - it has this amazing chatpate flavor that
 What I love most is that they haven't compromised on authenticity while making it fast food. The dal tastes just like homemade, the bhat is perfectly cooked, and the tarkari has that traditional flavor.
                 
 The sekuwa wrap is a game-changer. Perfectly grilled meat with fresh vegetables wrapped in soft roti - it's convenient to eat on the go but tastes amazing. Chulo has truly revolutionized Nepali fast food!`,
+comments: 32
   },
   4: {
+    id: 1234,
     title: "Clean, fast, and delicious!",
     tag: "#Experience",
     time: "2 days ago",
@@ -50,8 +57,10 @@ The sekuwa wrap is a game-changer. Perfectly grilled meat with fresh vegetables 
 I could see into the kitchen through the glass window and everything looked clean and organized. The staff were wearing proper uniforms and hairnets. This level of hygiene is rare in Nepali restaurants.
                 
 The ordering process was smooth - they have digital menus and multiple payment options. Food came out in less than 10 minutes and tasted fresh. The seating area is comfortable and well-designed. Great experience overall!`,
+comments: 32
   },
   5: {
+    id: 12345,
     title: "Great value for money",
     tag: "#Value",
     time: "3 days ago",
@@ -63,5 +72,6 @@ The ordering process was smooth - they have digital menus and multiple payment o
 I ordered the student special combo (NPR 350) and it came with a burger, fries, drink, and dessert. The portion size was generous and everything tasted great. Compare this to other places where you pay similar prices for just a burger.
                 
 They also have daily deals and loyalty programs. I downloaded their app and got 20% off on my first order. For students and young professionals like me, Chulo is perfect - affordable, tasty, and convenient!`,
+comments: 32
   },
 };

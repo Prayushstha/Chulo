@@ -4,21 +4,17 @@ import "../assets/CSS/frontpage.css";
 import { LoginContainer } from "../components/logincontainer";
 import { useState } from "react";
 import { 
-  // OpenReviewsDialog,
    ReviewsSection } from "../components/frontpagereviews";
 
 export function FrontPage() {
   const [ShowLoginPanel, setShowLoginPanel] = useState(false);
-  const [ShowReviewDialog, setShowReviewDialog] = useState(false);
+  const [ShowReview, setShowReview] = useState(null);
   return (
     <>
       <NavBar />
-      <MainContent setShowLoginPanel={setShowLoginPanel}  ShowReviewDialog={ShowReviewDialog}
-        setShowReviewDialog={setShowReviewDialog}/>
-      {/* <OpenReviewsDialog
-        ShowReviewDialog={ShowReviewDialog}
-        setShowReviewDialog={setShowReviewDialog}
-      /> */}
+      <MainContent setShowLoginPanel={setShowLoginPanel}  ShowReview={ShowReview}
+        setShowReview={setShowReview}/>
+
       <LoginContainer
         showLoginPanel={ShowLoginPanel}
         setShowLoginPanel={setShowLoginPanel}
@@ -28,12 +24,12 @@ export function FrontPage() {
   );
 }
 
-function MainContent({ setShowLoginPanel,ShowReviewDialog,setShowReviewDialog }) {
+function MainContent({ setShowLoginPanel,ShowReview,setShowReview }) {
   return (
     <>
       <HeroSection setShowLoginPanel={setShowLoginPanel} />
-      <DescriptionAndReviewSection  ShowReviewDialog={ShowReviewDialog}
-        setShowReviewDialog={setShowReviewDialog}/>
+      <DescriptionAndReviewSection  ShowReview={ShowReview}
+        setShowReview={setShowReview}/>
     </>
   );
 }
@@ -150,7 +146,7 @@ function HeroSection({ setShowLoginPanel }) {
     </section>
   );
 }
-function DescriptionAndReviewSection({ShowReviewDialog,setShowReviewDialog }) {
+function DescriptionAndReviewSection({ShowReview,setShowReview }) {
   return (
     <div className="about-container">
       <div className="about-section">
@@ -229,8 +225,8 @@ function DescriptionAndReviewSection({ShowReviewDialog,setShowReviewDialog }) {
         </p>
       </div>
 
-     <ReviewsSection  ShowReviewDialog={ShowReviewDialog}
-        setShowReviewDialog={setShowReviewDialog}/>
+     <ReviewsSection  ShowReview={ShowReview}
+        setShowReview={setShowReview}/>
     </div>
   );
 }
