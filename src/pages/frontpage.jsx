@@ -3,8 +3,7 @@ import { Footer } from "../components/footer";
 import "../assets/CSS/frontpage.css";
 import { LoginContainer } from "../components/logincontainer";
 import { useState } from "react";
-import { 
-   ReviewsSection } from "../components/frontpagereviews";
+import { ReviewsSection } from "../components/frontpagereviews";
 
 export function FrontPage() {
   const [ShowLoginPanel, setShowLoginPanel] = useState(false);
@@ -12,8 +11,11 @@ export function FrontPage() {
   return (
     <>
       <NavBar />
-      <MainContent setShowLoginPanel={setShowLoginPanel}  ShowReview={ShowReview}
-        setShowReview={setShowReview}/>
+      <MainContent
+        setShowLoginPanel={setShowLoginPanel}
+        ShowReview={ShowReview}
+        setShowReview={setShowReview}
+      />
 
       <LoginContainer
         showLoginPanel={ShowLoginPanel}
@@ -24,12 +26,14 @@ export function FrontPage() {
   );
 }
 
-function MainContent({ setShowLoginPanel,ShowReview,setShowReview }) {
+function MainContent({ setShowLoginPanel, ShowReview, setShowReview }) {
   return (
     <>
       <HeroSection setShowLoginPanel={setShowLoginPanel} />
-      <DescriptionAndReviewSection  ShowReview={ShowReview}
-        setShowReview={setShowReview}/>
+      <DescriptionAndReviewSection
+        ShowReview={ShowReview}
+        setShowReview={setShowReview}
+      />
     </>
   );
 }
@@ -146,7 +150,7 @@ function HeroSection({ setShowLoginPanel }) {
     </section>
   );
 }
-function DescriptionAndReviewSection({ShowReview,setShowReview }) {
+function DescriptionAndReviewSection({ ShowReview, setShowReview }) {
   return (
     <div className="about-container">
       <div className="about-section">
@@ -225,8 +229,7 @@ function DescriptionAndReviewSection({ShowReview,setShowReview }) {
         </p>
       </div>
 
-     <ReviewsSection  ShowReview={ShowReview}
-        setShowReview={setShowReview}/>
+      <ReviewsSection ShowReview={ShowReview} setShowReview={setShowReview} />
     </div>
   );
 }
