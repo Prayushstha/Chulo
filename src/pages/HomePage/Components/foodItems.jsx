@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router";
-export function FoodItem({ item, rank }) {
+export function FoodItem({ item }) {
   let navToProducts = useNavigate();
   const rating = item.rating || 4.5;
   const fullStars = Math.floor(rating);
   const emptyStars = 5 - fullStars;
 
 
-  function handleBuy(e) {
-    
+  function handleBuy(e) { 
     e.stopPropagation();
     console.log("add to cart", item.id);
   }
@@ -17,7 +16,6 @@ export function FoodItem({ item, rank }) {
       <a onClick={()=>{
         navToProducts(`/product/${item.id}`);
       }}>
-        {rank !== null && <span className="food-rank">{rank}</span>}
         <div className="food-image-wrapper">
           <img
             className="food-picture"
