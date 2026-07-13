@@ -15,7 +15,7 @@ export function FoodItem({ item, rank }) {
   return (
     <div className="food-preview" data-id={item.id}>
       <a onClick={()=>{
-        navToProducts(`/product-${item.id}`);
+        navToProducts(`/product/${item.id}`);
       }}>
         {rank !== null && <span className="food-rank">{rank}</span>}
         <div className="food-image-wrapper">
