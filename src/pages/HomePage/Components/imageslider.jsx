@@ -1,4 +1,4 @@
-import '../assets/CSS/slider.css'
+import '../Styles/slider.css'
     
 export function ImageSlider() {
   return (

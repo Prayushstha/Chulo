@@ -1,9 +1,9 @@
-import { NavBar } from "../components/navbar";
-import { Footer } from "../components/footer";
-import "../assets/CSS/frontpage.css";
-import { LoginContainer } from "../components/logincontainer";
+import { NavBar } from "../../components/navbar";
+import { Footer } from "../../components/footer";
+import "./Styles/frontpage.css";
+import { LoginContainer } from "../../components/logincontainer";
 import { useState } from "react";
-import { ReviewsSection } from "../components/frontpagereviews";
+import { ReviewsSection } from "./Components/frontpagereviews";
 
 export function FrontPage() {
   const [ShowLoginPanel, setShowLoginPanel] = useState(false);

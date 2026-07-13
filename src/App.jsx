@@ -1,8 +1,8 @@
 import "./App.css";
 import { HashRouter, Route, Routes } from "react-router";
 import { AboutUs } from "./pages/aboutus";
-import { HomePage } from "./pages/homepage";
-import { FrontPage } from "./pages/frontpage";
+import { HomePage } from "./pages/HomePage/homepage";
+import { FrontPage } from "./pages/FrontPage/frontpage";
 function App() {
   return (
     <HashRouter>

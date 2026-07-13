@@ -1,4 +1,4 @@
-import { reviews } from "../assets/Backend/reviews";
+import { reviews } from "../../../assets/Backend/reviews";
 
 export function ReviewsSection({ ShowReview, setShowReview }) {
   const reviewsArray = Object.values(reviews);
