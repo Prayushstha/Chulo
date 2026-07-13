@@ -9,7 +9,7 @@ export function Products() {
    console.log(currentItem);
 
   if (currentItem) return(
-    <div className="main-container">
+    <div className="main-product-container">
       <div className="food-description-container" id="desc">
         <div className="food-picture-container" style={{maxWidth: '600px'}}>
           <img className="food-description-picture" src={`/images/food-pictures/${currentItem.image}`} />
