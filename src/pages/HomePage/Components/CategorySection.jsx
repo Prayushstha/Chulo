@@ -1,5 +1,5 @@
 import { foodItems } from "../../../assets/Backend/descriptions.js";
-import { FoodItem } from "./foodItems.jsx";
+import { FoodItem } from "./FoodItems.jsx";
 export function CategorySection({ id, title, itemIds, showRanks = false }) {
   // Preserve the exact order given in itemIds, looking each id up in foodItems
   const items = itemIds

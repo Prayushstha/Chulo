@@ -1,8 +1,6 @@
 import { NavBar } from "../../components/navbar.jsx";
-import { ImageSlider } from "./Components/imageslider.jsx";
-import { SideBar } from "./Components/sidebar.jsx";
 import './Styles/homepage.css'
-import { CategorySection } from "./Components/CategorySection.jsx";
+import { CategorySection,SideBar,ImageSlider } from "./Components";
 const categories = {
   "Around-The-Globe": [1, 2, 3, 4, 5],
   Trending: [4, 2, 3, 1, 6],
