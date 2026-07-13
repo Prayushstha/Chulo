@@ -1,13 +1,10 @@
-
+import { useNavigate } from "react-router";
 export function FoodItem({ item, rank }) {
+  let navToProducts = useNavigate();
   const rating = item.rating || 4.5;
   const fullStars = Math.floor(rating);
   const emptyStars = 5 - fullStars;
 
-  function handleOpen() {
-    
-    console.log("open food dialog for", item.id);
-  }
 
   function handleBuy(e) {
     
@@ -17,7 +14,9 @@ export function FoodItem({ item, rank }) {
 
   return (
     <div className="food-preview" data-id={item.id}>
-      <a onClick={handleOpen}>
+      <a onClick={()=>{
+        navToProducts(`/product-${item.id}`);
+      }}>
         {rank !== null && <span className="food-rank">{rank}</span>}
         <div className="food-image-wrapper">
           <img

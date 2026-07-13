@@ -1,7 +1,7 @@
-import { NavBar } from "../components/navbar.jsx";
-import { Footer } from "../components/footer.jsx";
-import { Cart } from "../components/cart.jsx";
-import "../assets/CSS/aboutus.css";
+import { NavBar } from "../../components/navbar.jsx";
+import { Footer } from "../../components/footer.jsx";
+import { Cart } from "../../components/cart.jsx";
+import "./Styles/aboutus.css";
 export function AboutUs() {
   return (
     <>
