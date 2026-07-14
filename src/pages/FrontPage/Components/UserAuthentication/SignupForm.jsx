@@ -1,18 +1,19 @@
-import "../Styles/signup.css";
+import "../../Styles/signup.css";
 import { useState } from "react";
+
 export function SignUpForm() {
   const [step, setStep] = useState(0);
 
   return (
-    <>
+    <form>
       {step === 0 ? (
         <>
           <SignupFormStepOne />
           <button
-            type="submit"
             className="login-page-btn"
             onClick={() => setStep(1)}
             name="signup"
+            type="button"
           >
             Next
           </button>
@@ -20,12 +21,13 @@ export function SignUpForm() {
       ) : (
         <SignupFormStepTwo />
       )}
-    </>
+    </form>
   );
 }
 function SignupFormStepOne() {
   return (
-    <form>
+    <>
+      {" "}
       <div className="login-page-input-box">
         <label htmlFor="signup-name">Full Name</label>
         <input
@@ -46,7 +48,6 @@ function SignupFormStepOne() {
           placeholder="Enter your email"
         />
       </div>
-
       <div className="login-page-input-box">
         <label htmlFor="signup-phone">Phone Number</label>
         <input
@@ -69,7 +70,6 @@ function SignupFormStepOne() {
           minLength="8"
         />
       </div>
-
       <div className="login-page-input-box">
         <label htmlFor="signup-confirm-password">Confirm Password</label>
         <input
@@ -81,12 +81,13 @@ function SignupFormStepOne() {
           minLength="8"
         />
       </div>
-    </form>
+    </>
   );
 }
 function SignupFormStepTwo() {
+
   return (
-    <form>
+    <>
       <div className="login-page-input-box">
         <label htmlFor="signup-address">Delivery Address</label>
         <textarea
@@ -124,9 +125,13 @@ function SignupFormStepTwo() {
         </label>
       </div>
 
-      <button type="submit" className="login-page-btn" name="signup">
+      <button
+        type="submit"
+        className="login-page-btn"
+        name="signup"
+      >
         Sign Up
       </button>
-    </form>
+    </>
   );
 }

@@ -1,4 +1,4 @@
-import "../Styles/login.css";
+import "../../Styles/login.css";
 import { useEffect, useRef,useState } from "react";
 import { LoginForm } from "./LoginForm.jsx";
 import { SignUpForm } from "./SignupForm.jsx";
