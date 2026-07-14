@@ -5,12 +5,12 @@ export function NavBar() {
   return (
     <>
       <div className="navbar">
-        <a href="homepage.html">
+        <NavLink to="/">
           <div className="logo-container">
             <img className="logo" src="logo.png" />
             <p className="logo-name">Chulo</p>
           </div>
-        </a>
+        </NavLink>{" "}
         <ul>
           <li className="navbar-list search-nav-item" id="search">
             <div className="search-container">

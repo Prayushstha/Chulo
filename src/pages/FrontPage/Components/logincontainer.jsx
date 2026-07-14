@@ -1,4 +1,4 @@
-import "../assets/CSS/login.css";
+import "../Styles/login.css";
 import { useEffect, useRef } from "react";
 export function LoginContainer({ showLoginPanel, setShowLoginPanel }) {
   let menuRef = useRef();
