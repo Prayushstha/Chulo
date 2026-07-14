@@ -1,6 +1,10 @@
 import "../Styles/login.css";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef,useState } from "react";
+import { LoginForm } from "./LoginForm.jsx";
+import { SignUpForm } from "./SignupForm.jsx";
 export function LoginContainer({ showLoginPanel, setShowLoginPanel }) {
+  const [signUp,setSignUp] = useState(true);
+
   let menuRef = useRef();
 
   useEffect(() => {
@@ -18,63 +22,9 @@ export function LoginContainer({ showLoginPanel, setShowLoginPanel }) {
       ref={menuRef}
     >
       <div className="login-page-form-wrapper">
-        <h2>Get Started Now</h2>
+        <h2>{signUp ? "Get Back To Ordering" : "Get Started Now!"}</h2>
         <p id="errors"></p>
-
-        <form
-          method="post"
-          id="login-page-signup-htmlForm"
-          onSubmit={() => {
-            console.log("submitted");
-          }}
-        >
-          <div className="login-page-input-box">
-            <label htmlFor="login-page-name">Name</label>
-            <input
-              type="text"
-              id="login-page-name"
-              name="username"
-              required
-              placeholder="Enter your name"
-            />
-          </div>
-
-          <div className="login-page-input-box">
-            <label htmlFor="login-page-email">Email address</label>
-            <input
-              type="email"
-              id="login-page-email"
-              required
-              placeholder="Enter your email"
-              name="email"
-            />
-          </div>
-
-          <div className="login-page-input-box">
-            <label htmlFor="login-page-password">Password</label>
-            <input
-              type="password"
-              id="login-page-password"
-              required
-              placeholder="Enter your password"
-              name="password"
-            />
-          </div>
-
-          <div className="login-page-checkbox-wrapper">
-            <input type="checkbox" id="login-page-terms" required />
-            <label htmlFor="login-page-terms">
-              I agree to the{" "}
-              <a href="#" className="login-page-terms-link">
-                terms & policy
-              </a>
-            </label>
-          </div>
-
-          <button type="submit" className="login-page-btn" name="signup">
-            Signup
-          </button>
-        </form>
+        {signUp ? <LoginForm/> : <SignUpForm/>}
         <div className="login-page-divider">
           <span>Or</span>
         </div>
@@ -133,9 +83,11 @@ export function LoginContainer({ showLoginPanel, setShowLoginPanel }) {
 
         <div className="login-page-signup-text">
           <span>
-            Have an account?
-            <a href="login.html" className="login-page-signin-link">
-              Sign in
+            {signUp? "Have an account?" : "Don't have an account?"}
+            <a href="#" onClick={()=>{setSignUp(!signUp); 
+              signUp ? console.log("Displaying Signup Page") : console.log("Displaying Login Page")
+            }} className="login-page-signin-link">
+              {signUp ? "Sign in" : "Sign up"}
             </a>
           </span>
         </div>
