@@ -1,3 +1,3 @@
 export {CategorySection} from './CategorySection'
-export {ImageSlider} from './ImageSlider'
-export {SideBar} from './SideBar'
+export {ImageSlider} from './imageslider'
+export {SideBar} from './sidebar'

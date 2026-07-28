@@ -1,7 +1,8 @@
 import "../assets/CSS/navbar.css";
+import { useState } from "react";
 import { NavLink } from "react-router";
-
-export function NavBar() {
+import { Cart } from "./cart.jsx";
+export function NavBar({ cartActive, setCartActive }) {
   return (
     <>
       <div className="navbar">
@@ -58,11 +59,16 @@ export function NavBar() {
             <NavLink to="/aboutus">About Us</NavLink>
           </li>
 
-          <li className="navbar-list" id="navcart">
-            <a href="#" id="cart-toggle-btn">
-              <i className="fas fa-shopping-cart"></i>
-              <span id="cart-badge">0</span>
-            </a>
+          <li
+            className="navbar-list"
+            id="navcart"
+            onClick={() => {
+              console.log("Cart clicked");
+              setCartActive(!cartActive);
+            }}
+          >
+            <i className="fas fa-shopping-cart"></i>
+            <span id="cart-badge">0</span>
           </li>
           <li className="navbar-list" id="navprofile">
             <a href="signup.html">
@@ -71,6 +77,7 @@ export function NavBar() {
           </li>
         </ul>
       </div>
+  
     </>
   );
 }
