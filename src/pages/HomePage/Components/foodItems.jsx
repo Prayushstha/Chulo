@@ -1,4 +1,6 @@
 import { useNavigate } from "react-router";
+import { addToCart } from "../../../components/Cart/Components/cart";
+
 export function FoodItem({ item }) {
   let navToProducts = useNavigate();
   const rating = item.rating || 4.5;
@@ -8,7 +10,8 @@ export function FoodItem({ item }) {
 
   function handleBuy(e) { 
     e.stopPropagation();
-    console.log("add to cart", item.id);
+    addToCart(item.id);
+    console.log(`Added ${item.id}`)
   }
 
   return (

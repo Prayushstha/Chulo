@@ -6,7 +6,7 @@ import { FrontPage } from "./pages/FrontPage/frontpage";
 import { Products } from "./pages/Products/product";
 import { NavBar } from "./components/navbar";
 import { useState } from "react";
-import { Cart } from "./components/cart";
+import { Cart } from "./components/Cart/cart";
 function App() {
   const [cartActive, setCartActive] = useState(false);
 

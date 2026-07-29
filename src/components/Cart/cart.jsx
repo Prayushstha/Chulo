@@ -1,4 +1,5 @@
-import "../assets/CSS/cart.css";
+import { CartItem } from "./Components/CartItem";
+import "./Styles/cart.css";
 export function Cart({ cartActive, setCartActive }) {
   console.log(cartActive);
   return (
@@ -18,6 +19,7 @@ export function Cart({ cartActive, setCartActive }) {
         </div>
 
         <div className="cart-items-container" id="cart-items-container">
+          <CartItem />
           <div className="empty-cart-message">
             <i className="fas fa-shopping-basket"></i>
             <p>Your cart is empty</p>

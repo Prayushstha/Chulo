@@ -1,7 +1,7 @@
 import "../assets/CSS/navbar.css";
 import { useState } from "react";
 import { NavLink } from "react-router";
-import { Cart } from "./cart.jsx";
+import { Cart } from "./Cart/cart.jsx";
 export function NavBar({ cartActive, setCartActive }) {
   return (
     <>
