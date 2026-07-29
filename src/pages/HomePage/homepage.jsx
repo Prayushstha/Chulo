@@ -1,4 +1,3 @@
-import { NavBar } from "../../components/navbar.jsx";
 import './Styles/homepage.css'
 import { CategorySection,SideBar,ImageSlider } from "./Components";
 const categories = {
@@ -13,7 +12,6 @@ export function HomePage() {
 
   return (
     <>
-      <NavBar />
       <ImageSlider />
       <div className="name">
         <p id="categories">CATEGORIES</p>

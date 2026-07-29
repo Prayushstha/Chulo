@@ -1,16 +1,19 @@
 /* Cart Sidebar Styles */
+
 .cart-sidebar {
     position: fixed;
+     display: flex;
+    visibility: hidden;
+    pointer-events: none;
     top: 0;
-    right: -400px; /* Hidden by default */
+    right: -400px; 
     width: 400px;
     height: 100vh;
     background: var(--bg-glass);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    z-index: 2000;
-    display: none;
+    z-index: 3000;
     flex-direction: column;
     border-left: 1px solid var(--border-color);
     opacity: 0;
@@ -19,9 +22,10 @@
 }
 
 .cart-sidebar.open {
-     display: flex;
+   pointer-events: auto;
+   visibility: visible;
     right: 0;
-    opacity: 1;  /* Changed from opacity: 100 */
+    opacity: 1;  
 }
 
 .cart-header {
