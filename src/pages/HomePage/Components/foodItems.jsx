@@ -11,7 +11,6 @@ export function FoodItem({ item }) {
   function handleBuy(e) { 
     e.stopPropagation();
     addToCart(item.id);
-    console.log(`Added ${item.id}`)
   }
 
   return (

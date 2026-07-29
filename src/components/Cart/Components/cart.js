@@ -1,7 +1,7 @@
 import { foodItems } from "../../../assets/Backend/descriptions";
-
-export let cartItems = [];
-
-export function addToCart(itemId){
-    
+export function addToCart(itemId) {
+  const item = foodItems.find((food) => {
+    return itemId === food.id;
+  });
+  return item;
 }
