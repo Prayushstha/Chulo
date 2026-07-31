@@ -8,18 +8,22 @@ import { NavBar } from "./components/navbar";
 import { useState } from "react";
 import { Cart } from "./components/Cart/cart";
 function App() {
+  // For toggling the cart sidebar
   const [cartActive, setCartActive] = useState(false);
+  // for cart items
+  const [cart,setCart] = useState([]);
+
 
   return (
     <HashRouter>
       <NavBar cartActive={cartActive} setCartActive={setCartActive} />
       <div className="main-content">
-        <Cart cartActive={cartActive} setCartActive={setCartActive}/>
+        <Cart cartActive={cartActive} setCartActive={setCartActive} cart={cart} setCart={setCart} />
         <Routes>
           <Route
             path="/dashboard"
             element={
-              <HomePage cartActive={cartActive} setCartActive={setCartActive} />
+              <HomePage cartActive={cartActive} setCartActive={setCartActive} cart={cart} setCart={setCart} />
             }
           />
           <Route

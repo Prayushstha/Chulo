@@ -1,6 +1,6 @@
 import { foodItems } from "../../../assets/Backend/descriptions.js";
 import { FoodItem } from "./foodItems.jsx";
-export function CategorySection({ id, title, itemIds, showRanks = false }) {
+export function CategorySection({ id, title, itemIds, showRanks = false,cart, setCart }) {
   // Preserve the exact order given in itemIds, looking each id up in foodItems
   const items = itemIds
     .map((itemId) => foodItems.find((food) => food.id === itemId))
@@ -18,6 +18,8 @@ export function CategorySection({ id, title, itemIds, showRanks = false }) {
             key={item.id}
             item={item}
             rank={showRanks ? index + 1 : null}
+            cart={cart}
+            setCart={setCart}
           />
         ))}
       </div>

@@ -1,5 +1,5 @@
-import './Styles/homepage.css'
-import { CategorySection,SideBar,ImageSlider } from "./Components";
+import "./Styles/homepage.css";
+import { CategorySection, SideBar, ImageSlider } from "./Components";
 const categories = {
   "Around-The-Globe": [1, 2, 3, 4, 5],
   Trending: [4, 2, 3, 1, 6],
@@ -8,20 +8,19 @@ const categories = {
   Desi: [16, 17, 18],
 };
 
-export function HomePage() {
-
+export function HomePage({ cart, setCart }) {
   return (
     <>
       <ImageSlider />
       <div className="name">
         <p id="categories">CATEGORIES</p>
       </div>
-      <MainContent />
+      <MainContent cart={cart} setCart={setCart} />
     </>
   );
 }
 
-function MainContent() {
+function MainContent({ cart, setCart }) {
   return (
     <div className="food-preview-container">
       <SideBar />
@@ -31,15 +30,39 @@ function MainContent() {
           id="Around-The-Globe"
           title="AROUND THE GLOBE"
           itemIds={categories["Around-The-Globe"]}
+          cart={cart}
+          setCart={setCart}
         />
-        <CategorySection id="Trending" title="Trending" itemIds={categories.Trending} showRanks />
-        <CategorySection id="Dessert" title="DESSERT" itemIds={categories.Dessert} />
-        <CategorySection id="Healthy" title="Healthy Option" itemIds={categories.Healthy} />
-        <CategorySection id="Desi" title="Desi Foods" itemIds={categories.Desi} />
+        <CategorySection
+          id="Trending"
+          title="Trending"
+          itemIds={categories.Trending}
+          showRanks
+          cart={cart}
+          setCart={setCart}
+        />
+        <CategorySection
+          id="Dessert"
+          title="DESSERT"
+          itemIds={categories.Dessert}
+          cart={cart}
+          setCart={setCart}
+        />
+        <CategorySection
+          id="Healthy"
+          title="Healthy Option"
+          itemIds={categories.Healthy}
+          cart={cart}
+          setCart={setCart}
+        />
+        <CategorySection
+          id="Desi"
+          title="Desi Foods"
+          itemIds={categories.Desi}
+          cart={cart}
+          setCart={setCart}
+        />
       </div>
     </div>
   );
 }
-
-
-

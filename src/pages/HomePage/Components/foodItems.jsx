@@ -1,16 +1,17 @@
 import { useNavigate } from "react-router";
 import { addToCart } from "../../../components/Cart/Components/cart";
+import {useRef} from "react";
 
-export function FoodItem({ item }) {
+export function FoodItem({ item, cart, setCart }) {
+ let buyButtonRef = useRef(null);
   let navToProducts = useNavigate();
   const rating = item.rating || 4.5;
   const fullStars = Math.floor(rating);
   const emptyStars = 5 - fullStars;
 
-
   function handleBuy(e) { 
     e.stopPropagation();
-    addToCart(item.id);
+    addToCart({ cart, setCart, itemId: item.id });
   }
 
   return (
@@ -40,7 +41,7 @@ export function FoodItem({ item }) {
           </div>
           <div className="food-sub-description">
             <span className="food-price">&#x20B9; {item.price}</span>
-            <button className="buy-button" onClick={handleBuy}>
+            <button className="buy-button" onClick={handleBuy} ref={buyButtonRef}>
               Buy
             </button>
           </div>

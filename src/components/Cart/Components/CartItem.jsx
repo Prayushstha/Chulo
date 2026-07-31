@@ -4,15 +4,15 @@ import { useEffect } from "react";
 
 let cartItems = [];
 
-const item = addToCart();
-const items = useEffect(()=>{
-    console.log(item)
-},[])
+
+// const items = useEffect(()=>{
+//     console.log(item)
+// },[])
 
 
-export function CartItem(itemId) {
-    console.log(item);
-if(cartItems.length === 0) return;
+export function CartItem({itemId, cart, setCart}) {
+  console.log('Cart Items in CartItem Component:', cart);
+  if(cartItems.length === 0) return;
   return (
     <div className="cart-item"> 
       <img src={item.image} alt={item.name} className="cart-item-image" />
