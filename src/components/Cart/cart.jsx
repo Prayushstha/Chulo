@@ -2,7 +2,6 @@ import { CartItem } from "./Components/CartItem";
 import "./Styles/cart.css";
 export function Cart({ cartActive, setCartActive, cart, setCart }) {
   return (
-
       <aside
         className={cartActive ? "cart-sidebar open" : "cart-sidebar"}
         id="cart-sidebar"
