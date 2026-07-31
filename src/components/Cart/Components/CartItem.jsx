@@ -1,33 +1,33 @@
 import { addToCart } from "./cart";
-import { useEffect } from "react";
-
+import { useState } from "react";
 
 export function CartItem({cart, setCart}) {
-  console.log('Cart Items in CartItem Component:', cart);
-  if(cart.length === 0) return;
+
+  const [quantity, setQuantity] = useState(cart.quantity || 1);
+
   return (
-    <div className="cart-cart"> 
-      <img src={cart.image} alt={cart.name} className="cart-item-image" />
+    <div className="cart-item" data-id={cart.id}>
+      <img src={`/images/food-pictures/${cart.image}`} alt={cart.name} className="cart-item-image" />
       <div className="cart-item-details">
         <div className="cart-item-name">{cart.name}</div>
-        <div className="cart-item-price">Rs. {cart.price * cart.quantity}</div>
+        <div className="cart-item-price">Rs. {cart.price * quantity}</div>
         <div className="cart-item-controls">
           <button
             className="qty-btn"
-            onclick="event.stopPropagation(); updateQuantity(${item.id}, -1)"
+            onClick={() => quantity<=1 ? setQuantity(1) : setQuantity(quantity - 1)}
           >
             -
           </button>
-          <span className="cart-item-quantity">{cart.quantity}</span>
+          <span className="cart-item-quantity">{quantity}</span>
           <button
             className="qty-btn"
-            onclick="event.stopPropagation(); updateQuantity(${item.id}, 1)"
+            onClick={() => setQuantity(quantity + 1)}
           >
             +
           </button>
           <button
             className="remove-item-btn"
-            onclick="event.stopPropagation(); removeFromCart(${item.id})"
+            
           >
             <i className="fas fa-trash"></i>
           </button>
