@@ -1,9 +1,9 @@
 import { addToCart } from "./cart";
 import { useState } from "react";
 
-export function CartItem({cart, setCart}) {
+export function CartItem({cart, setCart,quantity,setQuantity, cartQuantity, setCartQuantity}) {
 
-  const [quantity, setQuantity] = useState(cart.quantity || 1);
+  
 
   return (
     <div className="cart-item" data-id={cart.id}>
@@ -14,14 +14,14 @@ export function CartItem({cart, setCart}) {
         <div className="cart-item-controls">
           <button
             className="qty-btn"
-            onClick={() => quantity<=1 ? setQuantity(1) : setQuantity(quantity - 1)}
+            onClick={() => quantity<=1 ? setQuantity(1) && setCartQuantity(1) : setQuantity(quantity - 1) && setCartQuantity(cartQuantity - 1)}
           >
             -
           </button>
           <span className="cart-item-quantity">{quantity}</span>
           <button
             className="qty-btn"
-            onClick={() => setQuantity(quantity + 1)}
+            onClick={() => setQuantity(quantity + 1) && setCartQuantity(cartQuantity + 1)}
           >
             +
           </button>

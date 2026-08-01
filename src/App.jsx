@@ -12,13 +12,15 @@ function App() {
   const [cartActive, setCartActive] = useState(false);
   // for cart items
   const [cart,setCart] = useState([]);
+  // for cart quantity
+  const [cartQuantity,setCartQuantity] = useState(0);
 
 
   return (
     <HashRouter>
-      <NavBar cartActive={cartActive} setCartActive={setCartActive} />
+      <NavBar cartActive={cartActive} setCartActive={setCartActive} cartQuantity={cartQuantity}  />
       <div className="main-content">
-        <Cart cartActive={cartActive} setCartActive={setCartActive} cart={cart} setCart={setCart} />
+        <Cart cartActive={cartActive} setCartActive={setCartActive} cart={cart} setCart={setCart} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
         <Routes>
           <Route
             path="/dashboard"

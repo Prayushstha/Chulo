@@ -2,7 +2,7 @@ import "../assets/CSS/navbar.css";
 import { useState } from "react";
 import { NavLink } from "react-router";
 import { Cart } from "./Cart/cart.jsx";
-export function NavBar({ cartActive, setCartActive }) {
+export function NavBar({ cartActive, setCartActive ,cartQuantity}) {
   return (
     <>
       <div className="navbar">
@@ -68,7 +68,7 @@ export function NavBar({ cartActive, setCartActive }) {
             }}
           >
             <i className="fas fa-shopping-cart"></i>
-            <span id="cart-badge">0</span>
+            <span id="cart-badge">{cartQuantity}</span>
           </li>
           <li className="navbar-list" id="navprofile">
             <a href="signup.html">

@@ -1,6 +1,8 @@
 import { CartItem } from "./Components/CartItem";
+import {useState} from "react";
 import "./Styles/cart.css";
-export function Cart({ cartActive, setCartActive, cart, setCart }) {
+export function Cart({ cartActive, setCartActive, cart, setCart,cartQuantity,setCartQuantity }) {
+  const [quantity, setQuantity] = useState(cart.quantity || 1);
   return (
     <aside
       className={cartActive ? "cart-sidebar open" : "cart-sidebar"}
@@ -23,7 +25,7 @@ export function Cart({ cartActive, setCartActive, cart, setCart }) {
       <div className="cart-items-container" id="cart-items-container">
         {cart.length > 0 ? (
           cart.map((item) => (
-            <CartItem key={item.id} cart={item} setCart={setCart} />
+            <CartItem key={item.id} cart={item} quantity={quantity} setQuantity={setQuantity} setCart={setCart} cartQuantity={cartQuantity} setCartQuantity={setCartQuantity} />
           ))
         ) : (
           <div className="empty-cart-message">
@@ -48,7 +50,13 @@ export function Cart({ cartActive, setCartActive, cart, setCart }) {
             <span id="cart-total">Rs. 0</span>
           </div>
         </div>
-        <button className="checkout-btn">Proceed to Checkout</button>
+        <button className="checkout-btn" onClick={() => {
+          cart.map((item)=>{
+            console.log(item.price)
+          })
+          }}>
+          Proceed to Checkout
+        </button>
       </div>
     </aside>
   );
