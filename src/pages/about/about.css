@@ -1,0 +1,400 @@
+
+
+
+.main-container {
+    margin-top: 90px;
+    flex: 1;
+    display: block;
+    border: none;
+    min-height: 90vh;
+    min-width: 0;
+    box-shadow: 0 2px 60px rgba(0, 0, 0, 0.25);
+}
+
+.hero {
+      background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), 
+                url('/images/others/About-Us-bg.jpg') no-repeat center center;
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-foreground);
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 56px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    font-size: 20px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.our-story {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.story-image {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, var(--action) 0%, var(--action) 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 80px;
+    color: var(--primary-foreground);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.story-content h2 {
+    font-size: 36px;
+    color: var(--foreground);
+    margin-bottom: 20px;
+}
+
+.story-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: var(--muted-foreground);
+    margin-bottom: 15px;
+}
+
+.stats {
+    background: linear-gradient(135deg, var(--action) 0%, var(--action) 100%);
+    padding: 60px 50px;
+    color: var(--primary-foreground);
+}
+
+.stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.stat-item p {
+    font-size: 16px;
+    opacity: 0.95;
+}
+
+.values {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 50px;
+}
+
+.values h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--foreground);
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.value-card {
+    background: var(--card);
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.value-card:hover {
+    transform: translateY(-10px);
+}
+
+.value-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.value-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: var(--foreground);
+}
+
+.value-card p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--muted-foreground);
+}
+
+.awards {
+    background-color: var(--primary-light);
+    padding: 80px 50px;
+}
+
+.awards-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.awards h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--foreground);
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+.award-card {
+    background: var(--card);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.trophy-icon {
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.award-card h3 {
+    font-size: 18px;
+    color: var(--foreground);
+    margin-bottom: 10px;
+}
+
+.award-card p {
+    font-size: 14px;
+    color: var(--muted-foreground);
+}
+
+.team {
+    max-width: 1200px;
+    margin: 80px auto;
+    padding: 0 50px;
+}
+
+.team h2 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--foreground);
+}
+
+.team-subtitle {
+    text-align: center;
+    font-size: 16px;
+    color: var(--muted-foreground);
+    margin-bottom: 50px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.team-member {
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px);
+}
+
+.member-photo {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible; /* Changed from default */
+    cursor: pointer;
+}
+
+/* Animated rotating border */
+.member-photo::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border-radius: 50%;
+    background: conic-gradient(
+        from 0deg,
+        var(--muted) 0deg,
+        var(--muted) 30deg,
+       var(--muted) 90deg,
+        transparent 360deg
+    );
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 0;
+}
+
+.member-photo:hover::before {
+    opacity: 1;
+    animation: rotateBorder 1.5s linear infinite;
+}
+
+/* White background circle to create outline effect */
+.member-photo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--card);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 1;
+}
+
+@keyframes rotateBorder {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* Remove old gradient background since we're using images */
+.member-photo {
+    background: none !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.team-member h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--foreground);
+}
+
+.team-member p {
+    font-size: 14px;
+    color: var(--link);
+}
+
+.location {
+    background-color: var(--card);
+    padding: 80px 50px;
+}
+
+.location-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.location-content h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: var(--foreground);
+}
+
+.location-details {
+    margin-top: 30px;
+}
+
+.location-item {
+    display: flex;
+    align-items: start;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.location-item-icon {
+    font-size: 24px;
+    color: var(--link);
+}
+
+.location-item-text h4 {
+    margin-top: 0;
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--foreground);
+}
+
+.location-item-text p {
+    font-size: 14px;
+    color: var(--muted-foreground);
+}
+
+.location-map {
+    width: 100%;
+    height: 400px;
+    background: linear-gradient(135deg, var(--primary-light) 0%, var(--primary-light) 100%);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    color: var(--link);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+    .our-story,
+    .location-container {
+        grid-template-columns: 1fr;
+    }
+    .stats-container,
+    .values-grid,
+    .awards-grid,
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    .hero-content h1 {
+        font-size: 36px;
+    }
+}
+

@@ -1,0 +1,206 @@
+
+* {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+   /* color: var(--foreground); */
+ }
+ a{
+  text-decoration: none;
+color: var(--foreground);
+ }
+ .logo-name {
+   font-family:"Supermercado One", sans-serif; 
+   font-weight: 450;
+   font-size: 30px;
+ }
+ 
+ .logo {
+   width: 70px;
+   height: auto;
+   border-radius: 50%;
+   object-fit: cover;
+   object-position: center;
+   margin-left: 30px;
+   cursor: pointer;
+   margin-right: 5px;
+ }
+ 
+ .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  background-color: var(--card);
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 70px;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-color: var(--border);
+  z-index: 100;
+}
+ 
+ .navbar-list {
+   display: inline-block;
+   list-style: none;
+   position: relative;
+   color: var(--foreground);
+   margin-right: 30px;
+   font-weight: bold;
+   transition: .1s;
+ }
+
+
+ .navbar ul li a {
+   text-decoration: none;
+   color: var(--foreground);
+   text-transform: uppercase;
+   text-decoration-color:var(--primary-foreground) ;
+ }
+ 
+ 
+.navbar-list {
+   position: relative; /* Add this! */
+}
+
+.navbar-list::after {
+   content: '';
+   height: 3px;
+   width: 0;
+   background: var(--primary);
+   position: absolute;
+   left: 0;
+   bottom: -10px;
+   transition: 0.7s;
+} 
+
+.navbar-list:hover::after {
+   width: 100%;
+}
+
+#navprofile::after {
+   content: none; /* This removes the underline for the profile icon */
+}
+#search::after{
+  content: none;
+}
+
+#navcart a {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+#navcart a:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+
+#cart-badge {
+  position: absolute;
+  top: -5px;
+  /* Adjust top to sit on edge */
+  right: -5px;
+  /* Adjust right to sit on edge */
+  background: var(--danger);
+  color: var(--primary-foreground);
+  font-size: 10px;
+  /* Slightly smaller font for better fit */
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  width: 18px;
+  /* Slightly smaller badge */
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--bg-primary);
+  line-height: 1;
+  /* Fix vertical alignment */
+  padding: 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  /* Don't interfere with click */
+}
+
+/* Navbar Search */
+#search{
+  margin-right:12px;
+}
+ .search-container {
+  position: relative;
+  --size-button: 40px;
+  color: var(--primary-foreground);
+  max-width: fit-content;
+}
+
+#navSearchInput {
+  padding-left: var(--size-button);
+  height: var(--size-button);
+  font-size: 15px;
+  border: none;
+  color: var(--primary-foreground);
+  outline: none;
+  width: 1px;
+  transition: all ease 0.3s;
+  background-color: transparent;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+#navSearchInput:focus,
+#navSearchInput:not(:invalid) {
+  width: 300px;
+  cursor: text;
+  box-shadow: inset 0 0 0 1px var(--input);
+}
+
+#navSearchInput:focus + .icon,
+#navSearchInput:not(:invalid) + .icon {
+  pointer-events: all;
+  cursor: pointer;
+}
+
+.search-container .icon {
+  position: absolute;
+  justify-self: center;
+  align-self: center;
+  width: 35px;
+  height: 30px;
+  top: 0;
+  left: 0;
+  /* padding: 8px; */
+  padding-top: 9px;
+  pointer-events: none;
+}
+
+.search-container .icon svg {
+  width: 100%;
+  height: 100%;
+}.navbar nav ul { display: flex; align-items: center; gap: 14px; }
+.navbar .navbar-list { margin: 0; }
+.navbar { padding-right: 20px; }
+.nav-action { position: relative; border: 0; background: transparent; color: var(--foreground); cursor: pointer; min-height: 44px; padding: 6px; }
+.nav-action:hover { background: var(--accent); color: var(--accent-foreground); border-radius: 8px; }
+.nav-search { display: flex; border: 1px solid var(--input); border-radius: 20px; overflow: hidden; }
+.nav-search input { width: 150px; padding: 8px 12px; background: var(--background); border: none; }
+.nav-search button { border: none; padding: 8px; background: var(--accent); color: var(--accent-foreground); cursor: pointer; }
+@media (max-width: 900px) { .navbar #search { display: none; } }
+@media (max-width: 600px) {
+ .navbar { padding: 0 10px; } .navbar .logo { width: 40px; margin: 0; }
+ .navbar .logo-name { font-size: 18px; } .navbar nav ul { gap: 5px; }
+ .navbar .navbar-list { margin: 0 !important; font-size: 12px; }
+ .nav-action { font-size: 12px; } .navbar .nav-about { display: none; }
+}

@@ -1,0 +1,62 @@
+.login-page-input-box {
+    margin-bottom: 24px;
+}
+
+.login-page-input-box label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.login-page-input-box input {
+    width: 100%;
+    padding: 14px 16px;
+    font-size: 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+    background: var(--bg-primary);
+}
+
+.login-page-input-box input:focus {
+    border-color: var(--link);
+    background: var(--bg-secondary);
+}
+
+.login-page-input-box input::placeholder {
+    color: var(--muted-foreground);
+}
+
+.login-page-btn {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--primary-foreground);
+    background: linear-gradient(135deg, var(--action) 0%, var(--action) 100%);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px color-mix(in srgb, var(--primary) 30%, transparent);
+}
+
+.login-page-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px color-mix(in srgb, var(--primary) 40%, transparent);
+    background: linear-gradient(135deg, var(--action) 0%, var(--action) 100%);
+}
+
+.login-page-btn:active {
+    transform: translateY(0);
+}
+
+.account-dialog { width: 500px; }
+
+.account-dialog fieldset { border: 0; padding: 0; margin-top: 20px; }
+
+.account-note, #account-help { color: var(--muted-foreground); margin-bottom: 16px; }

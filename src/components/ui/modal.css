@@ -1,0 +1,5 @@
+.app-modal { margin: auto; padding: 24px; max-width: min(560px, calc(100% - 24px)); max-height: calc(100dvh - 24px); overflow-y: auto; border: 1px solid var(--border); border-radius: 16px; background: var(--popover); color: var(--popover-foreground); box-shadow: var(--shadow-xl); }
+.app-modal::backdrop { background: rgb(0 0 0 / 60%); backdrop-filter: blur(4px); }
+.modal-heading { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-bottom: 20px; }
+.modal-heading h2 { font-size: 24px; margin: 0; color: inherit; }
+.modal-close { background: var(--accent); color: var(--accent-foreground); border: 1px solid var(--border); border-radius: 50%; min-width: 40px; min-height: 40px; cursor: pointer; }

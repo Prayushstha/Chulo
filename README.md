@@ -1,132 +1,83 @@
-# Chulo - Food Delivery Platform
+# Chulo
 
-A modern, responsive food delivery web application that connects customers with restaurant-quality meals. Built with HTML, CSS, and JavaScript, Chulo offers an intuitive interface for browsing menus, viewing dishes, and exploring culinary offerings.
+A React and Vite food-menu app for exploring Nepali dishes and planning an order.
 
-## Overview
+## Development
 
-Chulo is a comprehensive food delivery platform designed with a focus on user experience and modern web design principles. The application features a clean interface, smooth animations, and responsive layouts that work seamlessly across all devices.
+Use Node.js **22.12 or newer** (Vite 8 and ESLint 10 require a modern Node runtime).
 
-## Features
-
-- Modern, responsive design optimized for mobile, tablet, and desktop devices
-- Dynamic menu showcase with detailed food descriptions
-- Customer testimonials and reviews section
-- Interactive image slider for featured dishes
-- User authentication system with login and signup functionality
-- Smooth animations and page transitions
-- Fast loading and optimized performance
-- Clean, maintainable codebase
-
-## Technologies Used
-
-- **HTML5** - Semantic markup for better accessibility and SEO
-- **CSS3** - Modern styling with Flexbox and Grid layouts
-- **JavaScript** - Interactive functionality and DOM manipulation
-- **Responsive Design** - Mobile-first approach ensuring compatibility across devices
-
-## Project Structure
-
-```
-Chulo/
-├── index.html              # Main landing page
-├── homepage.html           # Primary food ordering interface
-├── AboutUS.html            # Company information and team details
-├── login.html              # User login page
-├── signup.html             # New user registration page
-├── README.md               # Project documentation
-│
-├── assets/                 # Asset directory
-│   ├── Backend/            # Backend JavaScript modules
-│   │   ├── cart.js         # Shopping cart functionality
-│   │   ├── descriptions.js # Food item descriptions and data
-│   │   ├── filters.js      # Menu filtering logic
-│   │   ├── navbar.js       # Navigation bar functionality
-│   │   ├── search.js       # Search feature implementation
-│   │   ├── signup.js       # Registration form handling
-│   │   ├── slider.js       # Image slider functionality
-│   │   └── ui-enhancer.js  # UI enhancement utilities
-│   │
-│   ├── CSS/                # Stylesheet directory
-│   │   ├── aboutus.css     # About page styles
-│   │   ├── cart.css        # Shopping cart styles
-│   │   ├── food-description.css  # Food detail page styles
-│   │   ├── footer.css      # Footer section styles
-│   │   ├── frontpage.css   # Landing page styles
-│   │   ├── homepage.css    # Homepage styles
-│   │   ├── login.css       # Login page styles
-│   │   ├── navbar.css      # Navigation bar styles
-│   │   ├── responsive.css  # Responsive design rules
-│   │   ├── sidebar.css     # Sidebar menu styles
-│   │   ├── slider.css      # Image slider styles
-│   │   └── theme.css       # Global theme variables and base styles
-│   │
-│   └── images/             # Image assets (logos, food photos, icons)
-│
-└── vercel/                 # Vercel deployment configuration
+```sh
+npm ci
+npm run dev
+npm run lint
+npm test
+npm run build
+npm run preview
 ```
 
-## Installation and Setup
+The VS Code tasks provide Dev server, Build, Lint, and Test commands. This is a JavaScript project; no TypeScript/type-check script is configured. Tests use Node's built-in test runner, with no extra dependencies.
 
-### Prerequisites
+## Structure
 
-- A modern web browser (Chrome, Firefox, Safari, or Edge)
-- A code editor (VS Code recommended)
-- Optional: Live Server extension for development
+```text
+index.html                 Vite HTML entry
+vite.config.js             Vite/React configuration
+eslint.config.js           Lint configuration
+package.json
+package-lock.json
+public/                    Images and icons served at stable URLs
+src/
+  main.jsx                 React entry and theme stylesheet
+  App.jsx                  Routes, shared shell, cart and theme state
+  components/
+    layout/                Navbar and Footer with their styles
+    ui/                    Accessible native modal and styles
+  features/
+    account/               Account availability dialog
+    cart/                  Drawer, item controls, model, hook and tests
+    menu/                  Shared dish data, categories and filter tests
+  lib/                     Defensive browser storage helpers and tests
+  pages/
+    landing/               Landing screen, reviews, sections and styles
+    menu/                  Menu screen, cards, category nav and slider
+    about/                 About screen, sections and styles
+    product/               Product detail screen and styles
+  styles/
+    theme.css              Palette tokens and semantic color roles
+    app.css                App shell and shared styles
+```
 
-### Local Development
+Components use PascalCase filenames; helpers and styles use descriptive lowercase names. Route-only components stay beside their screen. Shared menu data lives in a feature folder because both catalog and product/cart views use it. The old standalone DOM scripts and duplicated cart/auth implementations are removed. Images remain in `public/` because the catalog and CSS reference their stable URLs directly; future assets imported from JavaScript should go under `src/` beside their consumer or in `src/assets/`.
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/KhajaTime/Chulo.git
-   cd chulo
-   ```
+## Routes
 
-2. Open the project:
-   - Option 1: Open `index.html` directly in your web browser
-   - Option 2: Use VS Code with Live Server extension for hot reload
+Hash routing works with static hosting without server route rewrites:
 
-3. Start developing:
-   - Navigate to the file you want to edit
-   - Changes will reflect immediately when you refresh the browser
+- `/#/`: landing page and reviews
+- `/#/dashboard`: menu (`/#/menu` redirects here)
+- `/#/dashboard?q=momo&diet=Non-veg`: shareable search/filter state
+- `/#/dashboard?section=Trending`: category navigation
+- `/#/aboutus`: restaurant information
+- `/#/product/1`: product details
+- Unknown routes and product IDs show recovery links.
 
-## Usage
+## User flows
 
-1. **Landing Page**: Visit `index.html` to see the introduction and key features
-2. **Browse Menu**: Navigate to the homepage to explore available dishes
-3. **Search**: Use the search bar to find specific items
-4. **Filter**: Apply filters to narrow down menu options
-5. **View Details**: Click on any dish to see detailed descriptions
-6. **Add to Cart**: Select items and add them to your shopping cart
-7. **Account**: Create an account or login to save your preferences
+- Search by dish name or ingredient and filter vegetarian/non-vegetarian dishes. Empty results offer a filter reset.
+- Add dishes from menu cards or product details. Adjust individual quantities, remove dishes, clear the cart and review a calculated estimate. Cart items and quantities survive reloads; prices always come from the catalog. Quantities are capped at 99 per dish.
+- Toggle light/dark mode from the navigation. The chosen theme persists across reloads.
+- Cart and account panels use native dialogs for Escape, focus containment and restoration. Navigation, reviews, and purchase controls are keyboard accessible.
 
-## Future Enhancements
+## Current boundaries
 
-- Backend integration with Node.js and Express
-- Database implementation (MongoDB or PostgreSQL)
-- User authentication with JWT tokens
-- Real-time order tracking system
-- Advanced shopping cart with checkout process
-- Payment gateway integration (Stripe, PayPal)
-- Admin dashboard for restaurant management
-- Order history and user profiles
-- Email notifications for order updates
-- Rating and review system
-- Multi-restaurant support
+This is a frontend prototype. There is **no account, order, or payment backend**. Account inputs are disabled with an explanation, and the cart's review explicitly says that it does not place an order or charge a payment. Call the restaurant to confirm pricing and availability. The estimate retains the existing app's 13% VAT calculation; this is not a validated billing service.
 
-## Developer
+Cart/theme storage is local to the browser. If storage is unavailable, the app still works in memory. External Google Fonts and the embedded location map require a network connection; critical controls do not rely on the removed Font Awesome kit.
 
-**Prayush Shrestha**
-- GitHub: [@Prayushstha](https://github.com/Prayushstha)
-- Email: prayushstha1212@gmail.com
+## Verification
 
-## Contributing
+`npm test` covers cart merging, independent quantities, removals, limits, invalid saved data, totals, combined menu filters, catalog consistency, and storage failures. Run `npm run lint` and `npm run build` before publishing. Browser checks should cover desktop/mobile navigation, search, add/change/remove/clear, reload persistence, both themes, keyboard dialogs, and invalid routes.
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+## Credits
 
-## License
-
-This project is created for educational purposes. All rights reserved.
-
-## Acknowledgments
-
-Special thanks to all team members for their contributions to this project.
+Created by Prayush Shrestha and the Chulo team for educational purposes. All rights reserved.

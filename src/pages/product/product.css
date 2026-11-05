@@ -1,0 +1,171 @@
+
+
+.main-product-container{
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+  padding: 60px 80px;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-product-container .food-description-container{
+  display: flex;
+  flex-direction: row;
+  background: var(--bg-secondary);
+  border-radius: 24px;
+  box-shadow: var(--shadow-lg);
+  padding: 50px;
+  width: 100%;
+  max-width: 1500px;
+  gap: 60px;
+}
+
+.main-product-container .food-picture-container{
+  flex-shrink: 0;
+}
+
+.main-product-container .food-description-picture{
+  width: 600px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+.main-product-container .food-description{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+.main-product-container .food-name{
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.main-product-container .food-price{
+  display: flex;
+  align-items: center;
+  padding-bottom: 25px;
+  gap: 14px;
+}
+
+.main-product-container .original-price{
+  text-decoration: line-through;
+  color: var(--text-secondary);
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.main-product-container .discounted-price{
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+.main-product-container .buy-button{
+  border-radius: 14px;
+  border: none;
+  box-shadow: var(--shadow-md);
+  background: var(--gradient-primary);
+  padding: 16px 50px;
+  margin-bottom: 15px;
+  color: var(--primary-foreground);
+  font-weight: 700;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.2s;
+  width: fit-content;
+}
+
+.main-product-container .buy-button:hover{
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.main-product-container .description{
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
+}
+
+.main-product-container .description-heading,
+.main-product-container .ingredients-heading,
+.main-product-container .nutrients-heading{
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-secondary);
+  margin-bottom: 12px;
+}
+
+.main-product-container .description-content,
+.main-product-container .ingredients-content{
+  font-size: 19px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--text-primary);
+  padding-right: 40px;
+}
+
+.main-product-container .veg-non-veg{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-top: 22px;
+}
+
+.main-product-container .food-sticker{
+  width: 26px;
+  height: 26px;
+}
+
+.main-product-container .veg-non{
+  font-weight: 500;
+  font-size: 17px;
+  color: var(--text-primary);
+}
+
+.main-product-container .ingredients-heading{
+  padding-top: 30px;
+}
+
+.main-product-container .ingredients-content{
+  padding-top: 10px;
+}
+
+.main-product-container .nutrients-heading{
+  padding-top: 30px;
+  padding-bottom: 18px;
+  border-top: 1px solid var(--border-color);
+  margin-top: 25px;
+}
+
+.main-product-container .nutrients-content{
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 20px;
+  background: var(--primary-light);
+  border-radius: 16px;
+  padding: 24px 16px;
+}
+
+.main-product-container .nutrients-value{
+  text-align: center;
+}
+
+.main-product-container .nutrients-number{
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--primary);
+}
+
+.main-product-container .nutrients-value div:last-child{
+  font-size: 14px;
+  color: var(--text-secondary);
+}

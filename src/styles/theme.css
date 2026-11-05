@@ -1,0 +1,153 @@
+/* ===== THEME VARIABLES ===== */
+:root {
+--background: #faf9f5;
+  --foreground: #3d3929;
+  --card: #faf9f5;
+  --card-foreground: #141413;
+  --popover: #ffffff;
+  --popover-foreground: #28261b;
+  --primary: #ce7e4f;
+  --primary-foreground: #ffffff;
+  --secondary: #e9e6dc;
+  --secondary-foreground: #535146;
+  --muted: #ede9de;
+  --muted-foreground: #353531;
+  --accent: #e9e6dc;
+  --accent-foreground: #28261b;
+  --destructive: #141413;
+  --destructive-foreground: #ffffff;
+  --border: #dad9d4;
+  --input: #b4b2a7;
+  --ring: #c96442;
+  --chart-1: #b05730;
+  --chart-2: #9c87f5;
+  --chart-3: #ded8c4;
+  --chart-4: #dbd3f0;
+  --chart-5: #b4552d;
+  --sidebar: #f5f4ee;
+  --sidebar-foreground: #3d3d3a;
+  --sidebar-primary: #d07658;
+  --sidebar-primary-foreground: #fbfbfb;
+  --sidebar-accent: #e9e6dc;
+  --sidebar-accent-foreground: #343434;
+  --sidebar-border: #ebebeb;
+  --sidebar-ring: #b5b5b5;
+  --font-sans: Inter, ui-sans-serif, sans-serif, system-ui;
+  --font-serif: Space Grotesk, ui-sans-serif, sans-serif, system-ui;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --radius: 0.5rem;
+  --shadow-x: -1px;
+  --shadow-y: 6.5px;
+  --shadow-blur: 6.5px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.03;
+  --shadow-color: oklch(0 0 0);
+  --shadow-2xs: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.01);
+  --shadow-xs: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.01);
+  --shadow-sm: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 1px 2px -1px hsl(0 0% 0% / 0.03);
+  --shadow: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 1px 2px -1px hsl(0 0% 0% / 0.03);
+  --shadow-md: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 2px 4px -1px hsl(0 0% 0% / 0.03);
+  --shadow-lg: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 4px 6px -1px hsl(0 0% 0% / 0.03);
+  --shadow-xl: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 8px 10px -1px hsl(0 0% 0% / 0.03);
+  --shadow-2xl: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.07);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+/* ===== DARK THEME ===== */
+body.dark-theme {
+    --background: #141414;
+  --foreground: #dddcda;
+  --card: #211f1c;
+  --card-foreground: #faf9f5;
+  --popover: #272720;
+  --popover-foreground: #e5e5e2;
+  --primary: #d76742;
+  --primary-foreground: #ffffff;
+  --secondary: #faf9f5;
+  --secondary-foreground: #1a1a19;
+  --muted: #1b1b19;
+  --muted-foreground: #dbdad7;
+  --accent: #191814;
+  --accent-foreground: #f6f5ef;
+  --destructive: #f43e3e;
+  --destructive-foreground: #ffffff;
+  --border: #3e3e38;
+  --input: #52514a;
+  --ring: #d97757;
+  --chart-1: #b05730;
+  --chart-2: #9c87f5;
+  --chart-3: #1a1915;
+  --chart-4: #2f2b48;
+  --chart-5: #b4552d;
+  --sidebar: #1f1e1d;
+  --sidebar-foreground: #dddbd5;
+  --sidebar-primary: #d76742;
+  --sidebar-primary-foreground: #fbfbfb;
+  --sidebar-accent: #0f0f0e;
+  --sidebar-accent-foreground: #c3c0b6;
+  --sidebar-border: #ebebeb;
+  --sidebar-ring: #b5b5b5;
+  --font-sans: Inter, ui-sans-serif, sans-serif, system-ui;
+  --font-serif: Space Grotesk, ui-sans-serif, sans-serif, system-ui;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --radius: 0.5rem;
+  --shadow-x: -1px;
+  --shadow-y: 6.5px;
+  --shadow-blur: 6.5px;
+  --shadow-spread: 0px;
+  --shadow-opacity: 0.03;
+  --shadow-color: oklch(0 0 0);
+  --shadow-2xs: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.01);
+  --shadow-xs: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.01);
+  --shadow-sm: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 1px 2px -1px hsl(0 0% 0% / 0.03);
+  --shadow: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 1px 2px -1px hsl(0 0% 0% / 0.03);
+  --shadow-md: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 2px 4px -1px hsl(0 0% 0% / 0.03);
+  --shadow-lg: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 4px 6px -1px hsl(0 0% 0% / 0.03);
+  --shadow-xl: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.03), -1px 8px 10px -1px hsl(0 0% 0% / 0.03);
+  --shadow-2xl: -1px 6.5px 6.5px 0px hsl(0 0% 0% / 0.07);
+}
+
+/* Resolve semantic aliases on both theme boundaries. */
+:root, body.dark-theme {
+ --bg-primary: var(--background); --bg-secondary: var(--card);
+ --text-primary: var(--foreground); --text-secondary: var(--muted-foreground);
+ --border-color: var(--border);
+ --primary-light: color-mix(in srgb, var(--primary) 14%, var(--background));
+ --action: color-mix(in srgb, var(--primary) 72%, black);
+ --action-hover: color-mix(in srgb, var(--primary) 60%, black);
+ --action-active: color-mix(in srgb, var(--primary) 50%, black);
+ --primary-hover: var(--action-hover);
+ --link: color-mix(in srgb, var(--primary) 65%, black);
+ --gradient-primary: linear-gradient(135deg, var(--action), var(--action-hover));
+ --gradient-menu-button: var(--gradient-primary);
+ --glass-bg: color-mix(in srgb, var(--popover) 94%, transparent);
+ --bg-glass: var(--glass-bg); --glass-border: var(--border); --glass-shadow: var(--shadow-lg);
+ --footer-bg: var(--muted); --footer-text: var(--foreground); --footer-border: var(--border);
+ --footer-link: var(--link); --footer-link-hover: var(--link);
+ --hero-overlay: rgb(0 0 0 / 65%); --on-image: #fff;
+ --success: #26703b; --warning: #855800; --danger: var(--destructive);
+ color-scheme: light;
+}
+body.dark-theme {
+ --link: color-mix(in srgb, var(--primary) 65%, white);
+ --success: #82cf96; --warning: #ebc36a; color-scheme: dark;
+}
+body { background: var(--background); color: var(--foreground); }
+a { color: var(--link); }
+button, input, textarea, select { font: inherit; }
+input, textarea, select { color: var(--foreground); accent-color: var(--action); }
+input::placeholder, textarea::placeholder { color: var(--muted-foreground); opacity: 1; }
+body :is(a, button, input, textarea, select, [tabindex]):focus-visible {
+ outline: 3px solid var(--ring); outline-offset: 3px;
+}
+body :is(button, input, textarea, select):disabled {
+ background: var(--muted); color: var(--muted-foreground); border-color: var(--input);
+ cursor: not-allowed; opacity: 0.65; box-shadow: none; transform: none;
+}
+::selection { background: var(--primary-light); color: var(--foreground); }
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: Helvetica, Arial, sans-serif; line-height: 1.6; }
+h1, h2, h3, h4, p, ul { margin: 0; padding: 0; }
